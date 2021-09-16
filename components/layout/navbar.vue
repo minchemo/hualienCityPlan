@@ -32,6 +32,11 @@
             >資訊</span
           ></NuxtLink
         >
+        <NuxtLink class="navbar-link-item" to="/info"
+          ><span @mouseover="popupOpen = true" @mouseleave="popupOpen = false"
+            >資訊</span
+          ></NuxtLink
+        >
       </div>
     </div>
     <div
