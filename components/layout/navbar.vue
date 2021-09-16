@@ -1,46 +1,41 @@
 <template>
   <div>
-    <div
-      class="navbar"
-      data-aos="slide-down"
-      data-aos-delay="200"
-      data-aos-duration="1000"
-    >
+    <div class="navbar">
       <div class="logo">
         <NuxtLink to="/">
           <img src="@/assets/img/logo.png" alt="" srcset="" />
         </NuxtLink>
       </div>
       <div class="navbar-link">
-        <NuxtLink class="navbar-link-item" to="/about"
-          ><span @mouseover="popupOpen = true" @mouseleave="popupOpen = false"
-            >關於</span
-          ></NuxtLink
+        <NuxtLink
+          class="navbar-link-item"
+          :to="nav.linkTo"
+          v-for="(nav, i) in navList"
+          :key="i"
         >
-        <NuxtLink class="navbar-link-item" to="/access"
-          ><span @mouseover="popupOpen = true" @mouseleave="popupOpen = false"
-            >交通</span
-          ></NuxtLink
-        >
-        <NuxtLink class="navbar-link-item" to="/program"
-          ><span @mouseover="popupOpen = true" @mouseleave="popupOpen = false"
-            >活動</span
-          ></NuxtLink
-        >
-        <NuxtLink class="navbar-link-item" to="/info"
-          ><span @mouseover="popupOpen = true" @mouseleave="popupOpen = false"
-            >資訊</span
-          ></NuxtLink
-        >
+          <div
+            @mouseover="nav.menu ? togglePopup(true, nav.linkId) : null"
+            @mouseleave="nav.menu ? togglePopup(false, null) : null"
+          >
+            <span>{{ nav.linkName }}</span>
+          </div>
+        </NuxtLink>
       </div>
     </div>
     <div
       class="navbar-popup"
       v-bind:class="popupOpen ? 'active' : ''"
-      @mouseover="popupOpen = true"
-      @mouseleave="popupOpen = false"
+      @mouseover="togglePopup(true, activeLinkId)"
+      @mouseleave="togglePopup(false, null)"
     >
-    nodata
+      <NuxtLink
+        v-for="(item, i) in activeMenu"
+        :key="i"
+        :to="item.linkTo"
+        class="navbar-popup-item"
+      >
+        <span v-html="item.linkName"></span>
+      </NuxtLink>
     </div>
     <div class="social-button">
       <a href="">
@@ -78,12 +73,50 @@
   .navbar-link {
     display: flex;
     margin-right: 2vw;
+    height: 100%;
+    align-items: center;
     .navbar-link-item {
-      font-size: 1vw;
-      font-weight: bold;
-      margin-left: 2.2vw;
+      height: 100%;
+      div {
+        height: 100%;
+        padding: 0 1vw;
+        display: flex;
+        align-items: center;
+        span {
+          position: relative;
+          font-size: 1vw;
+          font-weight: bold;
+          &:after {
+            content: "";
+            height: 3px;
+            width: 100%;
+            background: #000;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: all 0.4s;
+            transform: scale(0);
+            transform-origin: center;
+          }
+        }
+      }
       &:hover {
-        opacity: 0.6;
+        div {
+          span {
+            &:after {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+      &.nuxt-link-active {
+        div {
+          span {
+            &:after {
+              transform: scale(1);
+            }
+          }
+        }
       }
     }
   }
@@ -91,7 +124,7 @@
 .navbar-popup {
   position: fixed;
   width: 15vw;
-  height: 50vh;
+  height: auto;
   background: #fff;
   z-index: 50;
   top: $pc_navbar_height;
@@ -99,8 +132,28 @@
   transform: translateX(100%);
   transition: all 0.5s;
   box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.2);
+  padding: 2vw 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   &.active {
     transform: translateX(0%);
+  }
+  .navbar-popup-item {
+    margin: 1vw 0;
+    padding-bottom: 2vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    span {
+      font-size: 1vw;
+    }
+    &:nth-last-child(1) {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    &:hover span {
+      opacity: 0.7;
+    }
   }
 }
 .social-button {
@@ -135,12 +188,79 @@ export default {
   data() {
     return {
       isMobile,
-      popupOpen: false
+      popupOpen: false,
+      currentPath: this.$nuxt.$route.name,
+      navList: [
+        {
+          linkTo: '/about',
+          linkId: 'about',
+          linkName: '關於'
+        },
+        {
+          linkTo: '/access',
+          linkId: 'access',
+          linkName: '交通'
+        },
+        {
+          linkTo: '/program',
+          linkId: 'program',
+          linkName: '活動',
+          menu: [
+            {
+              linkTo: '/program#1',
+              linkName: '<b>日出大道</b>｜日出未來河'
+            },
+            {
+              linkTo: '/program#2',
+              linkName: '<b>花創舞台</b>｜花創火溫酒'
+            },
+            {
+              linkTo: '/program#3',
+              linkName: '<b>日出舞台</b>｜南濱奔日流'
+            },
+            {
+              linkTo: '/program#4',
+              linkName: '<b>周邊街廓</b>｜溝仔尾問路'
+            },
+            {
+              linkTo: '/program#5',
+              linkName: '<b>特別場域</b>｜RPG豐田村'
+            },
+          ]
+        },
+        {
+          linkTo: '/info',
+          linkId: 'info',
+          linkName: '資訊',
+          menu: [
+            {
+              linkTo: '/info#1',
+              linkName: '節目表'
+            },
+            {
+              linkTo: '/info#2',
+              linkName: '展區地圖'
+            },
+          ]
+        },
+      ],
+      activeLinkId: '',
+      activeMenu: []
     }
   },
   methods: {
-    gogo() {
-      alert(1)
+    togglePopup(open, linkId) {
+      if (open) {
+        this.popupOpen = true;
+
+        if (linkId == 'program' || linkId == 'info') {
+          const activeLink = this.navList.find(item => item.linkId == linkId);
+          this.activeMenu = activeLink.menu;
+          this.activeLinkId = linkId;
+        }
+      } else {
+        this.popupOpen = false;
+      }
     }
   },
   mounted() {

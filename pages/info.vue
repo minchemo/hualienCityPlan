@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="main">
-      <Navbar />
+  <div class="main">
+    <Navbar />
+    <div class="content">
+      <h1>資訊 INFO</h1>
     </div>
-
     <Footer />
   </div>
 </template>
@@ -11,9 +11,16 @@
 @import "@/assets/css/variable.scss";
 .main {
   height: auto;
-  background: #eee;
-  padding-top: $pc_navbar_height;
-  margin-top: -$pc_navbar_height;
+  margin-top: $pc_navbar_height;
+
+  .content {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
 <script>
