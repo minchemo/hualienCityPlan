@@ -42,6 +42,9 @@
       font-size: 1vw;
       text-transform: uppercase;
     }
+    .footer-content{
+      font-size: .7vw;
+    }
   }
   &::before {
     content: "";
