@@ -9,26 +9,22 @@
         </p>
       </div>
       <div class="s2 teams">
-        <div class="team" data-aos="fade" data-aos-delay="200">
+        <div
+          class="team"
+          data-aos="fade-up"
+          :data-aos-delay="(i * 200) + 200"
+          v-for="(team, i) in teams"
+          :key="i"
+        >
           <div class="avatar">
-            <div class="avatar-img"></div>
+            <div
+              class="avatar-img"
+              v-bind:style="{ backgroundImage: 'url(' + team.avatar + ')' }"
+            ></div>
           </div>
           <div class="info">
-            <h2 class="info-name">藝術總監｜林昆穎</h2>
-            <p class="info-content">
-              文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹
-            </p>
-          </div>
-        </div>
-        <div class="team" data-aos="fade" data-aos-delay="400">
-          <div class="avatar">
-            <div class="avatar-img"></div>
-          </div>
-          <div class="info">
-            <h2 class="info-name">執行團隊｜中文名稱</h2>
-            <p class="info-content">
-              文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹
-            </p>
+            <h2 class="info-name" v-html="team.name"></h2>
+            <p class="info-content" v-html="team.content"></p>
           </div>
         </div>
       </div>
@@ -75,7 +71,9 @@
             width: 10vw;
             height: 10vw;
             border-radius: 100%;
-            background: #eee;
+            background-size: cover;
+            background-position: center;
+            filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.4));
           }
         }
 
@@ -105,7 +103,19 @@ import { isMobile } from "@/utils";
 export default {
   data() {
     return {
-      isMobile
+      isMobile,
+      teams: [
+        {
+          avatar: require('@/assets/img/about/avatar.jpeg'),
+          name: '藝術總監｜林昆穎',
+          content: '文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹'
+        },
+        {
+          avatar: require('@/assets/img/about/avatar.jpeg'),
+          name: '執行團隊｜中文名稱',
+          content: '文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹'
+        },
+      ]
     }
   },
   mounted() {
