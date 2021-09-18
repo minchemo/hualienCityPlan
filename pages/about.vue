@@ -2,7 +2,7 @@
   <div class="main">
     <Navbar />
     <div class="content">
-      <div class="intro" data-aos="fade" data-aos-delay="0">
+      <div class="intro">
         <h1>年度主題｜溫花蓮</h1>
         <p>
           文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹
@@ -12,7 +12,7 @@
         <div
           class="team"
           data-aos="fade-up"
-          :data-aos-delay="(i * 200) + 200"
+          :data-aos-delay="i * 200 + 200"
           v-for="(team, i) in teams"
           :key="i"
         >
@@ -85,7 +85,7 @@
           .info-content {
             padding-top: 1vw;
             margin-top: 1vw;
-            border-top: 1px solid;
+            border-top: 2px solid #808080;
             font-size: 0.7vw;
             line-height: 2;
             letter-spacing: 1.1px;
