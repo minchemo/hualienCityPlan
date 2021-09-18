@@ -6,12 +6,11 @@ export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
     ssr: false,
-
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'hualienCityPlan',
         htmlAttrs: {
-            lang: 'en'
+            lang: 'zh-Hant'
         },
         meta: [
             { charset: 'utf-8' },

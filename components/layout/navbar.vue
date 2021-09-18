@@ -31,7 +31,7 @@
       <NuxtLink
         v-for="(item, i) in activeMenu"
         :key="i"
-        :to="item.linkTo"
+        :to="{ path: item.linkTo, hash: item.hash }"
         class="navbar-popup-item"
       >
         <span v-html="item.linkName"></span>
@@ -129,7 +129,7 @@
   z-index: 50;
   top: $pc_navbar_height;
   right: 0;
-  transform: translateX(100%);
+  transform: translateX(150%);
   transition: all 0.5s;
   box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.2);
   padding: 2vw 1vw;
@@ -207,23 +207,28 @@ export default {
           linkName: '活動',
           menu: [
             {
-              linkTo: '/program#1',
+              linkTo: '/program',
+              hash: '1',
               linkName: '<b>日出大道</b>｜日出未來河'
             },
             {
-              linkTo: '/program#2',
+              linkTo: '/program',
+              hash: '2',
               linkName: '<b>花創舞台</b>｜花創火溫酒'
             },
             {
-              linkTo: '/program#3',
+              linkTo: '/program',
+              hash: '3',
               linkName: '<b>日出舞台</b>｜南濱奔日流'
             },
             {
-              linkTo: '/program#4',
+              linkTo: '/program',
+              hash: '4',
               linkName: '<b>周邊街廓</b>｜溝仔尾問路'
             },
             {
-              linkTo: '/program#5',
+              linkTo: '/program',
+              hash: '5',
               linkName: '<b>特別場域</b>｜RPG豐田村'
             },
           ]
@@ -234,11 +239,13 @@ export default {
           linkName: '資訊',
           menu: [
             {
-              linkTo: '/info#1',
+              linkTo: '/info',
+              hash: '1',
               linkName: '節目表'
             },
             {
               linkTo: '/info#2',
+              hash: '2',
               linkName: '展區地圖'
             },
           ]

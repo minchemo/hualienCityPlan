@@ -2,7 +2,7 @@
   <div class="main">
     <Navbar />
     <div class="content">
-      <h1>資訊 INFO</h1>
+      <h1>資訊 INFO {{ routeHash }}</h1>
     </div>
     <Footer />
   </div>
@@ -29,8 +29,12 @@ import { isMobile } from "@/utils";
 export default {
   data() {
     return {
-      isMobile
+      isMobile,
+
+      routeHash: this.$nuxt.$route.hash
     }
+  },
+  created() {
   },
   mounted() {
   }

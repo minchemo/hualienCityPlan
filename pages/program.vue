@@ -2,7 +2,7 @@
   <div class="main">
     <Navbar />
     <div class="content">
-      <h1>活動 PROGRAM</h1>
+      <h1>活動 PROGRAM {{ routeHash }}</h1>
     </div>
     <Footer />
   </div>
@@ -29,7 +29,13 @@ import { isMobile } from "@/utils";
 export default {
   data() {
     return {
-      isMobile
+      isMobile,
+      routeHash: this.$nuxt.$route.hash
+    }
+  },
+  created() {
+    window.onhashchange = function () {
+      console.log(1);
     }
   },
   mounted() {
