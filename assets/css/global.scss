@@ -13,6 +13,10 @@ div {
     font-family: 'Noto Sans TC', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 //基礎外觀調整
 ::selection {
     background: rgba(0, 0, 0, 0.3);
