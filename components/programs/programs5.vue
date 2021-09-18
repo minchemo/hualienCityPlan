@@ -1,6 +1,8 @@
 <template>
   <div>
     <div class="program5">
+      <div class="map" data-aos="fade">(圖片)</div>
+
       <div class="access-info">
         <img
           class="access-info-map"
@@ -23,28 +25,16 @@
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 .program5 {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: 0.25vw;
-  .program-item {
-    height: 25vw;
-    box-sizing: border-box;
+  .map {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    .program-item-title {
-      font-size: 1.2vw;
-      font-weight: bold;
-    }
-    .program-item-subtitle {
-      font-size: 0.9vw;
-      margin-top: 1vw;
-    }
+    font-size: 3vw;
+    font-weight: 100;
   }
-
   .access-info {
     display: flex;
     justify-content: space-between;

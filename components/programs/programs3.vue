@@ -1,7 +1,14 @@
 <template>
   <div>
     <div class="program3">
-      <div class="program-item" v-for="(item, i) in list" :key="i">
+      <div
+        class="program-item"
+        v-for="(item, i) in list"
+        :key="i"
+        data-aos="fade"
+        :data-aos-delay="i * 50 + 50"
+        data-aos-duration="1000"
+      >
         <div class="program-item-title" v-html="item.title"></div>
         <div class="program-item-subtitle" v-html="item.subtitle"></div>
       </div>

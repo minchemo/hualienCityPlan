@@ -16,11 +16,11 @@
           </div>
         </div>
         <div class="program-content">
-          <Program1 v-show="routeHash == 1" />
-          <Program2 v-show="routeHash == 2" />
-          <Program3 v-show="routeHash == 3" />
-          <Program4 v-show="routeHash == 4" />
-          <Program5 v-show="routeHash == 5" />
+          <Program1 v-if="routeHash == 1" />
+          <Program2 v-if="routeHash == 2" />
+          <Program3 v-if="routeHash == 3" />
+          <Program4 v-if="routeHash == 4" />
+          <Program5 v-if="routeHash == 5" />
         </div>
       </div>
     </div>
