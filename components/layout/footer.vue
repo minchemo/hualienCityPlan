@@ -31,7 +31,7 @@
   position: relative;
   background: #fff;
   padding: 2vw 20vw 5vw 20vw;
-  margin-top: 5vw;
+  margin-top: 10vw;
   width: 100%;
   display: flex;
   align-items: center;

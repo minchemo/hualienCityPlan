@@ -35,10 +35,11 @@ export default {
   data() {
     return {
       isMobile,
-      routeHash: this.$nuxt.$route.hash
+      routeHash: ''
     }
   },
   created() {
+    this.routeHash = this.$nuxt.$route.hash
   },
   mounted() {
   }
