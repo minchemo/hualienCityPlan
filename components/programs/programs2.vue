@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="program2">
-      todo
+      花創舞台
     </div>
   </div>
 </template>
@@ -9,27 +9,11 @@
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 .program2 {
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: 0.25vw;
-  .program-item {
-    height: 25vw;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    .program-item-title {
-      font-size: 1.2vw;
-      font-weight: bold;
-    }
-    .program-item-subtitle {
-      font-size: 0.9vw;
-      margin-top: 1vw;
-    }
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  font-size: 3vw;
 
   .access-info {
     display: flex;
