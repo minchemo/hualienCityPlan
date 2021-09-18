@@ -27,6 +27,11 @@
 import { isMobile } from "@/utils";
 
 export default {
+  watch: {
+    $route() {
+      this.routeHash = this.$nuxt.$route.hash;
+    },
+  },
   data() {
     return {
       isMobile,
