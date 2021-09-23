@@ -8,6 +8,7 @@
         data-aos="fade"
         :data-aos-delay="i * 50 + 50"
         data-aos-duration="1000"
+        @click="popupOpen = true"
       >
         <div class="program-item-title" v-html="item.title"></div>
         <div class="program-item-subtitle" v-html="item.subtitle"></div>
@@ -28,6 +29,9 @@
           <div class="open-map">查看地圖</div>
         </div>
       </div>
+    </div>
+    <div class="program-popup" v-show="popupOpen == true">
+      <div class="overlay" @click="popupOpen = false"></div>
     </div>
   </div>
 </template>
@@ -89,6 +93,21 @@
     }
   }
 }
+.program-popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  .overlay {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+  }
+}
 </style>
 <script>
 import { isMobile } from "@/utils";
@@ -130,7 +149,8 @@ export default {
           title: '提問8',
           subtitle: '漂浮魚網'
         },
-      ]
+      ],
+      popupOpen: false
     }
   },
   methods: {
