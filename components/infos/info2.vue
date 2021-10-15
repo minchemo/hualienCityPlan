@@ -22,12 +22,10 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 
 export default {
   data() {
     return {
-      isMobile,
     }
   },
   methods: {

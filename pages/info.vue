@@ -74,7 +74,6 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 import Info1 from '@/components/infos/info1.vue';
 import Info2 from '@/components/infos/info2.vue';
 
@@ -90,7 +89,6 @@ export default {
   },
   data() {
     return {
-      isMobile,
       routeHash: '',
       infos: [
         {

@@ -78,7 +78,6 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 import Program1 from '@/components/programs/programs1.vue';
 import Program2 from '@/components/programs/programs2.vue';
 import Program3 from '@/components/programs/programs3.vue';
@@ -100,7 +99,6 @@ export default {
   },
   data() {
     return {
-      isMobile,
       routeHash: '',
       programs: [
         {

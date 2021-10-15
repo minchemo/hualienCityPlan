@@ -3,7 +3,7 @@
     <div class="navbar">
       <div class="logo">
         <NuxtLink to="/">
-          <img src="@/assets/img/logo.png" alt="" srcset="" />
+          <img src="@/assets/img/logo.svg" alt="" srcset="" />
         </NuxtLink>
       </div>
       <div class="navbar-link">
@@ -56,7 +56,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,6 +97,14 @@
             transform: scale(0);
             transform-origin: center;
           }
+          &:before {
+            content: "";
+            height: 100%;
+            width: 1px;
+            background: #000;
+            position: absolute;
+            right: -1vw;
+          }
         }
       }
       &:hover {
@@ -114,6 +121,15 @@
           span {
             &:after {
               transform: scale(1);
+            }
+          }
+        }
+      }
+      &:last-child {
+        div {
+          span {
+            &::before {
+              content: none;
             }
           }
         }
@@ -182,95 +198,91 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
-
 export default {
   data() {
     return {
-      isMobile,
       popupOpen: false,
       currentPath: this.$nuxt.$route.name,
       navList: [
         {
-          linkTo: '/about',
-          linkId: 'about',
-          linkName: '關於'
+          linkTo: "/about",
+          linkId: "about",
+          linkName: "關於",
         },
         {
-          linkTo: '/access',
-          linkId: 'access',
-          linkName: '交通'
+          linkTo: "/access",
+          linkId: "access",
+          linkName: "交通",
         },
         {
-          linkTo: '/program',
-          linkId: 'program',
-          linkName: '活動',
+          linkTo: "/program",
+          linkId: "program",
+          linkName: "活動",
           menu: [
             {
-              linkTo: '/program',
-              hash: '1',
-              linkName: '<b>日出大道</b>｜日出未來河'
+              linkTo: "/program",
+              hash: "1",
+              linkName: "<b>日出大道</b>｜日出未來河",
             },
             {
-              linkTo: '/program',
-              hash: '2',
-              linkName: '<b>花創舞台</b>｜花創火溫酒'
+              linkTo: "/program",
+              hash: "2",
+              linkName: "<b>花創舞台</b>｜花創火溫酒",
             },
             {
-              linkTo: '/program',
-              hash: '3',
-              linkName: '<b>日出舞台</b>｜南濱奔日流'
+              linkTo: "/program",
+              hash: "3",
+              linkName: "<b>日出舞台</b>｜南濱奔日流",
             },
             {
-              linkTo: '/program',
-              hash: '4',
-              linkName: '<b>周邊街廓</b>｜溝仔尾問路'
+              linkTo: "/program",
+              hash: "4",
+              linkName: "<b>周邊街廓</b>｜溝仔尾問路",
             },
             {
-              linkTo: '/program',
-              hash: '5',
-              linkName: '<b>特別場域</b>｜RPG豐田村'
+              linkTo: "/program",
+              hash: "5",
+              linkName: "<b>特別場域</b>｜RPG豐田村",
             },
-          ]
+          ],
         },
         {
-          linkTo: '/info',
-          linkId: 'info',
-          linkName: '資訊',
+          linkTo: "/info",
+          linkId: "info",
+          linkName: "資訊",
           menu: [
             {
-              linkTo: '/info',
-              hash: '1',
-              linkName: '節目表'
+              linkTo: "/info",
+              hash: "1",
+              linkName: "節目表",
             },
             {
-              linkTo: '/info#2',
-              hash: '2',
-              linkName: '展區地圖'
+              linkTo: "/info#2",
+              hash: "2",
+              linkName: "展區地圖",
             },
-          ]
+          ],
         },
       ],
-      activeLinkId: '',
-      activeMenu: []
-    }
+      activeLinkId: "",
+      activeMenu: [],
+    };
   },
   methods: {
     togglePopup(open, linkId) {
       if (open) {
         this.popupOpen = true;
 
-        if (linkId == 'program' || linkId == 'info') {
-          const activeLink = this.navList.find(item => item.linkId == linkId);
+        if (linkId == "program" || linkId == "info") {
+          const activeLink = this.navList.find((item) => item.linkId == linkId);
           this.activeMenu = activeLink.menu;
           this.activeLinkId = linkId;
         }
       } else {
         this.popupOpen = false;
       }
-    }
+    },
   },
-  mounted() {
-  }
-}
+  mounted() {},
+};
 </script>

@@ -110,12 +110,10 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 
 export default {
   data() {
     return {
-      isMobile,
       list: [
         {
           title: '提問1',

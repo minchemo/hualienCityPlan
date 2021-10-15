@@ -83,13 +83,11 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 import * as html2canvas from 'html2canvas';
 
 export default {
   data() {
     return {
-      isMobile,
       list: [
         {
           'name': '節目名稱',

@@ -12,21 +12,18 @@
           class="bg-video"
           src="@/assets/img/home/bg.mp4"
         ></video>
-        <div class="bg-text">
-          文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹<br />文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹
+      </div>
+
+      <div class="intro">
+        <div class="intro-content">
+          <div class="yt-box">
+            <img src="@/assets/img/home/intro-preview.jpg" alt="" srcset="" />
+          </div>
         </div>
       </div>
+
       <div class="brands">
-        <div
-          class="brand-item"
-          data-aos="fade-left"
-          :data-aos-delay="i * 50"
-          v-for="(brand, i) in brands"
-          :key="i"
-        >
-          <img :src="brand.img" alt="" srcset="" />
-          <p v-html="brand.name + (i + 1)"></p>
-        </div>
+        <img src="@/assets/img/home/brands/groups.svg" alt="" srcset="" />
       </div>
     </div>
     <Footer />
@@ -44,82 +41,46 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    // background-size: cover;
-    // background-attachment: fixed;
-    // background-image: url("@/assets/img/home/bg.mp4");
     overflow: hidden;
-    .bg-text {
-      position: absolute;
-      bottom: 10vw;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9vw;
-      line-height: 2;
-      z-index: 1;
-    }
     .bg-video {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    } 
+      width: 100%;
+    }
+  }
+
+  .intro {
+    width: 100%;
+    border-bottom: 1px solid ;
+    padding-top: 10vw;
+    .intro-content {
+      width: 80vw;
+      text-align: center;
+      margin: 0 auto;
+      .yt-box {
+        width: 70%;
+        margin: 0 auto;
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .brands {
+    max-width: 80vw;
     display: flex;
-    justify-content: center;
-    padding-top: 5vw;
-    box-sizing: border-box;
-    .brand-item {
-      margin: 0.5vw;
-      &:hover {
-        transform: translateY(-10%);
-      }
-      p {
-        text-align: center;
-      }
+    flex-wrap: wrap;
+    margin: 5vw auto 5vw auto;
+    img {
+      width: 100%;
     }
   }
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
-
 export default {
   data() {
-    return {
-      isMobile,
-      brands: [
-        {
-          name: 'logo',
-          img: require('@/assets/img/home/brands/brand.png')
-        },
-        {
-          name: 'logo',
-          img: require('@/assets/img/home/brands/brand.png')
-        },
-        {
-          name: 'logo',
-          img: require('@/assets/img/home/brands/brand.png')
-        },
-        {
-          name: 'logo',
-          img: require('@/assets/img/home/brands/brand.png')
-        },
-        {
-          name: 'logo',
-          img: require('@/assets/img/home/brands/brand.png')
-        },
-      ]
-    }
+    return {};
   },
-  mounted() {
-  }
-}
+  mounted() {},
+};
 </script>

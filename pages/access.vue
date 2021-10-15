@@ -119,12 +119,10 @@
 }
 </style>
 <script>
-import { isMobile } from "@/utils";
 
 export default {
   data() {
     return {
-      isMobile,
       accessTypes: [
         {
           img: require('@/assets/img/access/type/train.jpeg'),

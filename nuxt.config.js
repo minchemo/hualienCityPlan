@@ -5,7 +5,7 @@ const routerBase =
 export default {
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
-    ssr: false,
+    ssr: true,
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'hualienCityPlan',
@@ -46,6 +46,7 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/eslint
+   '@nuxtjs/device',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
