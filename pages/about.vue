@@ -3,31 +3,23 @@
     <Navbar />
     <div class="content">
       <div class="intro">
-        <h1>年度主題｜溫花蓮 tt</h1>
-        <p>
-          文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹文字介紹
-        </p>
+        <img src="@/assets/img/about/intro.svg" alt="" srcset="" />
       </div>
-      <div class="s2 teams">
-        <div
-          class="team"
-          data-aos="fade-up"
-          :data-aos-delay="i * 200 + 200"
-          v-for="(team, i) in teams"
-          :key="i"
-        >
-          <div class="avatar">
-            <div
-              class="avatar-img"
-              v-bind:style="{ backgroundImage: 'url(' + team.avatar + ')' }"
-            ></div>
-          </div>
-          <div class="info">
-            <h2 class="info-name" v-html="team.name"></h2>
-            <p class="info-content" v-html="team.content"></p>
-          </div>
-        </div>
+      <div class="text">
+        <img src="@/assets/img/about/content.svg" alt="" srcset="" />
       </div>
+    </div>
+    <div class="team">
+      <div class="avatar">
+        <img src="@/assets/img/about/team_1.jpg" alt="" srcset="" />
+      </div>
+      <div class="text">
+        <img src="@/assets/img/about/team.svg" alt="" srcset="" />
+      </div>
+    </div>
+    <div class="shop">
+      <img class="title" src="@/assets/img/about/shop_title.svg" alt="" srcset="" />
+      <img class="logo" src="@/assets/img/about/shop_logos.jpg" alt="" srcset="" />
     </div>
     <Footer />
   </div>
@@ -39,59 +31,77 @@
   margin-top: $pc_navbar_height;
 
   .content {
-    padding-top: 5vw;
     position: relative;
-    height: auto;
-    width: 60vw;
+    margin: 7vw 15vw 0 0;
+    padding-bottom: 7vw;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+
     .intro {
-      h1 {
-        text-align: center;
-      }
-      p {
-        font-size: 0.7vw;
-        line-height: 2;
-        letter-spacing: 1.1px;
+      img {
+        height: 90vh;
       }
     }
+    .text {
+      img {
+        height: 90vh;
+      }
+    }
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 1px;
+      background: #262626;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
 
-    .teams {
-      .team {
-        margin: 5vw 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  .team {
+    position: relative;
+    max-width: 70vw;
+    display: flex;
+    align-items: flex-start;
+    margin: 5vw auto 3vw auto;
+    padding: 1vw 1vw 2vw 1vw;
+    .avatar {
+      flex: 3;
+      margin: 1vw;
+      img {
+        width: 100%;
+      }
+    }
+    .text {
+      flex: 7;
+      margin: 1vw;
+      margin-top: -1vw;
+      img {
+        width: 100%;
+      }
+    }
+    &::after {
+      content: "";
+      width: 100vw;
+      height: 1px;
+      background: #262626;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 
-        .avatar {
-          .avatar-img {
-            width: 10vw;
-            height: 10vw;
-            border-radius: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: drop-shadow(0px 5px 1px rgba(0, 0, 0, 0.4));
-          }
-        }
+  .shop {
+    width: 70vw;
+    margin: 0 auto;
+    margin-bottom: 5vw;
+    img {
+      width: 100%;
 
-        .info {
-          width: 70%;
-          .info-name {
-            font-size: 1vw;
-          }
-          .info-content {
-            padding-top: 1vw;
-            margin-top: 1vw;
-            border-top: 2px solid #808080;
-            font-size: 0.7vw;
-            line-height: 2;
-            letter-spacing: 1.1px;
-            font-weight: 500;
-          }
-        }
+      &.title {
+        margin-bottom: 2vw;
       }
     }
   }

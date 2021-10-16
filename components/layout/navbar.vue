@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar">
+    <div class="navbar" v-bind:class="scrollPos > 100 ? 'scroll' : ''">
       <div class="logo">
         <NuxtLink to="/">
           <img src="@/assets/img/logo.svg" alt="" srcset="" />
@@ -66,6 +66,7 @@
   height: $pc_navbar_height;
   z-index: 50;
   border-bottom: 1px solid;
+  transition: all .5s;
 
   .logo {
     padding-left: 2.2vw;
@@ -125,6 +126,11 @@
       }
     }
   }
+
+  &.scroll {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 }
 .navbar-popup {
   position: fixed;
@@ -169,7 +175,7 @@
   width: 0%;
   height: 0%;
   border-radius: 0% 0% 0% 50%;
-  transition: all 1s cubic-bezier(0, 0, 0.1, 1.0);
+  transition: all 1s cubic-bezier(0, 0, 0.1, 1);
 
   &.active {
     width: 100%;
@@ -271,6 +277,7 @@ export default {
       ],
       activeLinkId: "",
       activeMenu: [],
+      scrollPos: 0,
     };
   },
   methods: {
@@ -287,7 +294,14 @@ export default {
         this.popupOpen = false;
       }
     },
+    handleScroll() {
+      this.scrollPos = window.scrollY;
+    }
   },
-  mounted() { },
+  mounted() {
+  },
+  beforeMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
 };
 </script>
