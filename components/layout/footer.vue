@@ -87,7 +87,7 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    background: #808080;
+    background: #262626;
     left: 15vw;
   }
 }

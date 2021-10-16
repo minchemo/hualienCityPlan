@@ -11,8 +11,10 @@
             @click="setRouteHash(program.id)"
             v-bind:class="routeHash == program.id ? 'active' : ''"
           >
-            <div class="program-title" v-html="program.title"></div>
-            <div class="program-subtitle" v-html="program.subtitle"></div>
+            <div class="program-title">
+              <b>{{ program.title }}</b
+              >｜{{ program.subtitle }}
+            </div>
           </div>
         </div>
         <div class="program-content">
@@ -53,23 +55,22 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 2vw 0;
-          background-color: #e5e5e5;
-          transition: all 0.4s;
-          &:hover {
-            opacity: 0.5;
-            cursor: pointer;
-          }
+          padding: 1vw 0;
+          border-right: 1px solid #262626;
           &.active {
-            opacity: 0.5;
+            .program-title {
+              color: $primaryColor;
+            }
           }
           .program-title {
-            font-size: 1.2vw;
+            font-size: .8vw;
             font-weight: bold;
           }
-          .program-subtitle {
-            margin-top: 0.7vw;
-            font-size: 1.2vw;
+          &:hover {
+            cursor: pointer;
+            .program-title {
+              color: $primaryColor;
+            }
           }
         }
       }
@@ -124,7 +125,7 @@ export default {
         {
           id: 5,
           title: '特別場域',
-          subtitle: 'RPG豐田村',
+          subtitle: '豐田村秘境',
         },
       ],
     }
