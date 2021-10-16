@@ -15,7 +15,7 @@
       <div class="access-info">
         <img
           class="access-info-map"
-          src="~@/assets/img/access/map.jpg"
+          src=""
           alt=""
           srcset=""
         />

@@ -4,6 +4,7 @@
       <Navbar />
       <div class="bg">
         <video
+          loading="lazy"
           type="video/mp4"
           preload="auto"
           autoplay
@@ -18,11 +19,22 @@
         <div class="intro-content">
           <div class="yt-box"></div>
         </div>
-        <img class="intro-bg" src="@/assets/img/home/bg.svg" alt="" srcset="">
+        <img
+          loading="lazy"
+          class="intro-bg"
+          src="@/assets/img/home/bg.svg"
+          alt=""
+          srcset=""
+        />
       </div>
 
       <div class="brands">
-        <img src="@/assets/img/home/brands.svg" alt="" srcset="" />
+        <img
+          loading="lazy"
+          src="@/assets/img/home/brands.svg"
+          alt=""
+          srcset=""
+        />
       </div>
     </div>
     <Footer />
