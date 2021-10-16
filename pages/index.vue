@@ -16,14 +16,13 @@
 
       <div class="intro">
         <div class="intro-content">
-          <div class="yt-box">
-            <img src="@/assets/img/home/intro-preview.jpg" alt="" srcset="" />
-          </div>
+          <div class="yt-box"></div>
         </div>
+        <img class="intro-bg" src="@/assets/img/home/bg.svg" alt="" srcset="">
       </div>
 
       <div class="brands">
-        <img src="@/assets/img/home/brands/groups.svg" alt="" srcset="" />
+        <img src="@/assets/img/home/brands.svg" alt="" srcset="" />
       </div>
     </div>
     <Footer />
@@ -39,34 +38,45 @@
 
   .bg {
     position: relative;
-    height: 100vh;
     width: 100%;
-    overflow: hidden;
+    border-bottom: 1px solid;
     .bg-video {
       width: 100%;
+      vertical-align: bottom;
     }
   }
 
   .intro {
+    position: relative;
     width: 100%;
-    border-bottom: 1px solid ;
-    padding-top: 10vw;
+    border-bottom: 1px solid;
+    padding-top: 20vw;
     .intro-content {
-      width: 80vw;
+      z-index: 1;
+      position: relative;
+      width: 70vw;
       text-align: center;
       margin: 0 auto;
       .yt-box {
-        width: 70%;
+        width: 100%;
         margin: 0 auto;
-        img {
-          width: 100%;
-        }
+        height: 0;
+        padding-bottom: 56.25%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("@/assets/img/home/intro-preview.jpg");
       }
+    }
+    .intro-bg {
+      position: absolute;
+      width: 90vw;
+      top: 5vw;
+      left: 5vw;
     }
   }
 
   .brands {
-    max-width: 80vw;
+    max-width: 70vw;
     display: flex;
     flex-wrap: wrap;
     margin: 5vw auto 5vw auto;
@@ -81,6 +91,6 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>

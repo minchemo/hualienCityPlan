@@ -39,7 +39,7 @@
 .footer {
   position: relative;
   background: #fff;
-  padding: 2vw 10vw 5vw 10vw;
+  padding: 2vw 15vw 2vw 15vw;
   .footer-item {
     width: 100%;
     display: flex;
@@ -83,12 +83,12 @@
   &::before {
     content: "";
     height: 1px;
-    width: 80vw;
+    width: 70vw;
     position: absolute;
     top: 0;
     z-index: 1;
     background: #808080;
-    left: 10vw;
+    left: 15vw;
   }
 }
 </style>

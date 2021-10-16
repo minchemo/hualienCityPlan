@@ -37,6 +37,10 @@
         <span v-html="item.linkName"></span>
       </NuxtLink>
     </div>
+    <div
+      class="navbar-popup-overlay"
+      v-bind:class="popupOpen ? 'active' : ''"
+    ></div>
     <div class="social-button">
       <a href="">
         <img src="@/assets/img/fb.svg" alt="" srcset="" />
@@ -61,6 +65,7 @@
   justify-content: space-between;
   height: $pc_navbar_height;
   z-index: 50;
+  border-bottom: 1px solid;
 
   .logo {
     padding-left: 2.2vw;
@@ -85,18 +90,6 @@
           position: relative;
           font-size: 1vw;
           font-weight: bold;
-          &:after {
-            content: "";
-            height: 3px;
-            width: 100%;
-            background: #000;
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            transition: all 0.4s;
-            transform: scale(0);
-            transform-origin: center;
-          }
           &:before {
             content: "";
             height: 100%;
@@ -110,18 +103,14 @@
       &:hover {
         div {
           span {
-            &:after {
-              transform: scale(1);
-            }
+            color: #6eb9eb;
           }
         }
       }
       &.nuxt-link-active {
         div {
           span {
-            &:after {
-              transform: scale(1);
-            }
+            color: #6eb9eb;
           }
         }
       }
@@ -141,13 +130,12 @@
   position: fixed;
   width: 15vw;
   height: auto;
-  background: #fff;
+  background: transparent;
   z-index: 50;
   top: $pc_navbar_height;
   right: 0;
   transform: translateX(150%);
   transition: all 0.5s;
-  box-shadow: -5px 5px 30px rgba(0, 0, 0, 0.2);
   padding: 2vw 1vw;
   display: flex;
   flex-direction: column;
@@ -168,31 +156,48 @@
       padding-bottom: 0;
     }
     &:hover span {
-      opacity: 0.7;
+      color: #6eb9eb;
     }
+  }
+}
+.navbar-popup-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  z-index: 49;
+  right: 0;
+  top: 0;
+  width: 0%;
+  height: 0%;
+  border-radius: 0% 0% 0% 50%;
+  transition: all 1s cubic-bezier(0, 0, 0.1, 1.0);
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
   }
 }
 .social-button {
   position: fixed;
-  right: 1.5vw;
+  right: 0;
   top: 80%;
   margin-top: -2.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5vw;
-  height: 5vw;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 100%;
+  flex-direction: column;
+  background: #000;
   z-index: 50;
   filter: drop-shadow(4px 10px 15px rgba(0, 0, 0, 0.1));
+  padding: 15px 0;
   a {
-    margin: 3px;
+    margin: 5px 10px;
     &:hover {
       opacity: 0.7;
     }
     img {
       width: 1vw;
+      filter: invert(100%);
     }
   }
 }
@@ -283,6 +288,6 @@ export default {
       }
     },
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
