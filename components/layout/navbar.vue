@@ -54,6 +54,27 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.navbar-popup-item {
+  span {
+    .inset {
+      font-weight: 900;
+      color: black;
+      -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black;
+    }
+  }
+
+  &:hover {
+    .inset {
+      -webkit-text-stroke-color: #6eb9eb;
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 .navbar {
@@ -66,7 +87,7 @@
   height: $pc_navbar_height;
   z-index: 50;
   border-bottom: 1px solid;
-  transition: all .5s;
+  transition: all 0.5s;
 
   .logo {
     padding-left: 2.2vw;
@@ -134,7 +155,6 @@
 }
 .navbar-popup {
   position: fixed;
-  width: 15vw;
   height: auto;
   background: transparent;
   z-index: 50;
@@ -142,7 +162,7 @@
   right: 0;
   transform: translateX(150%);
   transition: all 0.5s;
-  padding: 2vw 1vw;
+  padding: 2vw 0vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,9 +173,11 @@
   .navbar-popup-item {
     margin: 1vw 0;
     padding-bottom: 2vw;
+    padding-right: 2vw;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     span {
       font-size: 1vw;
+      transition: all .1s;
     }
     &:nth-last-child(1) {
       border-bottom: 0;
@@ -167,7 +189,7 @@
   }
 }
 .navbar-popup-overlay {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.4);
   position: fixed;
   z-index: 49;
   right: 0;
@@ -176,11 +198,14 @@
   height: 0%;
   border-radius: 0% 0% 0% 50%;
   transition: all 1s cubic-bezier(0, 0, 0.1, 1);
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 
   &.active {
     width: 100%;
     height: 100%;
     border-radius: 0%;
+    backdrop-filter: blur(10px);
   }
 }
 .social-button {
@@ -233,27 +258,27 @@ export default {
             {
               linkTo: "/program",
               hash: "1",
-              linkName: "<b>日出大道</b>｜日出未來河",
+              linkName: "<b>日出大道</b> <span class='inset'>日出未來河</span>",
             },
             {
               linkTo: "/program",
               hash: "2",
-              linkName: "<b>花創舞台</b>｜花創火溫酒",
+              linkName: "<b>花創舞台</b> <span class='inset'>花創火溫酒</span>",
             },
             {
               linkTo: "/program",
               hash: "3",
-              linkName: "<b>日出舞台</b>｜南濱奔日流",
+              linkName: "<b>日出舞台</b> <span class='inset'>南濱奔日流</span>",
             },
             {
               linkTo: "/program",
               hash: "4",
-              linkName: "<b>周邊街廓</b>｜溝仔尾問路",
+              linkName: "<b>周邊街廓</b> <span class='inset'>溝仔尾問路</span>",
             },
             {
               linkTo: "/program",
               hash: "5",
-              linkName: "<b>特別場域</b>｜RPG豐田村",
+              linkName: "<b>特別場域</b> <span class='inset'>豐田村秘境</span>",
             },
           ],
         },
@@ -265,7 +290,7 @@ export default {
             {
               linkTo: "/info",
               hash: "1",
-              linkName: "節目表",
+              linkName: "節目表　",
             },
             {
               linkTo: "/info#2",
