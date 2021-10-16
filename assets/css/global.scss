@@ -1,17 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700;900&display=swap");
-
 @font-face {
     font-family: HelveticaND;
-    src: url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Black.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Bold.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Hairline.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Light.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Medium.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Thin.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XBlack.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XBold.otf") format("opentype"),
-        url("/assets/css/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XLight.otf") format("opentype");
+    src: url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Black.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Bold.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Hairline.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Light.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Medium.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ Thin.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XBlack.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XBold.otf") format("opentype"), url("~assets/font/Monotype\ \ -\ Helvetica\ Now\ Display\ XLight.otf") format("opentype");
 }
 
 h1,
