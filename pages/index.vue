@@ -2,7 +2,7 @@
   <div>
     <div class="main">
       <Navbar />
-      <div class="bg">
+      <div class="bg" data-aos="fade">
         <video
           v-lazy-load
           type="video/mp4"
@@ -15,7 +15,7 @@
         ></video>
       </div>
 
-      <div class="intro">
+      <div class="intro" data-aos="fade">
         <div class="intro-content">
           <div class="yt-box"></div>
         </div>
@@ -28,7 +28,7 @@
         />
       </div>
 
-      <div class="brands">
+      <div class="brands" data-aos="fade">
         <img
           v-lazy-load
           src="@/assets/img/home/brands.svg"

@@ -3,5 +3,7 @@ import "aos/dist/aos";
 import "aos/dist/aos.css";
 
 export default ({ app }) => {
-    app.AOS = new AOS.init();
-}
+    app.AOS = new AOS.init({
+        duration: 1000
+    });
+};

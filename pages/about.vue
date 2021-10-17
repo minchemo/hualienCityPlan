@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <Navbar />
-    <div class="content">
+    <div class="content" data-aos="fade">
       <div class="intro">
         <img src="@/assets/img/about/intro.svg" alt="" srcset="" v-lazy-load />
       </div>
@@ -9,7 +9,7 @@
         <img src="@/assets/img/about/content.svg" alt="" srcset="" v-lazy-load />
       </div>
     </div>
-    <div class="team">
+    <div class="team" data-aos="fade">
       <div class="avatar">
         <img src="@/assets/img/about/team_1.jpg" alt="" srcset="" v-lazy-load />
       </div>
@@ -17,7 +17,7 @@
         <img src="@/assets/img/about/team.svg" alt="" srcset="" v-lazy-load />
       </div>
     </div>
-    <div class="shop">
+    <div class="shop" data-aos="fade">
       <img class="title" src="@/assets/img/about/shop_title.svg" alt="" srcset="" v-lazy-load />
       <img class="logo" src="@/assets/img/about/shop_logos.jpg" alt="" srcset="" v-lazy-load />
     </div>

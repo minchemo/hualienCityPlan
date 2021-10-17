@@ -2,10 +2,10 @@
   <div class="main">
     <Navbar />
     <div class="content">
-      <div class="info">
+      <div class="info" data-aos="fade">
         <img src="@/assets/img/access/info.svg" alt="" srcset="" v-lazy-load />
       </div>
-      <div class="map">
+      <div class="map" data-aos="fade">
         <img src="@/assets/img/access/map.jpg" alt="" srcset="" v-lazy-load />
       </div>
     </div>
