@@ -3,10 +3,10 @@
     <Navbar />
     <div class="content">
       <div class="info">
-        <img src="@/assets/img/access/info.svg" alt="" srcset="" />
+        <img src="@/assets/img/access/info.svg" alt="" srcset="" v-lazy-load />
       </div>
       <div class="map">
-        <img src="@/assets/img/access/map.jpg" alt="" srcset="" />
+        <img src="@/assets/img/access/map.jpg" alt="" srcset="" v-lazy-load />
       </div>
     </div>
     <Footer />

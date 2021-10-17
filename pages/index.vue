@@ -4,7 +4,7 @@
       <Navbar />
       <div class="bg">
         <video
-          loading="lazy"
+          v-lazy-load
           type="video/mp4"
           preload="auto"
           autoplay
@@ -20,7 +20,7 @@
           <div class="yt-box"></div>
         </div>
         <img
-          loading="lazy"
+          v-lazy-load
           class="intro-bg"
           src="@/assets/img/home/bg.svg"
           alt=""
@@ -30,7 +30,7 @@
 
       <div class="brands">
         <img
-          loading="lazy"
+          v-lazy-load
           src="@/assets/img/home/brands.svg"
           alt=""
           srcset=""
