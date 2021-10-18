@@ -21,11 +21,14 @@ export const mutations = {
         state.currentDetailTitle = payload.title;
 
         state.detailOpen = true;
+
+        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
     },
     setCurrentDetailTab(state, payload) {
         state.currentDetailTab = payload;
     },
     closeDetail(state) {
         state.detailOpen = false;
+        document.getElementsByTagName('html')[0].style.overflow = 'auto';
     }
 };
