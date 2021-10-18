@@ -8,7 +8,7 @@ export default {
     ssr: true,
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: "hualienCityPlan",
+        title: "花蓮城市空間藝術節 | Hualien Performing Public Space Festival",
         htmlAttrs: {
             lang: "zh-Hant-TW"
         },
@@ -30,14 +30,17 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [{
-        src: "~/plugins/aos",
-        ssr: false
-    },
-    { src: "./plugins/vue-slick-carousel.js" },
-    { src: "./plugins/v-viewport.js" }
+            src: "~/plugins/aos",
+            ssr: false
+        },
+        { src: "./plugins/vue-slick-carousel.js" },
+        { src: "./plugins/v-observe.js" },
+        {
+            src: "./plugins/v-scrollto.js"
+        }
     ],
 
-    // Auto import components: https://go.nuxtjs.dev/config-components
+    // Auto import components: https://go. nuxtjs.dev/config-components
     components: {
         dirs: ["~/components", "~/components/layout"]
     },

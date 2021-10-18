@@ -3,15 +3,17 @@
     class="detail-popup"
     v-bind:class="$store.state.detailOpen ? 'active' : ''"
   >
-    <div class="detail-content-box">
+    <div class="detail-content-box" ref="detail">
       <div class="tab" ref="tab">
         <template v-if="$store.state.detailTab.length > 1">
           <div class="tab-title" v-html="$store.state.currentDetailTitle"></div>
           <div class="tabs">
             <div
-              class="item"
+              class="item tabs-item"
               v-for="(tab, i) in $store.state.detailTab"
               :key="i"
+              v-bind:class="activeTabName == tab.name ? 'active' : ''"
+              @click="scroll(`detail-item-${i}`)"
             >
               {{ tab.name }}
             </div>
@@ -23,14 +25,21 @@
       </div>
       <div
         class="detail-content"
-        v-bind:class="$store.state.detailTab.length > 1 ? 'multi' : ''"
+        v-bind:class="$store.state.detailTab.length > 1 ? 'multi' : 'single'"
       >
         <template v-for="(data, i) in $store.state.detailTab">
           <div
             class="detail-item"
+            :id="`detail-item-${i}`"
             :key="i"
-            v-bind:class="$store.state.detailTab.length > 1 ? 'multiple' : ''"
-            v-in-viewport="{ margin: '-100px 0px' }"
+            v-bind:class="
+              $store.state.detailTab.length > 1 ? 'multiple' : 'single'
+            "
+            v-observe-visibility="{
+              callback: visibilityChanged,
+              intersection: intersection,
+            }"
+            :data-tab-name="data.name"
           >
             <div class="info">
               <div class="name">{{ data.name }}</div>
@@ -52,7 +61,7 @@
                   ></div>
                 </VueSlickCarousel>
               </div>
-              <div ref="content" class="content" v-html="data.content"></div>
+              <div ref="content" class="content" :key="data.name" v-html="data.content"></div>
             </div>
           </div>
         </template>
@@ -211,6 +220,10 @@
             cursor: pointer;
             color: $primaryColor;
           }
+
+          &.active {
+            color: $primaryColor;
+          }
         }
       }
       &::after {
@@ -317,6 +330,12 @@
             }
           }
         }
+        &.single {
+          .info {
+            position: sticky;
+            top: 4vw;
+          }
+        }
       }
     }
   }
@@ -342,9 +361,9 @@
       opacity: 1;
       backdrop-filter: blur(10px);
       &:hover {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.3);
         cursor: pointer;
-        backdrop-filter: blur(0px);
+        backdrop-filter: blur(5px);
       }
     }
   }
@@ -352,9 +371,13 @@
 </style>
 
 <script>
+
 export default {
   data() {
     return {
+      intersection: {
+        threshold: 0.6,
+      },
       slickOptions: {
         slidesToShow: 1,
         arrows: true,
@@ -363,18 +386,37 @@ export default {
         waitForAnimate: false,
         speed: 200,
       },
-      intersectionOptions: {
-        root: null,
-        rootMargin: "0px 0px 0px 0px",
-        threshold: [0, 1],
-      },
+      activeTabName: '',
+      scrollOptions: {
+        container: '.detail-content-box',
+        easing: 'ease-in',
+        lazy: true,
+        offset: -150,
+        x: false,
+      }
     };
   },
-  methods: {
-    onWaypoint(data) {
-      console.log(data);
-    },
+  computed: {
+    detailOpen() {
+      return this.$store.state.detailOpen
+    }
   },
-  updated() {},
+  watch: {
+    detailOpen(newState, oldState) {
+      this.$refs.detail.scrollTop = 0;
+    }
+  },
+  methods: {
+    visibilityChanged(isVisible, entry) {
+      if (isVisible) {
+
+        this.activeTabName = entry.target.getAttribute('data-tab-name');
+      }
+    },
+    scroll(id) {
+      this.$scrollTo(document.getElementById(id), 300, this.scrollOptions)
+    }
+  },
+
 };
 </script>
