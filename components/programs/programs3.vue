@@ -34,7 +34,7 @@
             v-bind:style="`color: ${item.color}`"
           ></div>
           <div class="program-item-cover">
-            <img src="@/assets/img/program/4-3南濱奔日流/temp.jpg" alt="" />
+            <img :src="item.img" alt="" />
           </div>
           <div class="program-item-subtitle" v-html="item.subtitle"></div>
         </div>
@@ -150,7 +150,7 @@ export default {
           title: "01",
           subtitle: "部落劇會所",
           color: "#6EB9EB",
-          img: require("@/assets/img/program/4-3南濱奔日流/temp.jpg"),
+          img: require("@/assets/img/program/4-3南濱奔日流/01.jpg"),
           tab: [
             {
               name: "嘎造・伊漾 Kacaw.Iyang",
@@ -168,6 +168,7 @@ export default {
           title: "02",
           subtitle: "汝妮",
           color: "#DCC8EB",
+          img: require("@/assets/img/program/4-3南濱奔日流/02.jpg"),
           tab: [
             {
               name: "DJ 汝妮 DUNGI SAPOR",
@@ -192,6 +193,7 @@ export default {
           title: "03",
           subtitle: "冉而山劇場",
           color: "#C8E6FA",
+          img: require("@/assets/img/program/4-3南濱奔日流/03.jpg"),
           tab: [
             {
               name: "冉而山劇場",
@@ -209,6 +211,7 @@ export default {
           title: "04",
           subtitle: "原舞者",
           color: "#C3CDEB",
+          img: require("@/assets/img/program/4-3南濱奔日流/04.jpg"),
           tab: [
             {
               name: "原舞者",
@@ -230,6 +233,7 @@ export default {
           title: "05",
           subtitle: "阿努",
           color: "#DCC8EB",
+          img: require("@/assets/img/program/4-3南濱奔日流/05.jpg"),
           tab: [
             {
               name: "Anu阿努（阿努．卡力亭．沙力朋安 Anu.Kaliting.Sadipongan）",
