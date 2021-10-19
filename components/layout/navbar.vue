@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="navbar" v-bind:class="scrollPos > 50 ? 'scroll' : ''">
+    <div class="navbar" v-bind:class="scrollPos > 20 ? 'scroll' : ''">
       <div class="logo">
         <NuxtLink to="/">
           <img src="@/assets/img/logo.svg" alt="" srcset="" />
