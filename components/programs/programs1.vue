@@ -91,10 +91,11 @@
           height: 0.9vw;
           width: 0.9vw;
           background-image: url("@/assets/img/program/arrow.svg");
-          background-size: cover;
+          background-size: 95%;
+          background-repeat: no-repeat;
+          background-position: center center;
           position: absolute;
           right: 0;
-          bottom: 0;
           transition: all 0.2s;
         }
       }

@@ -139,6 +139,7 @@
         background: #fff;
         margin: 2vw 2vw;
         .avatar {
+          border: 1px solid #262626;
           img {
             width: 100%;
             vertical-align: bottom;

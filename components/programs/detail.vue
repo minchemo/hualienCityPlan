@@ -44,7 +44,7 @@
             <div class="info">
               <div class="name">{{ data.name }}</div>
               <div class="enname">{{ data.enname }}</div>
-              <div class="creator">
+              <div class="creator" v-if="$store.state.currentDetailTab.creator">
                 {{ $store.state.currentDetailTab.creator }}
               </div>
               <div class="time" v-html="data.info"></div>
@@ -78,6 +78,7 @@
 
 
 <style lang="scss">
+@import "@/assets/css/variable.scss";
 .slide {
   .program-carousel-wrapper {
     padding: 0;
@@ -163,8 +164,13 @@
     }
   }
   .content {
+    text-align: justify;
+    a {
+      color: $primaryColor;
+    }
     .en {
       color: #8c8c8c;
+      text-align: left;
     }
     .highlight {
       color: rgb(211, 168, 26);
@@ -283,6 +289,7 @@
           .name {
             font-size: 1.8vw;
             font-weight: 900;
+            line-height: 1.5;
           }
           .enname {
             font-size: 1.2vw;
@@ -419,7 +426,7 @@ export default {
     },
   },
   updated() {
-    this.scrollOptions.offset = - this.$refs.tab.clientHeight + 1;
+    this.scrollOptions.offset = -this.$refs.tab.clientHeight + 1;
   },
 };
 </script>
