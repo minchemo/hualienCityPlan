@@ -44,8 +44,8 @@
             <div class="info">
               <div class="name">{{ data.name }}</div>
               <div class="enname">{{ data.enname }}</div>
-              <div class="creator" v-if="$store.state.currentDetailTab.creator">
-                {{ $store.state.currentDetailTab.creator }}
+              <div class="creator" v-if="data.creator">
+                {{ data.creator }}
               </div>
               <div class="time" v-html="data.info"></div>
               <div class="warn" v-html="data.warn"></div>
