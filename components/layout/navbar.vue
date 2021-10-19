@@ -61,7 +61,7 @@
     .inset {
       font-weight: 900;
       color: black;
-      -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+      -webkit-text-fill-color: white;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: black;
     }

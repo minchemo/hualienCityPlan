@@ -61,7 +61,12 @@
                   ></div>
                 </VueSlickCarousel>
               </div>
-              <div ref="content" class="content" :key="data.name" v-html="data.content"></div>
+              <div
+                ref="content"
+                class="content"
+                :key="data.name"
+                v-html="data.content"
+              ></div>
             </div>
           </div>
         </template>
@@ -371,7 +376,6 @@
 </style>
 
 <script>
-
 export default {
   data() {
     return {
@@ -386,37 +390,36 @@ export default {
         waitForAnimate: false,
         speed: 200,
       },
-      activeTabName: '',
+      activeTabName: "",
       scrollOptions: {
-        container: '.detail-content-box',
-        easing: 'ease-in',
-        lazy: true,
-        offset: -150,
+        container: ".detail-content-box",
+        offset: 0,
         x: false,
-      }
+      },
     };
   },
   computed: {
     detailOpen() {
-      return this.$store.state.detailOpen
-    }
+      return this.$store.state.detailOpen;
+    },
   },
   watch: {
     detailOpen(newState, oldState) {
       this.$refs.detail.scrollTop = 0;
-    }
+    },
   },
   methods: {
     visibilityChanged(isVisible, entry) {
       if (isVisible) {
-
-        this.activeTabName = entry.target.getAttribute('data-tab-name');
+        this.activeTabName = entry.target.getAttribute("data-tab-name");
       }
     },
     scroll(id) {
-      this.$scrollTo(document.getElementById(id), 300, this.scrollOptions)
-    }
+      this.$scrollTo(document.getElementById(id), 300, this.scrollOptions);
+    },
   },
-
+  updated() {
+    this.scrollOptions.offset = - this.$refs.tab.clientHeight + 1;
+  },
 };
 </script>
