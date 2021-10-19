@@ -11,7 +11,7 @@
           muted
           loop
           class="bg-video"
-          src="@/assets/img/home/bg.mp4"
+          src="@/assets/img/home/loop.mp4"
         ></video>
       </div>
 
