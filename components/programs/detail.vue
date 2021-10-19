@@ -68,6 +68,23 @@
                 v-html="data.content"
               ></div>
             </div>
+            <div class="question" v-if="data.status > 0">
+              <div v-if="data.status == 2">問-答</div>
+              <div v-else-if="data.status == 1">問</div>
+            </div>
+            <div class="social-link" v-if="data.links.length > 0">
+              <p>店家臉書 / IG連結</p>
+              <template v-for="(link, i) in data.links">
+                <a
+                  :key="i"
+                  :href="link.link"
+                  target="_blank"
+                  v-if="link.type == 'fb'"
+                >
+                  <img src="@/assets/img/fb.svg" alt="" srcset="" />
+                </a>
+              </template>
+            </div>
           </div>
         </template>
       </div>
@@ -327,6 +344,38 @@
             letter-spacing: 0.1vw;
             &::-webkit-scrollbar {
               width: 2px;
+            }
+          }
+        }
+
+        .question {
+          position: absolute;
+          left: 2vw;
+          font-size: 7vw;
+          top: 23vw;
+          div {
+            color: #c8e6fa !important;
+            font-weight: 200;
+          }
+        }
+
+        .social-link {
+          display: flex;
+          position: absolute;
+          align-items: center;
+          left: 2vw;
+          bottom: 0vw;
+          font-size: 1vw;
+          p {
+            margin: 0;
+          }
+          a {
+            margin-left: 0.5vw;
+            img {
+              height: 100%;
+            }
+            &:hover {
+              opacity: 0.7;
             }
           }
         }

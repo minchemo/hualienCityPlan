@@ -63,7 +63,7 @@
             }
           }
           .program-title {
-            font-size: .8vw;
+            font-size: 1vw;
             font-weight: bold;
           }
           &:hover {
