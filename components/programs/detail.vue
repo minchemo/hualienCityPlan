@@ -162,19 +162,20 @@
         position: relative;
         &:after {
           content: "";
-          background: #000;
+          background: #fff;
           width: 100%;
           height: 1px;
           position: absolute;
           top: 50%;
           left: 0;
           transform: translateY(-50%);
-          opacity: 0.3;
+          opacity: 0.8;
           z-index: 1;
         }
         &.slick-active {
           &:after {
-            opacity: 1;
+            opacity: .8;
+            background: #000;
           }
         }
       }
@@ -372,7 +373,7 @@
           a {
             margin-left: 0.5vw;
             img {
-              height: 100%;
+              height: 1.5vw;
             }
             &:hover {
               opacity: 0.7;
