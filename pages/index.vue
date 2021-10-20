@@ -31,7 +31,7 @@
       <div class="brands" data-aos="fade">
         <img
           v-lazy-load
-          src="@/assets/img/home/brands.svg"
+          src="@/assets/img/home/brands.png"
           alt=""
           srcset=""
         />
