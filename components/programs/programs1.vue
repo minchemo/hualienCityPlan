@@ -49,11 +49,11 @@
       font-size: 2vw;
     }
     .subtitle {
-      font-size: 1vw;
+      font-size: 1.2vw;
       font-weight: 700;
     }
     .content {
-      font-size: 0.7vw;
+      font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
     }
@@ -80,7 +80,7 @@
       }
       .program-item-subtitle {
         position: relative;
-        font-size: 0.9vw;
+        font-size: 1vw;
         margin-top: 1vw;
         padding-right: 1.1vw;
         transition: all 0.2s;
@@ -119,6 +119,7 @@
           color: $primaryColor;
           &::after {
             transform: translateX(10px);
+            background-image: url("@/assets/img/program/arrow_hover.svg");
           }
         }
       }

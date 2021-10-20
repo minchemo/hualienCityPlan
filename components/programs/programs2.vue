@@ -84,11 +84,11 @@
       font-size: 2vw;
     }
     .subtitle {
-      font-size: 1vw;
+      font-size: 1.2vw;
       font-weight: 700;
     }
     .content {
-      font-size: 0.7vw;
+      font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
     }
@@ -178,7 +178,7 @@
           }
         }
         .desc {
-          font-size: .8vw;
+          font-size: 1vw;
           font-weight: 400;
           line-height: 2;
           text-align: justify;

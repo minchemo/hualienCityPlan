@@ -90,7 +90,7 @@
     }
     .subtitle {
       position: relative;
-      font-size: 1vw;
+      font-size: 1.2vw;
       font-weight: 700;
       line-height: 2;
       z-index: 1;
@@ -103,7 +103,7 @@
       z-index: 1;
     }
     .content {
-      font-size: 0.7vw;
+      font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
       span {

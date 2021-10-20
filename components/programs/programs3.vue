@@ -56,11 +56,11 @@
       font-size: 2vw;
     }
     .subtitle {
-      font-size: 1vw;
+      font-size: 1.2vw;
       font-weight: 700;
     }
     .content {
-      font-size: 0.7vw;
+      font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
       span {
@@ -132,6 +132,7 @@
           color: $primaryColor;
           &::after {
             transform: translateX(10px);
+          background-image: url("@/assets/img/program/arrow_hover.svg");
           }
         }
       }

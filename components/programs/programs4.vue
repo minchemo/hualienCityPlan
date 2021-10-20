@@ -78,7 +78,7 @@
       font-weight: 700;
     }
     .content {
-      font-size: 0.7vw;
+      font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
       span {
@@ -151,6 +151,7 @@
           color: $primaryColor;
           &::after {
             transform: translateX(10px);
+            background-image: url("@/assets/img/program/arrow_hover.svg");
           }
         }
       }
@@ -166,7 +167,7 @@
       margin-bottom: 3vw;
     }
     .shop {
-      font-size: 1vw;
+      font-size: .9vw;
       margin: 0 0.8vw 0.8vw 0;
       border: 1px solid #262626;
       border-radius: 50px;

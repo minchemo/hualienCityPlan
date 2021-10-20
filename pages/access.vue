@@ -67,7 +67,7 @@
     margin: 5vw auto;
     h1 {
       text-align: center;
-      font-weight: 200;
+      font-weight: 400;
       padding-top: 5vw;
       font-size: 2.5vw;
     }
@@ -96,7 +96,7 @@
         .text {
           border-top: 1px solid #262626;
           padding-top: 1vw;
-          font-size: 1vw;
+          font-size: .9vw;
           line-height: 2;
           letter-spacing: 0.1vw;
         }
@@ -146,7 +146,7 @@ export default {
           title: "太平洋公園<br/>南濱段",
           content: `
           <h3>1.自行開車(北往南)</h3>國道5號「蘇澳交流道」下 -「省道臺9線」-「縣道193線」<br/><br/>
-          <h3>2.大眾運輸<span>｜搭臺鐵至花蓮站轉乘公車</span></h3>國道5號「蘇澳交流道」下 -「省道臺9線」
+          <h3>2.大眾運輸<span>｜搭臺鐵至花蓮站轉乘公車</span></h3><div class="divider"></div>國道5號「蘇澳交流道」下 -「省道臺9線」
           `,
         },
         {

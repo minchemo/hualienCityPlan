@@ -30,14 +30,14 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [{
-            src: "~/plugins/aos",
-            ssr: false
-        },
-        { src: "./plugins/vue-slick-carousel.js" },
-        { src: "./plugins/v-observe.js" },
-        {
-            src: "./plugins/v-scrollto.js"
-        }
+        src: "~/plugins/aos",
+        ssr: false
+    },
+    { src: "./plugins/vue-slick-carousel.js" },
+    { src: "./plugins/v-observe.js" },
+    {
+        src: "./plugins/v-scrollto.js"
+    }
     ],
 
     // Auto import components: https://go. nuxtjs.dev/config-components
@@ -48,7 +48,8 @@ export default {
     // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
     buildModules: [
         // https://go.nuxtjs.dev/eslint
-        "@nuxtjs/device"
+        "@nuxtjs/device",
+        '@aceforth/nuxt-optimized-images',
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
@@ -58,5 +59,9 @@ export default {
     build: {},
     router: {
         base: routerBase
+    },
+
+    optimizedImages: {
+        optimizeImages: true
     }
 };

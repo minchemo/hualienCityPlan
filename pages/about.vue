@@ -193,10 +193,10 @@
           .name {
             font-size: 1vw;
             font-weight: bold;
-            margin-top: 5vw;
+            margin-top: 3vw;
           }
           .text {
-            margin-top: 2vw;
+            margin-top: 1vw;
             font-size: 1vw;
             line-height: 2;
             letter-spacing: 0.2vw;
