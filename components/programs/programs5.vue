@@ -82,7 +82,7 @@
     margin: 5vw 0;
     .title {
       position: relative;
-      font-size: 2vw;
+      font-size: 1.2vw;
       z-index: 1;
       &.margin-fix {
         margin-top: -15vw;
@@ -90,9 +90,8 @@
     }
     .subtitle {
       position: relative;
-      font-size: 1.2vw;
+      font-size: 2vw;
       font-weight: 700;
-      line-height: 2;
       z-index: 1;
     }
     .introtitle {

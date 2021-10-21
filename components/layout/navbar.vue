@@ -68,6 +68,9 @@
   }
 
   &:hover {
+    span {
+      color: #6eb9eb;
+    }
     .inset {
       -webkit-text-stroke-color: #6eb9eb;
     }
@@ -258,27 +261,27 @@ export default {
             {
               linkTo: "/program",
               hash: "1",
-              linkName: "<b>日出大道</b> <span class='inset'>日出未來河</span>",
+              linkName: "<b>日出大道</b>｜<span>日出未來河</span>",
             },
             {
               linkTo: "/program",
               hash: "2",
-              linkName: "<b>花創舞台</b> <span class='inset'>花創火溫酒</span>",
+              linkName: "<b>花創舞台</b>｜<span>花創火溫酒</span>",
             },
             {
               linkTo: "/program",
               hash: "3",
-              linkName: "<b>日出舞台</b> <span class='inset'>南濱奔日流</span>",
+              linkName: "<b>日出舞台</b>｜<span>南濱奔日流</span>",
             },
             {
               linkTo: "/program",
               hash: "4",
-              linkName: "<b>周邊街廓</b> <span class='inset'>溝仔尾問路</span>",
+              linkName: "<b>周邊街廓</b>｜<span>溝仔尾問路</span>",
             },
             {
               linkTo: "/program",
               hash: "5",
-              linkName: "<b>特別場域</b> <span class='inset'>豐田村秘境</span>",
+              linkName: "<b>特別場域</b>｜<span>豐田村秘境</span>",
             },
           ],
         },
@@ -290,12 +293,12 @@ export default {
             {
               linkTo: "/info",
               hash: "1",
-              linkName: "節目表　",
+              linkName: "<b>　節目表</b>",
             },
             {
               linkTo: "/info#2",
               hash: "2",
-              linkName: "展區地圖",
+              linkName: "<b>展區地圖</b>",
             },
           ],
         },

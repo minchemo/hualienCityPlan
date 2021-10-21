@@ -344,7 +344,7 @@
             line-height: 2;
             letter-spacing: 0.1vw;
             &::-webkit-scrollbar {
-              width: 2px;
+              width: 1px;
             }
           }
         }
@@ -389,6 +389,7 @@
             .content {
               max-height: 10.6vw;
               overflow: auto;
+              padding-right: 1.5vw;
             }
           }
         }

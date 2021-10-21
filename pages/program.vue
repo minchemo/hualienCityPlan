@@ -45,10 +45,14 @@
 
     .programs {
       width: 100%;
-      position: relative;
       .program-buttons {
+        position: fixed;
+        top: $program_nav_top;
         display: flex;
         width: 100%;
+        z-index: 100;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.4);
         .program-button {
           display: flex;
           flex: auto;
@@ -79,11 +83,11 @@
 }
 </style>
 <script>
-import Program1 from '@/components/programs/programs1.vue';
-import Program2 from '@/components/programs/programs2.vue';
-import Program3 from '@/components/programs/programs3.vue';
-import Program4 from '@/components/programs/programs4.vue';
-import Program5 from '@/components/programs/programs5.vue';
+import Program1 from "@/components/programs/programs1.vue";
+import Program2 from "@/components/programs/programs2.vue";
+import Program3 from "@/components/programs/programs3.vue";
+import Program4 from "@/components/programs/programs4.vue";
+import Program5 from "@/components/programs/programs5.vue";
 
 export default {
   components: {
@@ -100,43 +104,43 @@ export default {
   },
   data() {
     return {
-      routeHash: '',
+      routeHash: "",
       programs: [
         {
           id: 1,
-          title: '日出大道',
-          subtitle: '日出未來河',
+          title: "日出大道",
+          subtitle: "日出未來河",
         },
         {
           id: 2,
-          title: '花創舞台',
-          subtitle: '花創火溫酒',
+          title: "花創舞台",
+          subtitle: "花創火溫酒",
         },
         {
           id: 3,
-          title: '日出舞台',
-          subtitle: '南濱奔日流',
+          title: "日出舞台",
+          subtitle: "南濱奔日流",
         },
         {
           id: 4,
-          title: '周邊街廓',
-          subtitle: '溝仔尾問路',
+          title: "周邊街廓",
+          subtitle: "溝仔尾問路",
         },
         {
           id: 5,
-          title: '特別場域',
-          subtitle: '豐田村秘境',
+          title: "特別場域",
+          subtitle: "豐田村秘境",
         },
       ],
-    }
+    };
   },
   methods: {
     setRouteHash(hash) {
-      if (hash[0] == '#') {
+      if (hash[0] == "#") {
         hash = hash[1];
       }
 
-      if (hash == '') {
+      if (hash == "") {
         hash = 1;
       }
 
@@ -144,16 +148,15 @@ export default {
         this.routeHash = hash;
 
         this.$router.push({
-          path: '/program',
-          hash: '#' + hash
-        })
+          path: "/program",
+          hash: "#" + hash,
+        });
       }
-    }
+    },
   },
   created() {
     this.setRouteHash(this.$nuxt.$route.hash);
   },
-  mounted() {
-  }
-}
+  mounted() {},
+};
 </script>

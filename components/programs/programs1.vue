@@ -46,10 +46,10 @@
   .program-title {
     margin: 5vw 0;
     .title {
-      font-size: 2vw;
+      font-size: 1.2vw;
     }
     .subtitle {
-      font-size: 1.2vw;
+      font-size: 2vw;
       font-weight: 700;
     }
     .content {
