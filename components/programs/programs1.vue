@@ -97,6 +97,8 @@
           position: absolute;
           right: 0;
           transition: all 0.2s;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 

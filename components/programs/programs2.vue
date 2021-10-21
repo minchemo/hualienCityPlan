@@ -171,10 +171,10 @@
             }
           }
           .time {
-            font-size: .8vw;
+            font-size: 0.8vw;
             border: 1px solid #262626;
             border-radius: 100%;
-            padding: .3vw .5vw;
+            padding: 0.3vw 0.5vw;
           }
         }
         .desc {
@@ -323,18 +323,21 @@ export default {
   methods: {
     fitText() {
       const name = this.$refs.speaker_name;
-      name.forEach((item) => {
-        let text = item.textContent.split("");
 
-        const div = document.createElement("div");
-        text.forEach((t) => {
-          const span = document.createElement("span");
-          span.textContent = t;
-          div.appendChild(span);
+      if (name.length > 0) {
+        name.forEach((item) => {
+          let text = item.textContent.split("");
+
+          const div = document.createElement("div");
+          text.forEach((t) => {
+            const span = document.createElement("span");
+            span.textContent = t;
+            div.appendChild(span);
+          });
+
+          item.innerHTML = div.innerHTML;
         });
-
-        item.innerHTML = div.innerHTML;
-      });
+      }
     },
   },
   created() {},

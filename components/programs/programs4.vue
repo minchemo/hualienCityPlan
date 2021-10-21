@@ -139,6 +139,8 @@
           position: absolute;
           margin-left: 0.5vw;
           transition: all 0.2s;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 
