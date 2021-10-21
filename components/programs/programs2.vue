@@ -30,7 +30,7 @@
               <div class="avatar">
                 <img :src="speaker.img" alt="" srcset="" />
               </div>
-              <div ref="speaker_name" class="name" v-html="speaker.name"></div>
+              <div ref="speakername" class="name" v-html="speaker.name"></div>
               <div class="info">
                 <div class="tag">
                   講者｜<span>{{ speaker.tag }}</span>
@@ -322,7 +322,8 @@ export default {
   },
   methods: {
     fitText() {
-      const name = this.$refs.speaker_name;
+      const name = this.$refs.speakername;
+
 
       if (name.length > 0) {
         name.forEach((item) => {
