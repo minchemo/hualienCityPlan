@@ -133,8 +133,8 @@
         .program-item-subtitle {
           color: $primaryColor;
           &::after {
-            transform: translateX(10px);
-          background-image: url("@/assets/img/program/arrow_hover.svg");
+            transform: translateY(-50%) translateX(10px);
+            background-image: url("@/assets/img/program/arrow_hover.svg");
           }
         }
       }
