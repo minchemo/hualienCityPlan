@@ -481,7 +481,7 @@ export default {
         {
           title: "Executive Team",
           tag: "執行團隊",
-          name: !this.$device.isMobile ? "" : "林昆穎",
+          name: !this.$device.isMobile ? "" : "執行團隊",
           content: `
             表演藝術策畫統籌／軟硬倍事<br/>
             視覺統籌／三頁文<br/>
