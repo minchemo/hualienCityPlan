@@ -25,6 +25,8 @@
           <Program5 v-show="routeHash == 5" />
         </div>
       </div>
+
+      <Detail />
     </div>
     <Footer />
   </div>
@@ -50,7 +52,7 @@
         top: $program_nav_top;
         display: flex;
         width: 100%;
-        z-index: 100;
+        z-index: 10;
         backdrop-filter: blur(10px);
         background-color: rgba(255, 255, 255, 0.4);
         .program-button {
@@ -88,6 +90,7 @@ import Program2 from "@/components/programs/programs2.vue";
 import Program3 from "@/components/programs/programs3.vue";
 import Program4 from "@/components/programs/programs4.vue";
 import Program5 from "@/components/programs/programs5.vue";
+import Detail from "@/components/programs/detail.vue";
 
 export default {
   components: {
@@ -96,6 +99,7 @@ export default {
     Program3,
     Program4,
     Program5,
+    Detail,
   },
   watch: {
     $route() {

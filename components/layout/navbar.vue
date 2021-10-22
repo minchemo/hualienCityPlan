@@ -3,10 +3,16 @@
     <div class="navbar" v-bind:class="scrollPos > 20 ? 'scroll' : ''">
       <div class="logo">
         <NuxtLink to="/">
-          <img src="@/assets/img/logo.svg" alt="" srcset="" />
+          <img
+            src="@/assets/img/logo.svg"
+            v-if="!$device.isMobile"
+            alt=""
+            srcset=""
+          />
+          <img src="@/assets/img/logo_m.svg" v-else alt="" srcset="" />
         </NuxtLink>
       </div>
-      <div class="navbar-link">
+      <div class="navbar-link" v-if="!$device.isMobile">
         <NuxtLink
           class="navbar-link-item"
           :to="nav.linkTo"
@@ -21,12 +27,20 @@
           </div>
         </NuxtLink>
       </div>
+      <div
+        class="navbar-hamberger"
+        v-bind:class="{ active: mobileMenuOpen }"
+        @click="mobileMenuOpen = !mobileMenuOpen"
+        v-else
+      ></div>
     </div>
+    <!-- 電腦選單 -->
     <div
       class="navbar-popup"
       v-bind:class="popupOpen ? 'active' : ''"
       @mouseover="togglePopup(true, activeLinkId)"
       @mouseleave="togglePopup(false, null)"
+      v-if="!$device.isMobile"
     >
       <NuxtLink
         v-for="(item, i) in activeMenu"
@@ -40,8 +54,66 @@
     <div
       class="navbar-popup-overlay"
       v-bind:class="popupOpen ? 'active' : ''"
+      v-if="!$device.isMobile"
     ></div>
-    <div class="social-button">
+    <!-- mobile 選單 -->
+    <div
+      class="mobile-menu"
+      v-bind:class="{ active: mobileMenuOpen }"
+      v-if="$device.isMobile"
+    >
+      <div
+        class="mobile-menu-item"
+        v-for="nav in navList"
+        :key="nav.linkName"
+        v-bind:class="{ active: currentMenu == nav.linkId }"
+      >
+        <h2 class="mobile-menu-title" @click="toggleMenu(nav.linkId)">
+          <NuxtLink :to="nav.menu ? `#` : nav.linkTo">
+            <span>{{ nav.linkName }}</span>
+            <img
+              class="active-arrow"
+              src="@/assets/img/nav_arrow_blue_m.svg"
+              alt=""
+              srcset=""
+            />
+            <img
+              class="arrow"
+              src="@/assets/img/nav_arrow_m.svg"
+              alt=""
+              srcset=""
+            />
+          </NuxtLink>
+        </h2>
+        <template v-if="nav.menu && nav.menu.length > 0">
+          <div class="submenu">
+            <div
+              v-for="menu in nav.menu"
+              :key="menu.linkName"
+              class="submenu-item"
+            >
+              <NuxtLink :to="{ path: menu.linkTo, hash: menu.hash }">
+                <div v-html="menu.linkName"></div>
+              </NuxtLink>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <div class="social-button">
+        <a href="">
+          <img src="@/assets/img/fb.svg" alt="" srcset="" />
+        </a>
+        <a href="">
+          <img src="@/assets/img/ig.svg" alt="" srcset="" />
+        </a>
+        <a href="">
+          <img src="@/assets/img/yt.svg" alt="" srcset="" />
+        </a>
+      </div>
+    </div>
+
+    <div class="social-button" v-if="!$device.isMobile">
       <a href="">
         <img src="@/assets/img/fb.svg" alt="" srcset="" />
       </a>
@@ -180,7 +252,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     span {
       font-size: 1vw;
-      transition: all .1s;
+      transition: all 0.1s;
     }
     &:nth-last-child(1) {
       border-bottom: 0;
@@ -235,13 +307,184 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $mo_navbar_height;
+    z-index: 50;
+    border-bottom: 1px solid;
+    transition: all 0.5s;
+
+    .logo {
+      padding-left: 16px;
+      margin-bottom: -5px; //fix
+      img {
+        height: auto;
+        width: 50vw;
+      }
+    }
+
+    .navbar-hamberger {
+      position: relative;
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #262626;
+        position: absolute;
+        top: 60%;
+        transition: all 0.2s;
+      }
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #262626;
+        position: absolute;
+        top: 40%;
+        transition: all 0.5s;
+      }
+
+      &.active {
+        &::after {
+          top: 50%;
+          transform: rotate(45deg) translateY(-50%);
+          transform-origin: center;
+        }
+        &::before {
+          top: 50%;
+          transform: rotate(315deg) translateY(-50%);
+          transform-origin: center;
+        }
+      }
+    }
+  }
+
+  .mobile-menu {
+    padding-top: $pc_navbar_height;
+    background: #fff;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: translateX(100%);
+    transition: all 0.3s;
+
+    .mobile-menu-item {
+      padding-left: 16px;
+      border-bottom: 1px solid #262626;
+      .mobile-menu-title {
+        a {
+          display: flex;
+          align-items: center;
+          font-size: 24pt;
+          img {
+            height: 24pt;
+            margin-left: 8pt;
+
+            &.arrow {
+              display: block;
+            }
+            &.active-arrow {
+              display: none;
+            }
+          }
+        }
+      }
+      .submenu {
+        overflow: hidden;
+        transition: all 0.5s;
+        height: 0;
+        .submenu-item {
+          font-size: 14pt;
+          margin: 24pt 0;
+          &:first-child {
+            margin-top: 12pt;
+          }
+        }
+      }
+      &.active {
+        .mobile-menu-title {
+          a {
+            span {
+              color: #6eb9eb;
+            }
+            .arrow {
+              display: none;
+            }
+            .active-arrow {
+              display: block;
+            }
+          }
+        }
+        .submenu {
+          height: auto;
+          .submenu-item {
+            .nuxt-link-active {
+              div {
+                color: #6eb9eb;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .social-button {
+      position: relative;
+      left: 12pt;
+      right: unset;
+      top: 0;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: row;
+      background:transparent;
+      z-index: 50;
+      filter: drop-shadow(4px 10px 15px rgba(0, 0, 0, 0.1));
+      padding: 15px 0;
+      a {
+        margin: 5px 5px;
+        &:hover {
+          opacity: 0.7;
+        }
+        img {
+          width: 18pt;
+          filter: invert(0%);
+        }
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &.active {
+      transform: translateX(0%);
+    }
+  }
+}
 </style>
 <script>
 export default {
   data() {
     return {
       popupOpen: false,
-      currentPath: this.$nuxt.$route.name,
+      mobileMenuOpen: false,
+      currentMenu: this.$nuxt.$route.name,
       navList: [
         {
           linkTo: "/about",
@@ -260,28 +503,33 @@ export default {
           menu: [
             {
               linkTo: "/program",
+              fullLink: "/program#1",
               hash: "1",
-              linkName: "<b>日出大道</b>｜<span>日出未來河</span>",
+              linkName: "日出大道｜<b>日出未來河</b>",
             },
             {
               linkTo: "/program",
+              fullLink: "/program#2",
               hash: "2",
-              linkName: "<b>花創舞台</b>｜<span>花創火溫酒</span>",
+              linkName: "花創舞台｜<b>花創火溫酒</b>",
             },
             {
               linkTo: "/program",
+              fullLink: "/program#3",
               hash: "3",
-              linkName: "<b>日出舞台</b>｜<span>南濱奔日流</span>",
+              linkName: "日出舞台｜<b>南濱奔日流</b>",
             },
             {
               linkTo: "/program",
+              fullLink: "/program#4",
               hash: "4",
-              linkName: "<b>周邊街廓</b>｜<span>溝仔尾問路</span>",
+              linkName: "周邊街廓｜<b>溝仔尾問路</b>",
             },
             {
               linkTo: "/program",
+              fullLink: "/program#5",
               hash: "5",
-              linkName: "<b>特別場域</b>｜<span>豐田村秘境</span>",
+              linkName: "特別場域｜<b>豐田村秘境</b>",
             },
           ],
         },
@@ -292,11 +540,15 @@ export default {
           menu: [
             {
               linkTo: "/info",
+              fullLink: "/info#1",
               hash: "1",
-              linkName: "<b>　節目表</b>",
+              linkName: this.$device.isMobile
+                ? "<b>節目表</b>"
+                : "<b>　節目表</b>",
             },
             {
-              linkTo: "/info#2",
+              linkTo: "/info",
+              fullLink: "/info#2",
               hash: "2",
               linkName: "<b>展區地圖</b>",
             },
@@ -324,12 +576,21 @@ export default {
     },
     handleScroll() {
       this.scrollPos = window.scrollY;
-    }
+    },
+    toggleMenu(id) {
+      console.log(id);
+      if (this.currentMenu != id) {
+        this.currentMenu = id;
+      } else {
+        this.currentMenu = "";
+      }
+    },
   },
   mounted() {
+    console.log(this.$nuxt.$route);
   },
   beforeMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
+    window.addEventListener("scroll", this.handleScroll);
+  },
 };
 </script>

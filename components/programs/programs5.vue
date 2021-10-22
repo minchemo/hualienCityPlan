@@ -68,7 +68,6 @@
         </p>
       </div>
     </div>
-    <Detail />
   </div>
 </template>
 
@@ -155,15 +154,11 @@
 }
 </style>
 <script>
-import Detail from "@/components/programs/detail.vue";
-
 export default {
   data() {
     return {};
   },
-  components: {
-    Detail,
-  },
+  components: {},
   methods: {},
   created() {},
   mounted() {},

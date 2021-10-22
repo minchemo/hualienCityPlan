@@ -174,7 +174,7 @@
         }
         &.slick-active {
           &:after {
-            opacity: .8;
+            opacity: 0.8;
             background: #000;
           }
         }
@@ -453,6 +453,15 @@ export default {
         container: ".detail-content-box",
         offset: 0,
         x: false,
+        onStart: function (element) {
+          console.log(element);
+        },
+        onDone: function (element) {
+          console.log(element);
+        },
+        onCancel: function () {
+          console.log(3);
+        },
       },
     };
   },
@@ -473,6 +482,7 @@ export default {
       }
     },
     scroll(id) {
+      console.log(document.getElementsByClassName('detail-content-box'));
       this.$scrollTo(document.getElementById(id), 300, this.scrollOptions);
     },
   },

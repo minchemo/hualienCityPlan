@@ -33,7 +33,6 @@
         </div>
       </div>
     </div>
-    <Detail />
   </div>
 </template>
 
@@ -130,7 +129,6 @@
 }
 </style>
 <script>
-import Detail from "@/components/programs/detail.vue";
 
 export default {
   data() {
@@ -572,9 +570,6 @@ Soundcloud：<a target="_blank" href="https://soundcloud.com/ankr_taiwan">soundc
         },
       ],
     };
-  },
-  components: {
-    Detail,
   },
   methods: {},
   created() {},

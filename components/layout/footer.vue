@@ -5,8 +5,11 @@
         <div class="left">
           <div class="link">
             <h2>contact us</h2>
-            <p>
+            <p v-if="!$device.isMobile">
               花蓮縣政府文化局 ｜ (+886)-3-8227121 #131 ｜ hccc8227121@gmail.com
+            </p>
+            <p v-else>
+              花蓮縣政府文化局<br />(+886)-3-8227121 #131<br />hccc8227121@gmail.com
             </p>
           </div>
         </div>
@@ -55,7 +58,6 @@
           margin-right: 2vw;
         }
       }
-      
     }
 
     .link {
@@ -89,6 +91,67 @@
     z-index: 1;
     background: #262626;
     left: 15vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    padding: 10vw;
+    .footer-item {
+      align-items: flex-start;
+
+      .left {
+        .link {
+          display: block;
+        }
+      }
+
+      .right {
+        display: block;
+        .link {
+          display: flex;
+          justify-content: flex-end;
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12pt;
+        h2 {
+          font-size: 12pt;
+          margin-right: 6pt;
+          font-weight: 400;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        p {
+          font-size: 10pt;
+          line-height: 2;
+          font-size: 400;
+        }
+        .item {
+          margin-right: 7pt;
+          &:last-child {
+            margin-right: 0;
+          }
+          img {
+            height: 12pt;
+          }
+          &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    &::before {
+      width: 80vw;
+      left: 10vw;
+    }
   }
 }
 </style>

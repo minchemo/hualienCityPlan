@@ -25,16 +25,35 @@
           src="@/assets/img/home/bg.svg"
           alt=""
           srcset=""
+          v-if="!$device.isMobile"
+        />
+        <img
+          v-else
+          v-lazy-load
+          class="intro-bg"
+          src="@/assets/img/home/bg_1_mo.svg"
+          alt=""
+          srcset=""
+        />
+        <img
+          v-if="$device.isMobile"
+          v-lazy-load
+          class="intro-bg2"
+          src="@/assets/img/home/bg_2_mo.svg"
+          alt=""
+          srcset=""
         />
       </div>
 
       <div class="brands" data-aos="fade">
         <img
+          v-if="!$device.isMobile"
           v-lazy-load
           src="@/assets/img/home/brands.png"
           alt=""
           srcset=""
         />
+        <img v-else v-lazy-load src="@/assets/img/home/brands_mo.png" alt="" srcset="" />
       </div>
     </div>
     <Footer />
@@ -89,11 +108,48 @@
 
   .brands {
     max-width: 70vw;
-    display: flex;
-    flex-wrap: wrap;
     margin: 5vw auto 5vw auto;
     img {
       width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .main {
+    .bg {
+      position: relative;
+      width: 100%;
+      border-bottom: 1px solid;
+      .bg-video {
+        width: 100%;
+        vertical-align: bottom;
+      }
+    }
+
+    .intro {
+      width: 100%;
+      padding: 106pt 0;
+      .intro-content {
+        z-index: 1;
+        position: relative;
+        width: 100vw;
+        text-align: center;
+        margin: 0 auto;
+      }
+      .intro-bg2 {
+        position: absolute;
+        width: 63vw;
+        bottom: 5vw;
+        left: 5vw;
+      }
+    }
+
+    .brands {
+      max-width: 80vw;
+      margin: 15vw auto 15vw auto;
+      img {
+        width: 100%;
+      }
     }
   }
 }
@@ -103,6 +159,6 @@ export default {
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
