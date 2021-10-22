@@ -40,7 +40,7 @@
       v-bind:class="popupOpen ? 'active' : ''"
       @mouseover="togglePopup(true, activeLinkId)"
       @mouseleave="togglePopup(false, null)"
-      v-if="!$device.isMobile"
+      v-show="!$device.isMobile"
     >
       <NuxtLink
         v-for="(item, i) in activeMenu"
@@ -54,13 +54,13 @@
     <div
       class="navbar-popup-overlay"
       v-bind:class="popupOpen ? 'active' : ''"
-      v-if="!$device.isMobile"
+      v-show="!$device.isMobile"
     ></div>
     <!-- mobile 選單 -->
     <div
       class="mobile-menu"
       v-bind:class="{ active: mobileMenuOpen }"
-      v-if="$device.isMobile"
+      v-show="$device.isMobile"
     >
       <div
         class="mobile-menu-item"
@@ -113,7 +113,7 @@
       </div>
     </div>
 
-    <div class="social-button" v-if="!$device.isMobile">
+    <div class="social-button" v-show="!$device.isMobile">
       <a href="">
         <img src="@/assets/img/fb.svg" alt="" srcset="" />
       </a>
@@ -578,7 +578,6 @@ export default {
       this.scrollPos = window.scrollY;
     },
     toggleMenu(id) {
-      console.log(id);
       if (this.currentMenu != id) {
         this.currentMenu = id;
       } else {
@@ -587,7 +586,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$nuxt.$route);
   },
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);
