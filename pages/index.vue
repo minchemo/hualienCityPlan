@@ -4,6 +4,7 @@
       <Navbar />
       <div class="bg" data-aos="fade">
         <video
+          id="main-v"
           type="video/mp4"
           preload="auto"
           autoplay
@@ -191,6 +192,8 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+    document.getElementById('main-v').play();
+  },
 };
 </script>
