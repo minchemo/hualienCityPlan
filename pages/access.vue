@@ -8,12 +8,15 @@
           <div class="num" v-bind:style="{ color: access.color }">
             {{ access.num }}
           </div>
-          <div class="title" v-html="access.title"></div>
-          <div class="text" v-html="access.content"></div>
+          <div class="info-content">
+            <div class="title" v-html="access.title"></div>
+            <div class="text" v-html="access.content"></div>
+          </div>
         </div>
       </div>
       <div class="map" data-aos="fade">
-        <img src="@/assets/img/access/map.jpg" alt="" srcset="" v-lazy-load />
+        <img v-if="!$device.isMobile" src="@/assets/img/access/map.jpg" alt="" srcset="" v-lazy-load />
+        <img v-else src="@/assets/img/access/map_mo.jpg" alt="" srcset="" v-lazy-load />
       </div>
     </div>
     <Footer />
@@ -96,7 +99,7 @@
         .text {
           border-top: 1px solid #262626;
           padding-top: 1vw;
-          font-size: .9vw;
+          font-size: 0.9vw;
           line-height: 2;
           letter-spacing: 0.1vw;
         }
@@ -112,6 +115,85 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .main {
+    height: auto;
+    margin-top: $mo_navbar_height;
+
+    .content {
+      max-width: 100vw;
+      margin: 0;
+      h1 {
+        text-align: center;
+        font-weight: 400;
+        padding: 5vw;
+        font-size: 18pt;
+        border-bottom: 1px solid #262626;
+      }
+      .info {
+        margin-bottom: 5vw;
+        grid-template-columns: repeat(1, 1fr);
+        .info-item {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          padding: 0 1vw;
+          border-right: 0;
+          border-top: 0;
+          align-items: center;
+          margin: 5vw 0;
+          padding-bottom: 10vw;
+          border-bottom: 1px solid;
+          .num {
+            display: block;
+            text-align: left;
+            font-size: 30vw;
+            font-weight: bold;
+            width: 50vw;
+            position: absolute;
+            letter-spacing: 0;
+            line-height: 1;
+            margin-top: -5pt;
+            top: 0;
+            transform: translateX(-12vw);
+          }
+          .info-content {
+            border-left: 1px solid #262626;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-left: 30vw;
+            padding-left: 5vw;
+            padding-right: 5vw;
+            .title {
+              font-size: 18pt;
+              line-height: 1.5;
+              font-weight: bold;
+              margin-bottom: 8vw;
+            }
+            .text {
+              border-top: 0;
+              padding-top: 1vw;
+              font-size: 10pt;
+              line-height: 2;
+              letter-spacing: 0.1vw;
+            }
+          }
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+      .map {
+        padding: 0 5vw;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 export default {
@@ -122,7 +204,7 @@ export default {
           num: "01",
           color: "#6EB9EB",
           title: "花蓮<br/>日出大道",
-          content: `<h3>主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。</h3>`,
+          content: this.$device.isMobile ? `主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。` : `<h3>主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。</h3>`,
         },
         {
           num: "02",
