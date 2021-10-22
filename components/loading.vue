@@ -55,9 +55,7 @@ export default {
         elems.push(item);
       });
 
-      const totals = images.length;
-
-      const eachPercentage = Math.ceil(100 / totals);
+      const eachPercentage = Math.ceil(100 / elems.length);
 
       const self = this;
       elems.forEach((element) => {
