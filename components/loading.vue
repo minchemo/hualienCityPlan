@@ -44,19 +44,41 @@ export default {
       }
     },
     load() {
+      let elems = [];
       const images = document.getElementsByTagName("img");
+      const video = document.getElementsByTagName("video");
+
+      images.forEach((item) => {
+        elems.push(item);
+      });
+      video.forEach((item) => {
+        elems.push(item);
+      });
 
       const totals = images.length;
 
       const eachPercentage = Math.ceil(100 / totals);
 
-      images.forEach((element) => {
-        var img = new Image();
-        img.onload = () => {
-          this.setProgress(eachPercentage);
-        };
+      const self = this;
+      elems.forEach((element) => {
+        let tagName = element.tagName;
 
-        img.src = element.getAttribute("data-src");
+        if (tagName == "IMG") {
+          var img = new Image();
+          img.onload = () => {
+            self.setProgress(eachPercentage);
+          };
+
+          img.src = element.getAttribute("data-src");
+        } else {
+          var r = new XMLHttpRequest();
+          r.onload = function () {
+            self.setProgress(eachPercentage);
+          };
+          r.open("GET", element.src);
+          r.responseType = "blob";
+          r.send();
+        }
       });
     },
   },

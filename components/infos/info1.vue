@@ -83,7 +83,6 @@
 }
 </style>
 <script>
-import * as html2canvas from 'html2canvas';
 
 export default {
   data() {
@@ -140,26 +139,26 @@ export default {
     }
   },
   methods: {
-    download() {
-      const self = this;
-      if (self.isDownloading == true) {
-        return
-      }
+    // download() {
+    //   const self = this;
+    //   if (self.isDownloading == true) {
+    //     return
+    //   }
 
-      self.isDownloading = true;
+    //   self.isDownloading = true;
 
-      html2canvas(document.querySelector("#show-list"), { scale: 1.5 }).then(canvas => {
-        const dt = canvas.toDataURL('image/png');
+    //   html2canvas(document.querySelector("#show-list"), { scale: 1.5 }).then(canvas => {
+    //     const dt = canvas.toDataURL('image/png');
 
-        let link = document.createElement('a');
-        link.download = 'HualienCity2021.png';
-        link.href = dt;
-        link.click();
+    //     let link = document.createElement('a');
+    //     link.download = 'HualienCity2021.png';
+    //     link.href = dt;
+    //     link.click();
 
-        self.isDownloading = false;
-      });
+    //     self.isDownloading = false;
+    //   });
 
-    }
+    // }
 
   },
   created() {
