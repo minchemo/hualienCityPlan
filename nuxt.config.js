@@ -53,7 +53,11 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ["nuxt-lazy-load"],
+    modules: [
+        "nuxt-lazy-load",
+        '@nuxtjs/google-analytics'
+    ],
+
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
@@ -63,5 +67,11 @@ export default {
 
     optimizedImages: {
         optimizeImages: true
+    },
+    googleAnalytics: {
+        id: 'G-ZSNNBFJW22',
+        autoTracking: {
+          pageviewOnLoad: false
+        },
     }
 };
