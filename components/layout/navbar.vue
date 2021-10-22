@@ -12,7 +12,7 @@
           <img src="@/assets/img/logo_m.svg" v-else alt="" srcset="" />
         </NuxtLink>
       </div>
-      <div class="navbar-link" v-if="!$device.isMobile">
+      <div class="navbar-link" v-show="!$device.isMobile">
         <NuxtLink
           class="navbar-link-item"
           :to="nav.linkTo"
@@ -31,7 +31,7 @@
         class="navbar-hamberger"
         v-bind:class="{ active: mobileMenuOpen }"
         @click="mobileMenuOpen = !mobileMenuOpen"
-        v-else
+        v-show="$device.isMobile"
       ></div>
     </div>
     <!-- 電腦選單 -->

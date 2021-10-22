@@ -4,7 +4,6 @@
       <Navbar />
       <div class="bg" data-aos="fade">
         <video
-          v-lazy-load
           type="video/mp4"
           preload="auto"
           autoplay
@@ -20,7 +19,13 @@
           <div class="yt-box"></div>
         </div>
         <img
-          v-lazy-load
+          class="intro-bg-first"
+          src="@/assets/img/home/bg_0_mo.svg"
+          alt=""
+          srcset=""
+          v-show="$device.isMobile"
+        />
+        <img
           class="intro-bg"
           src="@/assets/img/home/bg.svg"
           alt=""
@@ -29,15 +34,13 @@
         />
         <img
           v-else
-          v-lazy-load
           class="intro-bg"
           src="@/assets/img/home/bg_1_mo.svg"
           alt=""
           srcset=""
         />
         <img
-          v-if="$device.isMobile"
-          v-lazy-load
+          v-show="$device.isMobile"
           class="intro-bg2"
           src="@/assets/img/home/bg_2_mo.svg"
           alt=""
@@ -53,7 +56,13 @@
           alt=""
           srcset=""
         />
-        <img v-else v-lazy-load src="@/assets/img/home/brands_mo.png" alt="" srcset="" />
+        <img
+          v-else
+          v-lazy-load
+          src="@/assets/img/home/brands_mo.png"
+          alt=""
+          srcset=""
+        />
       </div>
     </div>
     <Footer />
@@ -128,7 +137,9 @@
 
     .intro {
       width: 100%;
-      padding: 106pt 0;
+      padding-top: 133vw;
+      padding-bottom: 106pt;
+      position: relative;
       .intro-content {
         z-index: 1;
         position: relative;
@@ -136,11 +147,32 @@
         text-align: center;
         margin: 0 auto;
       }
+      .intro-bg-first {
+        position: absolute;
+        width: 70vw;
+        top: 10vw;
+        left: 15vw;
+      }
+      .intro-bg {
+        position: absolute;
+        width: 90vw;
+        top: 100vw;
+        left: 5vw;
+      }
       .intro-bg2 {
         position: absolute;
         width: 63vw;
         bottom: 5vw;
         left: 5vw;
+      }
+      &:after {
+        content: "";
+        width: 100vw;
+        height: 1px;
+        background: #262626;
+        position: absolute;
+        top: 95vw;
+        left: 0;
       }
     }
 
