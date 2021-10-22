@@ -194,7 +194,7 @@ export default {
     return {};
   },
   mounted() {
-    document.getElementById('main-v').play();
+    document.getElementById("main-v").play();
   },
 };
 </script>

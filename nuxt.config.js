@@ -64,7 +64,7 @@ export default {
     router: {
         base: routerBase
     },
-
+    loading: `~/components/loading.vue`,
     optimizedImages: {
         optimizeImages: true
     },
