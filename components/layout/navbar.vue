@@ -322,10 +322,9 @@
 
     .logo {
       padding-left: 16px;
-      margin-bottom: -5px; //fix
+      height: 60%;
       img {
-        height: auto;
-        width: 50vw;
+        height: 100%;
       }
     }
 
@@ -511,13 +510,13 @@ export default {
               linkTo: "/program",
               fullLink: "/program#2",
               hash: "2",
-              linkName: "花創舞台｜<b>花創火溫酒</b>",
+              linkName: "花創園區｜<b>花創火溫酒</b>",
             },
             {
               linkTo: "/program",
               fullLink: "/program#3",
               hash: "3",
-              linkName: "日出舞台｜<b>南濱奔日流</b>",
+              linkName: "南濱公園｜<b>南濱奔日流</b>",
             },
             {
               linkTo: "/program",

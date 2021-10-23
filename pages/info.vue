@@ -41,31 +41,39 @@
       width: 100%;
       position: relative;
       .info-buttons {
+        position: fixed;
+        top: $program_nav_top;
         display: flex;
         width: 100%;
+        z-index: 10;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.4);
         .info-button {
           display: flex;
           flex: auto;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          padding: 2vw 0;
-          background-color: #e5e5e5;
-          transition: all 0.4s;
+          padding: 1vw 0;
+          border-right: 1px solid #262626;
           &:hover {
-            opacity: 0.5;
             cursor: pointer;
+            .info-title {
+              color: $primaryColor;
+            }
           }
           &.active {
-            opacity: 0.5;
+            .info-title {
+              color: $primaryColor;
+            }
           }
           .info-title {
-            font-size: 1.2vw;
+            font-size: 1vw;
             font-weight: bold;
           }
-          .info-subtitle {
-            margin-top: 0.7vw;
-            font-size: 1.2vw;
+          
+          &:last-child {
+            border-right: 0;
           }
         }
       }

@@ -1,25 +1,26 @@
 <template>
   <div>
     <div class="info1">
-      <div class="show-list" id="show-list">
-        <div
-          class="show-item"
-          v-for="(item, i) in list"
-          :key="i"
-          v-bind:class="item.header == true ? 'header' : ''"
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-once="true"
-        >
-          <div class="show-name" v-html="item.name"></div>
-          <div class="show-time" v-html="item.time"></div>
-        </div>
+      <div class="info-download">
+        <span @click="download">下載節目單</span>
       </div>
-      <div class="download" data-aos="fade-up">
-        <div @click="download()">
-          <span v-if="isDownloading" v-html="DownloadingText"></span>
-          <span v-else>下載節目單</span>
-        </div>
+      <div class="info-content">
+        <img
+          v-if="!$device.isMobile"
+          src="@/assets/img/info/program_list.svg"
+          alt=""
+          srcset=""
+        />
+        <img
+          v-else
+          src="@/assets/img/info/program_list_mo.svg"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="info-warning">
+        ＊主辦單位保留活動異動權<br />
+        ＊參加本活動者須配合政府防疫公告相關措施
       </div>
     </div>
   </div>
@@ -30,54 +31,80 @@
 
 .info1 {
   position: relative;
-  width: 60vw;
+  width: 100vw;
   margin: 0 auto;
   padding-top: 5vw;
-  .show-list {
-    width: 100%;
-    .show-item {
-      display: flex;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-      padding-bottom: 2vw;
-      margin-bottom: 2vw;
-      .show-name {
-        width: 50%;
-        font-size: 1vw;
-      }
-      .show-time {
-        width: 50%;
-        font-size: 1vw;
-      }
-
-      &:last-child {
-        border-bottom: 0;
-        padding-bottom: 0;
-        margin-bottom: 0;
-      }
-
-      &.header {
-        .show-name {
-          font-weight: bold;
-        }
-        .show-time {
-          font-weight: bold;
-        }
+  .info-download {
+    font-size: 1.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3vw 0;
+    span {
+      border: 1px solid #dcc8eb;
+      color: #e8c6ee;
+      font-weight: bold;
+      padding: 1.5vw;
+      border-radius: 100%;
+      letter-spacing: 0.2vw;
+      &:hover {
+        color: #fff;
+        background: #dcc8eb;
+        cursor: pointer;
       }
     }
   }
-  .download {
-    margin-top: 5vw;
+  .info-content {
     position: relative;
-    text-align: right;
-    div {
-      display: inline;
-      cursor: pointer;
-      font-size: 1vw;
-      font-weight: bold;
-      text-decoration: underline;
-      &:hover {
-        opacity: 0.7;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .info-warning {
+    font-size: 1vw;
+    text-align: center;
+    margin: 5vw 0;
+    line-height: 1.8;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info1 {
+    position: relative;
+    width: 100vw;
+    margin: 0 auto;
+    padding-top: 5vw;
+    .info-download {
+      font-size: 18.35pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 14vw 0;
+      span {
+        border: 1px solid #dcc8eb;
+        color: #e8c6ee;
+        font-weight: bold;
+        padding: 16pt;
+        border-radius: 100%;
+        letter-spacing: 0.2vw;
+        &:hover {
+          color: #fff;
+          background: #dcc8eb;
+          cursor: pointer;
+        }
       }
+    }
+    .info-content {
+      position: relative;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    .info-warning {
+      margin: 10vw 0;
+      font-size: 9pt;
     }
   }
 }
@@ -87,78 +114,18 @@
 export default {
   data() {
     return {
-      list: [
-        {
-          'name': '節目名稱',
-          'time': '時間',
-          'header': true
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-        {
-          'name': '節目名稱',
-          'time': '18:00-19:00'
-        },
-      ],
-      isDownloading: false,
-      DownloadingText: '處理中'
+      downloadUrl: require('@/assets/img/info/program_list_download.jpg')
     }
   },
   methods: {
-    // download() {
-    //   const self = this;
-    //   if (self.isDownloading == true) {
-    //     return
-    //   }
-
-    //   self.isDownloading = true;
-
-    //   html2canvas(document.querySelector("#show-list"), { scale: 1.5 }).then(canvas => {
-    //     const dt = canvas.toDataURL('image/png');
-
-    //     let link = document.createElement('a');
-    //     link.download = 'HualienCity2021.png';
-    //     link.href = dt;
-    //     link.click();
-
-    //     self.isDownloading = false;
-    //   });
-
-    // }
+    download() {
+      let a = document.createElement('a');
+      a.href = this.downloadUrl;
+      a.download = "花蓮城市空間藝術節 - 節目單.jpg";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
 
   },
   created() {

@@ -78,6 +78,9 @@
               color: $primaryColor;
             }
           }
+          &:last-child {
+            border-right: 0;
+          }
         }
       }
     }
@@ -117,12 +120,12 @@ export default {
         },
         {
           id: 2,
-          title: "花創舞台",
+          title: "花創園區",
           subtitle: "花創火溫酒",
         },
         {
           id: 3,
-          title: "日出舞台",
+          title: "南濱公園",
           subtitle: "南濱奔日流",
         },
         {
