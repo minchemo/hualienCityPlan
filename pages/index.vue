@@ -12,7 +12,7 @@
           loop
           playsinline
           class="bg-video"
-          src="@/assets/img/home/loop.mp4"
+          src="https://witty-sea-0c73a1500.azurestaticapps.net/_nuxt/videos/loop.04b2877.mp4"
         ></video>
       </div>
 

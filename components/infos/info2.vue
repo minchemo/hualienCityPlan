@@ -4,7 +4,7 @@
       <div class="info-download">
         <span @click="download">下載展區地圖</span>
       </div>
-      <div class="info-map" v-show="false">
+      <div class="info-map">
         <div class="map">
           <img
             v-if="!$device.isMobile"
