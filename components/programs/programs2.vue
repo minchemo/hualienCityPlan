@@ -5,9 +5,15 @@
         <h2 class="title">花創園區</h2>
         <div class="subtitle">花創火溫酒</div>
         <p class="content">
-          這是舊時代的酒廠園區，古蹟演進成為文創基地，日治時期的屋舍建築，悠緩的氣氛依舊，有人愛上<br />
-          花蓮而移居，有人因為追求而遷出，花蓮城市依舊緩緩的透著生活感，慢慢進步。這時候，適合溫一<br />
-          壺茶酒，大家來這裡圍坐，在徐風向晚，聽聽12位「花蓮人」的花蓮因緣，也分享自己的美麗故事，<br />
+          這是舊時代的酒廠園區，古蹟演進成為文創基地，日治時期的屋舍建築，悠緩的氣氛依舊，有人愛上<br
+            v-show="!$device.isMobile"
+          />
+          花蓮而移居，有人因為追求而遷出，花蓮城市依舊緩緩的透著生活感，慢慢進步。這時候，適合溫一<br
+            v-show="!$device.isMobile"
+          />
+          壺茶酒，大家來這裡圍坐，在徐風向晚，聽聽12位「花蓮人」的花蓮因緣，也分享自己的美麗故事，<br
+            v-show="!$device.isMobile"
+          />
           一起回到時光中相聚。
         </p>
       </div>
@@ -27,11 +33,28 @@
         <div class="program-items">
           <template v-for="(speaker, i) in activeTabData.speakers">
             <div class="program-item" :key="i">
+              <div
+                ref="speakername"
+                class="name"
+                v-html="speaker.name"
+                v-show="$device.isMobile"
+              ></div>
+              <div class="info" v-show="$device.isMobile">
+                <div class="tag">
+                  講者｜<span>{{ speaker.tag }}</span>
+                </div>
+                <div class="time">{{ speaker.time }}</div>
+              </div>
               <div class="avatar">
                 <img :src="speaker.img" alt="" srcset="" />
               </div>
-              <div ref="speakername" class="name" v-html="speaker.name"></div>
-              <div class="info">
+              <div
+                ref="speakername"
+                class="name"
+                v-html="speaker.name"
+                v-show="!$device.isMobile"
+              ></div>
+              <div class="info" v-show="!$device.isMobile">
                 <div class="tag">
                   講者｜<span>{{ speaker.tag }}</span>
                 </div>
@@ -65,6 +88,31 @@
       &.active {
         span {
           color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .program-item-box {
+    .program-tabs {
+      .program-tab {
+        span {
+          display: inline-block;
+          font-size: 10px;
+          transform: translateY(-0.7vw);
+          margin-right: 0.2vw;
+        }
+        &:hover {
+          span {
+            color: $primaryColor;
+          }
+        }
+        &.active {
+          span {
+            color: $primaryColor;
+          }
         }
       }
     }
@@ -200,6 +248,144 @@
       top: 0;
       transform: translateX(-50%);
       background: #262626;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .program2 {
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 25vw;
+    .program-title {
+      margin: 25vw 0 15vw 0;
+      .title {
+        font-size: 12pt;
+        margin-bottom: 2vw;
+      }
+      .subtitle {
+        font-size: 18pt;
+      }
+      .content {
+        font-size: 9.5pt;
+        text-align: justify;
+        margin-top: 7vw;
+      }
+    }
+
+    .program-item-box {
+      position: relative;
+      .program-tabs {
+        display: flex;
+        justify-content: space-between;
+        .program-tab {
+          position: relative;
+          font-size: 13.41pt;
+          font-weight: bold;
+          border-right: 1px solid #262626;
+          flex: 1;
+          box-sizing: border-box;
+          &:nth-child(1) {
+            text-align: left;
+            padding: 1vw 1vw 0 1vw;
+          }
+          &:nth-child(2) {
+            text-align: center;
+            padding: 1vw 1vw 0 1vw;
+          }
+          &:nth-child(3) {
+            text-align: right;
+            padding: 1vw 1vw 0 1vw;
+            border: 0;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $primaryColor;
+          }
+          &.active {
+            color: $primaryColor;
+          }
+        }
+      }
+
+      .program-items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 50pt;
+        margin-top: 40pt;
+
+        .program-item {
+          font-size: 2vw;
+          font-weight: bolder;
+          flex: 1;
+          background: #fff;
+          margin: 2vw 2vw;
+          position: relative;
+          .avatar {
+            border: 1px solid #262626;
+            img {
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+          .name {
+            font-size: 32.62pt;
+            margin: 1vw 0;
+            border-top: 1px solid #262626;
+            border-bottom: 0;
+            padding-bottom: 0;
+            padding-top: 8pt;
+          }
+          .info {
+            margin: 12pt 0;
+            .tag {
+              font-size: 12pt;
+            }
+            .time {
+              font-size: 10pt;
+              padding: 2pt 6pt;
+            }
+          }
+          .desc {
+            margin-top: 10pt;
+            font-size: 10pt;
+          }
+          &:first-child {
+            margin-left: 0;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &::after {
+            content: "";
+            background-image: url("@/assets/img/program/arrow2.svg");
+            background-size: contain;
+            width: 20pt;
+            height: 20pt;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -40pt;
+            z-index: 1;
+          }
+
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+      &::before {
+        content: "";
+        width: 100vw;
+        height: 1px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        background: #262626;
+      }
     }
   }
 }
@@ -341,7 +527,7 @@ export default {
       }
     },
   },
-  created() {},
+  created() { },
   mounted() {
     this.fitText();
   },

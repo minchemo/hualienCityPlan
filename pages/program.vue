@@ -11,9 +11,7 @@
             @click="setRouteHash(program.id)"
             v-bind:class="routeHash == program.id ? 'active' : ''"
           >
-            <div class="program-title">
-              <b>{{ program.title }}</b
-              >｜{{ program.subtitle }}
+            <div class="program-title" v-html="program.showTitle">
             </div>
           </div>
         </div>
@@ -86,6 +84,63 @@
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .main {
+    height: auto;
+    margin-top: $mo_navbar_height;
+
+    .content {
+      position: relative;
+      height: auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .programs {
+        width: 100%;
+        .program-buttons {
+          position: fixed;
+          top: $mo_program_nav_top;
+          display: flex;
+          width: 100%;
+          z-index: 10;
+          backdrop-filter: blur(10px);
+          background-color: rgba(255, 255, 255, 0.4);
+          .program-button {
+            display: flex;
+            flex: auto;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border-right: 1px solid #262626;
+            &.active {
+              .program-title {
+                color: $primaryColor;
+              }
+            }
+            .program-title {
+              font-size: 9pt;
+              font-weight: bold;
+              text-align: center;
+              line-height: 1.8;
+            }
+            &:hover {
+              cursor: pointer;
+              .program-title {
+                color: $primaryColor;
+              }
+            }
+            &:last-child {
+              border-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 import Program1 from "@/components/programs/programs1.vue";
@@ -115,26 +170,31 @@ export default {
       programs: [
         {
           id: 1,
+          showTitle: this.$device.isMobile ? "日出大道<br/><b>日出未來河</b>" : "日出大道｜<b>日出未來河</b>",
           title: "日出大道",
           subtitle: "日出未來河",
         },
         {
           id: 2,
+          showTitle: this.$device.isMobile ? "花創園區<br/><b>花創火溫酒</b>" : "花創園區｜<b>花創火溫酒</b>",
           title: "花創園區",
           subtitle: "花創火溫酒",
         },
         {
           id: 3,
+          showTitle: this.$device.isMobile ? "南濱公園<br/><b>南濱奔日流</b>" : "南濱公園｜<b>南濱奔日流</b>",
           title: "南濱公園",
           subtitle: "南濱奔日流",
         },
         {
           id: 4,
+          showTitle: this.$device.isMobile ? "周邊街廓<br/><b>溝仔尾問路</b>" : "周邊街廓｜<b>溝仔尾問路</b>",
           title: "周邊街廓",
           subtitle: "溝仔尾問路",
         },
         {
           id: 5,
+          showTitle: this.$device.isMobile ? "特別場域<br/><b>豐田村秘境</b>" : "特別場域｜<b>豐田村秘境</b>",
           title: "特別場域",
           subtitle: "豐田村秘境",
         },
@@ -158,12 +218,14 @@ export default {
           path: "/program",
           hash: "#" + hash,
         });
+
+        this.$store.commit('forceCloseMobileMenu');
       }
     },
   },
   created() {
     this.setRouteHash(this.$nuxt.$route.hash);
   },
-  mounted() {},
+  mounted() { },
 };
 </script>

@@ -11,7 +11,8 @@ export const state = () => ({
         slides: [],
         links: []
     },
-    currentDetailTitle: ""
+    currentDetailTitle: "",
+    mobileMenuOpen: false
 });
 
 export const mutations = {
@@ -22,13 +23,19 @@ export const mutations = {
 
         state.detailOpen = true;
 
-        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+        document.getElementsByTagName("html")[0].style.overflow = "hidden";
     },
     setCurrentDetailTab(state, payload) {
         state.currentDetailTab = payload;
     },
     closeDetail(state) {
         state.detailOpen = false;
-        document.getElementsByTagName('html')[0].style.overflow = 'auto';
+        document.getElementsByTagName("html")[0].style.overflow = "auto";
+    },
+    mobileMenuToggle(state) {
+        state.mobileMenuOpen = !state.mobileMenuOpen;
+    },
+    forceCloseMobileMenu(state) {
+        state.mobileMenuOpen = false;
     }
 };

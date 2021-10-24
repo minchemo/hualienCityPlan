@@ -20,7 +20,6 @@ export default {
         ],
         link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
     },
-
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
         "@/assets/css/normalize.css",
@@ -30,14 +29,14 @@ export default {
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [{
-        src: "~/plugins/aos",
-        ssr: false
-    },
-    { src: "./plugins/vue-slick-carousel.js" },
-    { src: "./plugins/v-observe.js" },
-    {
-        src: "./plugins/v-scrollto.js"
-    }
+            src: "~/plugins/aos",
+            ssr: false
+        },
+        { src: "./plugins/vue-slick-carousel.js" },
+        { src: "./plugins/v-observe.js" },
+        {
+            src: "./plugins/v-scrollto.js"
+        }
     ],
 
     // Auto import components: https://go. nuxtjs.dev/config-components
@@ -49,15 +48,15 @@ export default {
     buildModules: [
         // https://go.nuxtjs.dev/eslint
         "@nuxtjs/device",
-        '@aceforth/nuxt-optimized-images',
+        "@aceforth/nuxt-optimized-images"
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
     modules: [
         "nuxt-lazy-load",
-        '@nuxtjs/google-analytics'
+        "@nuxtjs/google-analytics",
+        "@nuxtjs/google-fonts"
     ],
-
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
@@ -69,9 +68,14 @@ export default {
         optimizeImages: true
     },
     googleAnalytics: {
-        id: 'G-ZSNNBFJW22',
+        id: "G-ZSNNBFJW22",
         autoTracking: {
-          pageviewOnLoad: false
-        },
+            pageviewOnLoad: false
+        }
+    },
+    googleFonts: {
+        families: {
+            "Noto+Sans+TC": [300, 400, 700, 900]
+        }
     }
 };

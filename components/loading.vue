@@ -14,12 +14,15 @@ export default {
   data: () => ({
     loading: false,
     progress: 0,
+    timeout: 5000,
+    timeoutInstance: null
   }),
   methods: {
     start() {
       this.loading = true;
 
       this.load();
+      this.$store.commit('forceCloseMobileMenu');
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
     },
     finish() {
@@ -34,9 +37,11 @@ export default {
       }
 
       if (this.progress >= 100) {
+        clearTimeout(this.timeoutInstance);
         setTimeout(() => {
           this.progress = 0;
-          this.$refs.loadingPage.classList.add("fadeOut");
+          if (this.$refs.loadingPage)
+            this.$refs.loadingPage.classList.add("fadeOut");
           setTimeout(() => {
             this.finish();
           }, 1000);
@@ -58,6 +63,13 @@ export default {
       const eachPercentage = Math.ceil(100 / elems.length);
 
       const self = this;
+
+      this.timeoutInstance = setTimeout(() => {
+        if (this.progress < 80) {
+          this.setProgress(100);
+        }
+      }, this.timeout);
+
       elems.forEach((element) => {
         let tagName = element.tagName;
 
@@ -80,7 +92,7 @@ export default {
       });
     },
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
 <style lang="scss" scoped>

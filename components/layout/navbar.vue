@@ -29,8 +29,8 @@
       </div>
       <div
         class="navbar-hamberger"
-        v-bind:class="{ active: mobileMenuOpen }"
-        @click="mobileMenuOpen = !mobileMenuOpen"
+        v-bind:class="{ active: $store.state.mobileMenuOpen }"
+        @click="$store.commit('mobileMenuToggle')"
         v-show="$device.isMobile"
       ></div>
     </div>
@@ -59,7 +59,7 @@
     <!-- mobile 選單 -->
     <div
       class="mobile-menu"
-      v-bind:class="{ active: mobileMenuOpen }"
+      v-bind:class="{ active: $store.state.mobileMenuOpen }"
       v-show="$device.isMobile"
     >
       <div
@@ -370,7 +370,7 @@
   .mobile-menu {
     padding-top: $pc_navbar_height;
     background: #fff;
-    z-index: 2;
+    z-index: 11;
     position: fixed;
     top: 0;
     left: 0;
@@ -482,7 +482,6 @@ export default {
   data() {
     return {
       popupOpen: false,
-      mobileMenuOpen: false,
       currentMenu: this.$nuxt.$route.name,
       navList: [
         {

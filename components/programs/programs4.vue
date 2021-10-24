@@ -5,9 +5,11 @@
         <h2 class="title">周邊街廓</h2>
         <div class="subtitle">溝仔尾問路</div>
         <p class="content">
-          溝仔尾街廓間的商家，是城市演進的見證者，在每日的供需行為中，累積出生活的向度，從里長到店長，<br />
-          從居民到旅客，這裏深藏的故事，可以從一道有趣的提問開始，一座親人的城市，交流人情的現場，我們<br />
-          或許記不得所有故事，但我們不會忘記願意分享與理解的感動瞬間。
+          溝仔尾街廓間的商家，是城市演進的見證者，在每日的供需行為中，累積出生活的向度，從里長到店長，<br
+            v-show="!$device.isMobile"
+          />從居民到旅客，這裏深藏的故事，可以從一道有趣的提問開始，一座親人的城市，交流人情的現場，我們<br
+            v-show="!$device.isMobile"
+          />或許記不得所有故事，但我們不會忘記願意分享與理解的感動瞬間。
         </p>
         <div class="divider">
           <img
@@ -168,11 +170,130 @@
       margin-bottom: 3vw;
     }
     .shop {
-      font-size: .9vw;
+      font-size: 0.9vw;
       margin: 0 0.8vw 0.8vw 0;
       border: 1px solid #262626;
       border-radius: 50px;
       padding: 0.5vw 1vw;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .program4 {
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 25vw;
+    .program-title {
+      margin: 25vw 0 15vw 0;
+      .title {
+        font-size: 12pt;
+        margin-bottom: 2vw;
+      }
+      .subtitle {
+        font-size: 18pt;
+      }
+      .content {
+        font-size: 9.5pt;
+        text-align: justify;
+        margin-top: 7vw;
+        span {
+          color: #8c8c8c;
+        }
+      }
+      .divider {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .program-item-box {
+      margin: 6vw 0;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 3vw;
+      width: 100vw;
+      margin-left: -10vw;
+      .program-item {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+        margin: 0;
+        .program-item-title {
+          font-size: 158.8pt;
+          font-weight: bold;
+          transition: all 0.2s;
+          position: relative;
+          margin-bottom: -70pt;
+        }
+        .program-item-subtitle {
+          position: relative;
+          font-size: 18pt;
+          padding: 15pt 0;
+          transition: all 0.2s;
+          letter-spacing: 0.1vw;
+          background: #fff;
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid #262626;
+
+          &::after {
+            content: "";
+            height: 14pt;
+            width: 14pt;
+            background-image: url("@/assets/img/program/arrow.svg");
+            background-size: 95%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: absolute;
+            margin-left: 0.5vw;
+            transition: all 0.2s;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          .program-item-title {
+            margin-bottom: 0pt;
+          }
+          .program-item-subtitle {
+            color: $primaryColor;
+            &::after {
+              transform: translateY(-50%) translateX(10px);
+              background-image: url("@/assets/img/program/arrow_hover.svg");
+            }
+          }
+        }
+      }
+    }
+
+    .shops {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      h4 {
+        flex: 100%;
+        margin-bottom: 20pt;
+        font-size: 12pt;
+      }
+      .shop {
+        font-size: 8.13pt;
+        margin: 8pt 4pt 8pt 0;
+        border: 1px solid #262626;
+        border-radius: 50px;
+        padding: 6pt 12pt;
+      }
     }
   }
 }
@@ -756,7 +877,7 @@ export default {
   components: {
   },
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>

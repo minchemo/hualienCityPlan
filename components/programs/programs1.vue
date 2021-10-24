@@ -5,10 +5,13 @@
         <h2 class="title">日出大道</h2>
         <div class="subtitle">日出未來河</div>
         <p class="content">
-          一條充滿故事的溝仔尾，轉生成為日出大道，曾是一條河，棲河而生的時代後，城市建設往前走了一大<br />
-          步，人們的生活改變了。城市因人聚集而生，時間的河繼續地流向未來，在追憶與追求之間，此刻正是<br />
-          時候，我們來到自由街，用八道提問來號召藝術跨域作品，一起溫溫的問問過去，一起找出未來花蓮的<br />
-          城市共感。
+          一條充滿故事的溝仔尾，轉生成為日出大道，曾是一條河，棲河而生的時代後，城市建設往前走了一大<br
+            v-show="!$device.isMobile"
+          />步，人們的生活改變了。城市因人聚集而生，時間的河繼續地流向未來，在追憶與追求之間，此刻正是<br
+            v-show="!$device.isMobile"
+          />時候，我們來到自由街，用八道提問來號召藝術跨域作品，一起溫溫的問問過去，一起找出未來花蓮的<br
+            v-show="!$device.isMobile"
+          />城市共感。
         </p>
       </div>
 
@@ -29,6 +32,7 @@
             v-html="item.title"
             v-bind:style="`color: ${item.color}`"
           ></div>
+          <div class="program-item-tag" v-html="item.tag"></div>
           <div class="program-item-subtitle" v-html="item.subtitle"></div>
         </div>
       </div>
@@ -55,6 +59,19 @@
       font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
+      position: relative;
+      margin-bottom: 10vw;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 1px;
+        background: #262626;
+        left: 50%;
+        bottom: -5vw;
+        transform: translateX(-50%);
+      }
     }
   }
 
@@ -76,14 +93,46 @@
         font-weight: bold;
         transition: all 0.2s;
         position: relative;
+        &::before {
+          content: "";
+          width: 150%;
+          height: 1px;
+          position: absolute;
+          background: #262626;
+          left: 50%;
+          bottom: 30%;
+          z-index: 1;
+          transform: translateX(-50%);
+          transition: all 0.2s;
+        }
+        &::after {
+          content: "";
+          width: 100%;
+          height: 50%;
+          position: absolute;
+          background: #fff;
+          left: 0;
+          bottom: -20%;
+          transition: all 0.2s;
+        }
+      }
+      .program-item-tag {
+        margin-top: -1vw;
+        position: relative;
+        z-index: 1;
+        transition: all 0.2s;
+        font-size: 1vw;
       }
       .program-item-subtitle {
         position: relative;
         font-size: 1vw;
-        margin-top: 1vw;
+        margin-top: 0.5vw;
         padding-right: 1.1vw;
         transition: all 0.2s;
         letter-spacing: 0.1vw;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.5;
 
         &::after {
           content: "";
@@ -101,26 +150,136 @@
         }
       }
 
-      &:after {
-        content: "";
-        width: 80%;
-        height: 1px;
-        background: #262626;
-        position: absolute;
-        bottom: 1.8vw;
-        left: 10%;
-      }
-
       &:hover {
         cursor: pointer;
         .program-item-title {
-          transform: translateY(-3%);
+          transform: translateY(-30%);
+          &::before {
+            bottom: 0%;
+            transform: translateX(-50%);
+          }
+          &::after {
+            content: "";
+            bottom: -50%;
+          }
+        }
+        .program-item-tag {
+          color: $primaryColor;
         }
         .program-item-subtitle {
           color: $primaryColor;
           &::after {
             transform: translateY(-50%) translateX(10px);
             background-image: url("@/assets/img/program/arrow_hover.svg");
+          }
+        }
+      }
+
+      &:nth-child(6) {
+        .program-item-subtitle {
+          &::before {
+            content: "(選段演出)";
+            position: absolute;
+            font-weight: 400;
+            left: 50%;
+            transform: translate(-50%, 110%);
+            font-size: 1vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .program1 {
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 25vw;
+    .program-title {
+      margin: 25vw 0;
+      .title {
+        font-size: 12pt;
+        margin-bottom: 2vw;
+      }
+      .subtitle {
+        font-size: 18pt;
+      }
+      .content {
+        font-size: 9.5pt;
+        text-align: justify;
+        margin-top: 7vw;
+        margin-bottom: 30vw;
+        &::after {
+          bottom: -15vw;
+        }
+      }
+    }
+
+    .program-item-box {
+      position: relative;
+      width: 100vw;
+      margin-left: -10vw;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30pt;
+      .program-item {
+        padding-bottom: 20vw;
+        .program-item-title {
+          font-size: 77.9pt;
+          &::before {
+            content: "";
+            width: 110%;
+            height: 1px;
+            position: absolute;
+            background: #262626;
+            left: 50%;
+            bottom: 30%;
+            z-index: 1;
+            transform: translateX(-50%);
+            transition: all 0.2s;
+          }
+          &::after {
+            content: "";
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            background: #fff;
+            left: 0;
+            bottom: -20%;
+            transition: all 0.2s;
+          }
+        }
+        .program-item-tag {
+          margin-top: -15pt;
+          font-size: 9pt;
+        }
+        .program-item-subtitle {
+          font-size: 13pt;
+          margin-top: 6pt;
+          padding-right: 18pt;
+          text-align: left;
+          position: absolute;
+          top: 85pt;
+
+          &::after {
+            height: 12pt;
+            width: 12pt;
+          }
+        }
+
+        &:hover {
+          .program-item-subtitle {
+            &::after {
+              transform: translateY(-50%) translateX(5px);
+            }
+          }
+        }
+
+        &:nth-child(6) {
+          .program-item-subtitle {
+            &::before {
+              content: "";
+            }
           }
         }
       }
@@ -137,6 +296,7 @@ export default {
         {
           title: "Q1",
           subtitle: "花式提問",
+          tag: "你有愛花蓮嗎？",
           color: "#6EB9EB",
           tab: [
             {
@@ -183,7 +343,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         },
         {
           title: "Q2",
-          subtitle: "走路草農藝團",
+          subtitle: "白浪海嘯吃菜吧",
+          tag: "花蓮綠色啟示？",
           color: "#DCC8EB",
           tab: [
             {
@@ -208,7 +369,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         },
         {
           title: "Q3",
-          subtitle: "呼喊花蓮客廳",
+          subtitle: "家族",
+          tag: "有回家的感覺？",
           color: "#C8E6FA",
           tab: [
             {
@@ -238,7 +400,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         },
         {
           title: "Q4",
-          subtitle: "城市切面計畫",
+          subtitle: "校準：路徑",
+          tag: "大道帶我去哪？",
           color: "#C3CDEB",
           tab: [
             {
@@ -268,6 +431,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         {
           title: "Q5",
           subtitle: "這原是一條河",
+          tag: "這原本是條河？",
           color: "#C3CDEB",
           tab: [
             {
@@ -289,7 +453,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         },
         {
           title: "Q6",
-          subtitle: "動態平衡蹺蹺",
+          subtitle: this.$device.isMobile ? "非常態運動<br/>失序邊境" : "非常態運動-失序邊境",
+          tag: "什麼永恆不變？",
           color: "#C8E6FA",
           tab: [
             {
@@ -338,7 +503,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         },
         {
           title: "Q7",
-          subtitle: "象徵匯聚鏡面",
+          subtitle: "鏡岕",
+          tag: "過去現在未來？",
           color: "#DCC8EB",
           tab: [
             {
@@ -361,6 +527,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
         {
           title: "Q8",
           subtitle: "大道流動問答",
+          tag: "我們來一起問？",
           color: "#6EB9EB",
           tab: [
             {
@@ -572,7 +739,7 @@ Soundcloud：<a target="_blank" href="https://soundcloud.com/ankr_taiwan">soundc
     };
   },
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>

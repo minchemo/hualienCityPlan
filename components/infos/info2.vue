@@ -12,7 +12,12 @@
             alt=""
             srcset=""
           />
-          <img v-else src="@/assets/img/info/map_mo.png" alt="" srcset="" />
+          <img
+            v-else
+            src="@/assets/img/info/map_mo.png"
+            alt=""
+            srcset=""
+          />
         </div>
         <div class="tag1" v-show="!$device.isMobile">
           <img src="@/assets/img/info/map_tag.svg" alt="" srcset="" />
@@ -188,12 +193,6 @@
         &.disabled {
           opacity: 0.2;
         }
-        &:hover {
-          opacity: 0.3;
-        }
-        &:active {
-          opacity: 0.3;
-        }
       }
       .prev {
         transform: rotate(-180deg);
@@ -215,7 +214,7 @@
         height: 1px;
         background: #262626;
         z-index: 1;
-        transition: all .5s;
+        transition: all 0.5s;
       }
     }
     .info-map-detail {
@@ -307,11 +306,10 @@ export default {
     getScrollStepOffset() {
       const stepOffset = this.scrollParam.find(item => item.step == this.scrollStep);
       let offset = this.totalScollWidth * stepOffset.offsetRatio;
-      
+
       this.$refs.scrollProgress.style.left = stepOffset.offsetRatio * 100 + '%';
       return offset;
     },
-
   },
   created() {
   },

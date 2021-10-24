@@ -5,14 +5,17 @@
         <h2 class="title">南濱公園</h2>
         <div class="subtitle">南濱濱日流</div>
         <p class="content">
-          海上日出，太陽一路奔向中央山脈，天空色彩魔幻萬變，這是花蓮獨特的環境濾鏡，潮汐拍打的節<br />
-          奏，成為度量時間的方法，人們隨天光而作息，生活因為緩慢而感官更加開闊。在南濱太平洋海岸<br />
-          ，有巨大的珍貴石群佈落在沿岸邊，我們邀請自己在破曉前回到這裡，就像回家一樣，在這自然之<br />
-          中，我們以聲景吟遊，來迎接日出。<br /><br />
+          海上日出，太陽一路奔向中央山脈，天空色彩魔幻萬變，這是花蓮獨特的環境濾鏡，潮汐拍打的節<br
+            v-show="!$device.isMobile"
+          />奏，成為度量時間的方法，人們隨天光而作息，生活因為緩慢而感官更加開闊。在南濱太平洋海岸<br
+            v-show="!$device.isMobile"
+          />，有巨大的珍貴石群佈落在沿岸邊，我們邀請自己在破曉前回到這裡，就像回家一樣，在這自然之<br
+            v-show="!$device.isMobile"
+          />中，我們以聲景吟遊，來迎接日出。<br /><br />
 
           日出開幕儀式｜<span>11.20（六）5:00-7:30</span><br />
           日出閉幕儀式｜<span>11.21（日）5:00-7:30</span><br />
-          <span>＊實際場次時間將依當日天候狀況調整，請以現場流程為主</span>
+          <span>＊實際場次時間將依當日天候狀況調整，<br v-show="$device.isMobile" />請以現場流程為主</span>
         </p>
       </div>
 
@@ -140,6 +143,126 @@
     }
   }
 }
+
+@media screen and (max-width: 500px) {
+  .program3 {
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 25vw;
+    .program-title {
+      margin: 25vw 0 15vw 0;
+      .title {
+        font-size: 12pt;
+        margin-bottom: 2vw;
+      }
+      .subtitle {
+        font-size: 18pt;
+      }
+      .content {
+        font-size: 9.5pt;
+        text-align: justify;
+        margin-top: 7vw;
+        span {
+          color: #8c8c8c;
+        }
+      }
+    }
+
+    .program-item-box {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 3vw;
+      .program-item {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        color: #fff;
+        padding-bottom: 0;
+        margin: 0;
+        margin-bottom: 30pt;
+        .program-item-title {
+          font-size: 120pt;
+          font-weight: bold;
+          transition: all 0.2s;
+          position: absolute;
+          left: 0;
+          margin-left: -25vw;
+          height: 100%;
+          line-height: 100%;
+        }
+        .program-item-cover {
+          position: relative;
+          width: 100%;
+          margin-top: 0;
+          z-index: 1;
+          padding-left: 40%;
+          img {
+            width: 100%;
+            vertical-align: bottom;
+            border: 1px solid #262626;
+          }
+        }
+        .program-item-subtitle {
+          position: relative;
+          font-size: 14pt;
+          margin-top: 7pt;
+          padding-right: 1.5vw;
+          padding-left: 40%;
+          transition: all 0.2s;
+          letter-spacing: 0.1vw;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+
+          &::after {
+            content: "";
+            height: 12pt;
+            width: 12pt;
+            background-image: url("@/assets/img/program/arrow.svg");
+            background-size: 95%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            position: absolute;
+            right: unset;
+            margin-left: 2%;
+            transition: all 0.2s;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+          .program-item-title {
+            transform: unset;
+          }
+          .program-item-subtitle {
+            color: $primaryColor;
+            &::after {
+              transform: translateY(-50%) translateX(10px);
+              background-image: url("@/assets/img/program/arrow_hover.svg");
+            }
+          }
+        }
+
+        &::before {
+          content: "";
+          width: 100vw;
+          height: 1px;
+          background: #262626;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
 </style>
 <script>
 export default {
@@ -253,7 +376,7 @@ export default {
   },
   components: {},
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>
