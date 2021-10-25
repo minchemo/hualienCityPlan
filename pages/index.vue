@@ -100,6 +100,8 @@
       text-align: center;
       margin: 0 auto;
       .yt-box {
+        border: 1px solid #262626;
+        border-bottom: 0;
         width: 100%;
         margin: 0 auto;
         height: 0;
@@ -194,7 +196,6 @@ export default {
     return {};
   },
   mounted() {
-    document.getElementById("main-v").play();
   },
 };
 </script>

@@ -15,14 +15,14 @@ export default {
     loading: false,
     progress: 0,
     timeout: 5000,
-    timeoutInstance: null
+    timeoutInstance: null,
   }),
   methods: {
     start() {
       this.loading = true;
 
       this.load();
-      this.$store.commit('forceCloseMobileMenu');
+      this.$store.commit("forceCloseMobileMenu");
       document.getElementsByTagName("html")[0].style.overflow = "hidden";
     },
     finish() {
@@ -81,18 +81,20 @@ export default {
 
           img.src = element.getAttribute("data-src");
         } else {
+          let loopFilmUrl = require('@/assets/img/home/loop.mp4');
           var r = new XMLHttpRequest();
           r.onload = function () {
+            document.getElementById("main-v").play();
             self.setProgress(eachPercentage);
           };
-          r.open("GET", element.src);
+          r.open("GET", loopFilmUrl);
           r.responseType = "blob";
           r.send();
         }
       });
     },
   },
-  mounted() { },
+  mounted() {},
 };
 </script>
 <style lang="scss" scoped>
