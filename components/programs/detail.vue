@@ -8,8 +8,8 @@
         <div
           class="tab-title"
           v-bind:class="{ single: $store.state.detailTab.length == 1 }"
+          v-html="$store.state.currentDetailTitle.replaceAll('<br/>', ' ')"
         >
-          {{ $store.state.currentDetailTitle }}
         </div>
         <template v-if="$store.state.detailTab.length > 1">
           <div class="tabs">

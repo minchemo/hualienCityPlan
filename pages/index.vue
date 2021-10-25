@@ -150,6 +150,9 @@
         width: 100vw;
         text-align: center;
         margin: 0 auto;
+      .yt-box {
+        border-bottom: 1px solid #262626;
+      }
       }
       .intro-bg-first {
         position: absolute;
@@ -195,7 +198,6 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
