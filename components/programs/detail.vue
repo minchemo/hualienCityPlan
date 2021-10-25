@@ -73,11 +73,11 @@
                 v-if="data.links.length > 0"
                 v-show="!$device.isMobile"
               >
-                <p>店家臉書 / IG連結</p>
+                <p></p>
                 <template v-for="(link, i) in data.links">
                   <a :key="i" :href="link.link" target="_blank">
                     <img
-                      :src="`@/assets/img/${link.type}.svg`"
+                      :src="require(`@/assets/img/${link.type}.svg`)"
                       alt=""
                       srcset=""
                     />
@@ -100,7 +100,7 @@
                 class="info"
                 v-show="$device.isMobile"
                 v-bind:class="{
-                  'has-status': data.status > 0 ,
+                  'has-status': data.status > 0,
                   'right-social':
                     $nuxt.$route.fullPath == '/program#1' ||
                     $nuxt.$route.fullPath == '/program#3',
@@ -558,6 +558,40 @@
           }
         }
       }
+      &.multi {
+        .detail-item {
+          padding-bottom: 2vw;
+          .info {
+            height: auto;
+          }
+          .social-link {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            left: 2vw;
+            bottom: 2vw;
+            font-size: 1vw;
+            p {
+              margin: 0;
+            }
+            a {
+              margin-left: 0.5vw;
+              img {
+                height: 1.5vw;
+              }
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+
+          .slide {
+            .content {
+              padding-bottom: 0vw;
+            }
+          }
+        }
+      }
     }
   }
   .overlay {
@@ -780,6 +814,7 @@
                   margin-left: 0;
                   img {
                     height: 20pt;
+                    max-width: 20pt;
                   }
                 }
               }
@@ -890,11 +925,14 @@ export default {
       if (isVisible) {
         this.activeTabName = entry.target.getAttribute("data-tab-name");
         const tabKey = entry.target.getAttribute("data-tab-key");
-        this.$scrollTo(
-          document.getElementById("tabs-item-" + tabKey),
-          100,
-          this.tabScrollOptions
-        );
+
+        if (this.$device.isMobile) {
+          this.$scrollTo(
+            document.getElementById("tabs-item-" + tabKey),
+            100,
+            this.tabScrollOptions
+          );
+        }
       }
     },
     scroll(id) {

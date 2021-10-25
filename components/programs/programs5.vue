@@ -74,12 +74,14 @@
             srcset=""
           />
         </div>
-        <h2 class="title margin-fix large">活動主題｜模擬富民</h2>
+        <h2 class="title margin-fix large">
+          活動主題｜回家的聲音 One Day in Fengtian
+        </h2>
         <div class="subtitle mobile small">
-          報名場次｜11/20、11/21 ( 09:00 - 13:00 )<br />
+          報名場次｜11/20、11/21 ( 09:00 、 13:00 )<br />
           地點｜豐田村
         </div>
-        <div class="introtitle"><b>作品介紹</b></div>
+        <div class="introtitle"><b>活動介紹</b></div>
         <p class="content">
           以豐田幾位返鄉青年的真實返鄉故事出發，藉由真人農村RPG的形式，讓參與者實地體驗返鄉所遇到的<br />
           困境與挑戰；藉由當初返鄉青年們作為出發號角的竹炮DIY，在蒐集素材中也更認識農村的人、事、物<br />
@@ -90,9 +92,15 @@
             is declining and the number of children is declining.</span
           >
         </p>
-        <div class="introtitle"><b>活動策劃</b>｜豐田移創指導所</div>
+        <div class="introtitle">
+          <b>活動策劃</b>｜豐田移創指導所、社團法人花蓮縣牛犁社區交流協會
+        </div>
         <p class="content">
-          藉由引進創意人口短或長期移駐，增進地方情感關係人口，打造下個世代的農村創意基地。<br />
+          <b>豐田移創指導所  FengTian IDEA Lab</b><br />
+藉由引進創意人口短或長期移駐，增進地方情感關係人口，打造下個世代的農村創意基地。<br /><br />
+
+          <b>社團法人花蓮縣牛犁社區交流協會</b><br />
+          以建立屬於現今居民特色的社區營造工作為志業，在民國九十年遂正式立案為「花蓮縣牛犁社區交流協會」，<br/>關懷觸角伸及村中的老人、婦女以及青少年，更關切自身的土地認同，透過對土地歷史、禮俗及生活紀事的追尋，逐漸為豐田－我們的家。<br />
           <span>
             <b>FengTian IDEA Lab</b><br />
             By introducing short-term or long-term migration of creative
@@ -331,7 +339,7 @@ export default {
   },
   components: {},
   methods: {},
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
 };
 </script>

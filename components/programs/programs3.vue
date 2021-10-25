@@ -2,7 +2,7 @@
   <div>
     <div class="program3">
       <div class="program-title">
-        <h2 class="title">南濱公園</h2>
+        <h2 class="title">太平洋公園南濱段</h2>
         <div class="subtitle">南濱濱日流</div>
         <p class="content">
           海上日出，太陽一路奔向中央山脈，天空色彩魔幻萬變，這是花蓮獨特的環境濾鏡，潮汐拍打的節<br
@@ -15,11 +15,7 @@
 
           日出開幕儀式｜<span>11.20（六）5:00-7:30</span><br />
           日出閉幕儀式｜<span>11.21（日）5:00-7:30</span><br />
-          <span
-            >＊實際場次時間將依當日天候狀況調整，<br
-              v-show="$device.isMobile"
-            />請以現場流程為主</span
-          >
+          <span>＊演出為移動式觀賞動線，5:00從南濱入口開始。</span>
         </p>
       </div>
 
@@ -275,7 +271,7 @@ export default {
       list: [
         {
           title: "01",
-          subtitle: "部落劇會所",
+          subtitle: "嘎造・伊漾",
           color: "#6EB9EB",
           img: require("@/assets/img/program/4-3南濱奔日流/01.jpg"),
           tab: [
@@ -284,10 +280,11 @@ export default {
               info: `場次｜11/20（六）、 11/21（日）<br>時間｜05:00 - 05:25`,
               content: `花蓮玉里下德武部落人，只是一名出現在劇場裡的原住民。國立臺北藝術大學劇場藝術創作研究所表演組畢業。曾參演台南人劇團、瘋戲樂工作室、愛樂劇工廠、舞鈴劇場、刺點創作工坊、複象公場等劇團作品，為舞台劇／音樂劇演員，目前任教於基隆崇右影藝科技大學。於2018年創立「部落劇會所」，常用神話故事透過劇場的各種形式與社會對話，尋找現代人聽神話的必要性，致力於將劇場與傳承議題做結合，說那些該被「傳承」的事。`,
               slides: [
-                require("@/assets/img/program/4-3南濱奔日流/01-1部落聚會所.jpg"),
+                // require("@/assets/img/program/4-3南濱奔日流/01-1部落聚會所.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/01-2部落聚會所.jpg"),
               ],
               links: [],
+              warn: "*實際出場時間將依日出狀況調整，演出順序不變。",
             },
           ],
         },
@@ -299,11 +296,12 @@ export default {
           tab: [
             {
               name: "DJ 汝妮 DUNGI SAPOR",
-              info: `場次｜11/20（六）、 11/21（日）<br>時間｜05:00 - 05:25`,
-              content: `
-有著古典鋼琴及舞蹈的底子，不侷限任何音樂類型，在奠下基礎後，2015年進入DJ生涯，不斷挑戰清楚建立出自己的聲響辨識，使她的音樂場景擁有獨特品味，表演中大膽拼湊自我意識的風格，被稱為公主的她很快就累積出一批死忠粉絲。曾受邀於Australia、New Zealand、S2O Taiwan Songkran Music Festival演出、德國知名TechnoDJ Monoloc亞洲巡迴台灣站指定暖場DJ、與華人世界百大女DJ Cookie演出，以地下場景鍛鍊出的能量與爆發力說服音樂祭的舞客。來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
+              info: `場次｜11/20（六）、 11/21（日）<br>時間｜05:25-05:45`,
+              content: `來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
 
-<div class="en">DUNGI SAPOR is an indigenous mix of Taiwan indigenous and Maori. Self-conscious style, uses wild tempo to illustrate complicated tribe language and let the world hear Taiwan's most beautiful music, but the song is not subject to any genre. Dungi's musical taste is unique, and the singing skills are unique. It is always fatal to please all kinds of ethnic groups. Nowadays, you can feel the energy flowing around, and the moment will definitely be sucked into her world, and you Will become a believer in the princess.</div>`,
+汝妮有著古典鋼琴及舞蹈的底子，不侷限任何音樂類型，在奠下基礎後，2015年進入DJ生涯，不斷挑戰清楚建立出自己的聲響辨識，使她的音樂場景擁有獨特品味，表演中大膽拼湊自我意識的風格，被稱為公主的她很快就累積出一批死忠粉絲。<br/><br/>
+
+曾受邀於Australia、New Zealand、S2O Taiwan Songkran Music Festival演出、德國知名TechnoDJ Monoloc亞洲巡迴台灣站指定暖場DJ、與華人世界百大女DJ Cookie演出，以地下場景鍛鍊出的能量與爆發力說服音樂祭的舞客。`,
               slides: [
                 require("@/assets/img/program/4-3南濱奔日流/02-1汝妮.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/02-2汝妮.jpg"),
@@ -318,6 +316,7 @@ export default {
                   link: "https://www.instagram.com/dungisapor",
                 },
               ],
+              warn: "*實際出場時間將依日出狀況調整，演出順序不變。",
             },
           ],
         },
@@ -333,9 +332,13 @@ export default {
               content: `冉而山（Langasan）劇場，相應著阿美族聖山「奇冉而山（Cilangasan）」蘊存的神話與族群繁衍的發祥地的意義，本身亦為原舞者資深團員的團長阿道‧巴辣夫‧冉而山做為大海嘯神話中遷往 Cilangasan 一支的氏族，過去以來懷抱文化使命，透過樂舞復振，維繫原住民文化的細膩內涵。<br/><br/>
 <div class="en">The Langasan Theater took it’s name from a mountain in Hualien called Cilangasan. Adaw Palaf Langasan is the founder and mentor of the theatre group.  As legend has it, many years and many moons ago, he and his Langasan people came to Taiwan from the ocean in the waves. The LangasanTheater‘s performances incorporate music, dance, singing and story telling, all as a way of keeping traditional Aborigine culture alive.</div>`,
               slides: [
-                require("@/assets/img/program/4-3南濱奔日流/03-1冉而山劇場.jpg"),
+                require("@/assets/img/program/4-3南濱奔日流/03-01.jpg"),
+                require("@/assets/img/program/4-3南濱奔日流/03-02.jpg"),
+                require("@/assets/img/program/4-3南濱奔日流/03-03.jpg"),
+                require("@/assets/img/program/4-3南濱奔日流/03-04.jpg"),
               ],
               links: [],
+              warn: "*實際出場時間將依日出狀況調整，演出順序不變。",
             },
           ],
         },
@@ -361,6 +364,7 @@ export default {
                   link: "https://fidfca.com.tw",
                 },
               ],
+              warn: "*實際出場時間將依日出狀況調整，演出順序不變。",
             },
           ],
         },
@@ -380,6 +384,7 @@ export default {
                 require("@/assets/img/program/4-3南濱奔日流/05-3阿努.jpg"),
               ],
               links: [],
+              warn: "*實際出場時間將依日出狀況調整，演出順序不變。",
             },
           ],
         },
