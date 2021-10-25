@@ -326,7 +326,6 @@ export default {
 
       this.scrollPos = scrollLeft * 100;
 
-console.log(scrollLeft);
       if (scrollLeft >= 0 && scrollLeft <= 0.1337) {
         this.scrollStep = 0;
       } else if (scrollLeft >= 0.1337 && scrollLeft <= 0.2886) {
@@ -344,8 +343,6 @@ console.log(scrollLeft);
       } else if (scrollLeft >= 0.89745 && scrollLeft <= 1) {
         this.scrollStep = 7;
       }
-
-      console.log(this.scrollStep);
 
     })
   },
