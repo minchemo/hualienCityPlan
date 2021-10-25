@@ -82,21 +82,32 @@ export default {
 
           img.src = element.getAttribute("data-src");
         } else {
-          let loopFilmUrl = require('@/assets/img/home/loop.mp4')
+          // let loopFilmUrl = require('@/assets/img/home/loop.mp4')
 
-          const req = new XMLHttpRequest();
-          req.open('GET', loopFilmUrl, true);
-          req.responseType = 'blob';
-          req.onload = function () {
-            if (this.status === 200) {
-              const videoBlob = this.response;
-              const blobSrc = URL.createObjectURL(videoBlob);
-              element.src = blobSrc;
-              document.getElementById("main-v").play();
-              self.setProgress(eachPercentage);
-            }
+          // const req = new XMLHttpRequest();
+          // req.open('GET', loopFilmUrl, true);
+          // req.responseType = 'blob';
+          // req.onload = function () {
+          //   if (this.status === 200) {
+          //     const videoBlob = this.response;
+          //     const blobSrc = URL.createObjectURL(videoBlob);
+          //     element.src = blobSrc;
+          //     document.getElementById("main-v").play();
+          //     self.setProgress(eachPercentage);
+          //   }
+          // };
+          // req.send();
+
+          let loopFilmUrl = require('@/assets/img/home/loop.mp4');
+          var r = new XMLHttpRequest();
+          r.onload = function () {
+            element.src = loopFilmUrl;
+            document.getElementById("main-v").play();
+            self.setProgress(eachPercentage);
           };
-          req.send();
+          r.open("GET", loopFilmUrl);
+          r.responseType = "blob";
+          r.send();
         }
       });
     },
