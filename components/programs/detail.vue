@@ -19,7 +19,7 @@
               v-for="(tab, i) in $store.state.detailTab"
               :key="i"
               v-bind:class="activeTabName == tab.name ? 'active' : ''"
-              @click="scroll(`detail-item-${i}`)"
+              @click="scroll(`detail-item-${i}`, i, tab.name)"
             >
               {{ tab.name }}
             </div>
@@ -901,6 +901,8 @@ export default {
         container: ".detail-content-box",
         offset: 0,
         x: false,
+        onStart: this.tabScrollStart,
+        onDone: this.tabScrollDone,
       },
       tabScrollOptions: {
         container: ".tabs",
@@ -908,6 +910,8 @@ export default {
         x: true,
         y: false,
       },
+      tabScrolling: false,
+      lastTabKey: 0,
     };
   },
   computed: {
@@ -923,20 +927,39 @@ export default {
   methods: {
     visibilityChanged(isVisible, entry) {
       if (isVisible) {
-        this.activeTabName = entry.target.getAttribute("data-tab-name");
         const tabKey = entry.target.getAttribute("data-tab-key");
 
-        if (this.$device.isMobile) {
+
+        if (!this.$device.isMobile) {
+          this.activeTabName = entry.target.getAttribute("data-tab-name");
+        } else if (this.$device.isMobile && !this.tabScrolling) {
+          this.activeTabName = entry.target.getAttribute("data-tab-name");
           this.$scrollTo(
             document.getElementById("tabs-item-" + tabKey),
             100,
             this.tabScrollOptions
           );
         }
+
+
+        console.log(this.activeTabName);
       }
     },
-    scroll(id) {
+    tabScrollStart() {
+      this.tabScrolling = true;
+    },
+    tabScrollDone() {
+      this.tabScrolling = false;
+      this.$scrollTo(
+        document.getElementById("tabs-item-" + this.lastTabKey),
+        300,
+        this.tabScrollOptions
+      );
+    },
+    scroll(id, i, tabname) {
+      this.lastTabKey = i;
       this.$scrollTo(document.getElementById(id), 300, this.scrollOptions);
+      this.activeTabName = tabname;
     },
   },
   updated() {

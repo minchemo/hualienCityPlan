@@ -287,7 +287,7 @@
       }
       .introtitle {
         position: relative;
-        font-size: 1.2vw;
+        font-size: 10pt;
         font-weight: 400;
         margin-top: 5vw;
         z-index: 1;
