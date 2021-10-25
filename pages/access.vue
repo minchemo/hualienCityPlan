@@ -15,8 +15,20 @@
         </div>
       </div>
       <div class="map" data-aos="fade">
-        <img v-if="!$device.isMobile" src="@/assets/img/access/map.jpg" alt="" srcset="" v-lazy-load />
-        <img v-else src="@/assets/img/access/map_mo.jpg" alt="" srcset="" v-lazy-load />
+        <img
+          v-if="!$device.isMobile"
+          src="@/assets/img/access/map.jpg"
+          alt=""
+          srcset=""
+          v-lazy-load
+        />
+        <img
+          v-else
+          src="@/assets/img/access/map_mo.jpg"
+          alt=""
+          srcset=""
+          v-lazy-load
+        />
       </div>
     </div>
     <Footer />
@@ -109,8 +121,11 @@
       }
     }
     .map {
+      background-image: url("@/assets/img/access/map.jpg");
+      background-size: cover;
       img {
         width: 100%;
+        visibility: hidden;
       }
     }
   }
@@ -186,7 +201,8 @@
         }
       }
       .map {
-        padding: 0 5vw;
+        padding: 5vw 5vw;
+        background-image: url("@/assets/img/access/map_mo.jpg");
         img {
           width: 100%;
         }
@@ -204,7 +220,9 @@ export default {
           num: "01",
           color: "#6EB9EB",
           title: "花蓮<br/>日出大道",
-          content: this.$device.isMobile ? `主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。` : `<h3>主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。</h3>`,
+          content: this.$device.isMobile
+            ? `主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。`
+            : `<h3>主要活動區域為花蓮市自由街，自上海街到重慶路段，建議抵達市區後步行參與。</h3>`,
         },
         {
           num: "02",

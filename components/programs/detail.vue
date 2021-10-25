@@ -15,6 +15,7 @@
           <div class="tabs">
             <div
               class="item tabs-item"
+              :id="`tabs-item-${i}`"
               v-for="(tab, i) in $store.state.detailTab"
               :key="i"
               v-bind:class="activeTabName == tab.name ? 'active' : ''"
@@ -56,6 +57,7 @@
               intersection: intersection,
             }"
             :data-tab-name="data.name"
+            :data-tab-key="i"
           >
             <div class="info" v-show="!$device.isMobile">
               <div class="name">{{ data.name }}</div>
@@ -797,10 +799,12 @@ export default {
     visibilityChanged(isVisible, entry) {
       if (isVisible) {
         this.activeTabName = entry.target.getAttribute("data-tab-name");
+        const tabKey = entry.target.getAttribute("data-tab-key");
+        this.$scrollTo(document.getElementById('tabs-item-' + tabKey), 100, this.tabScrollOptions);
       }
     },
     scroll(id) {
-      console.log(document.getElementsByClassName('detail-content-box'));
+      console.log(document.getElementsByClassName("detail-content-box"));
       this.$scrollTo(document.getElementById(id), 300, this.scrollOptions);
     },
   },
