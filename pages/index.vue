@@ -12,7 +12,7 @@
           loop
           playsinline
           class="bg-video"
-          src="@/assets/img/home/loop.mp4"
+          src=""
         ></video>
       </div>
 

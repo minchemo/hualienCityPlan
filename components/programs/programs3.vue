@@ -169,6 +169,9 @@
         margin-top: 7vw;
         span {
           color: #8c8c8c;
+          &.small {
+            font-size: 9pt;
+          }
         }
       }
     }

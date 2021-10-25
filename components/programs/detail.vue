@@ -883,7 +883,7 @@ export default {
   data() {
     return {
       intersection: {
-        threshold: 0.4,
+        threshold: 0.3,
       },
       slickOptions: {
         slidesToShow: 1,

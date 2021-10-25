@@ -82,13 +82,32 @@ export default {
           img.src = element.getAttribute("data-src");
         } else {
 
-          element.addEventListener("progress", function () {
-            if (Math.round(element.buffered.end(0)) / Math.round(element.seekable.end(0)) === 1) {
-              
-            document.getElementById("main-v").play();
-            self.setProgress(eachPercentage);
+
+          let loopFilmUrl = require('@/assets/img/home/loop.mp4')
+          const req = new XMLHttpRequest();
+          req.open('GET', loopFilmUrl, true);
+          req.responseType = 'blob';
+          req.onload = function () {
+            if (this.status === 200) {
+              const videoBlob = this.response;
+              const blobSrc = URL.createObjectURL(videoBlob);
+              element.src = blobSrc;
+              document.getElementById("main-v").play();
+              self.setProgress(eachPercentage);
             }
-          }, false);
+          };
+          req.onerror = function () {
+          };
+          req.send();
+
+          // element.addEventListener("progress", function () {
+          //   console.log('loading');
+          //   if (Math.round(element.buffered.end(0)) / Math.round(element.seekable.end(0)) === 1) {
+          //     console.log('loaded');
+          //     document.getElementById("main-v").play();
+          //     self.setProgress(eachPercentage);
+          //   }
+          // }, false);
 
           // let loopFilmUrl = require('@/assets/img/home/loop.mp4');
           // var r = new XMLHttpRequest();
