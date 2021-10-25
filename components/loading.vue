@@ -19,11 +19,11 @@ export default {
   }),
   methods: {
     start() {
-      this.loading = true;
-
-      this.load();
-      this.$store.commit("forceCloseMobileMenu");
-      document.getElementsByTagName("html")[0].style.overflow = "hidden";
+      if (!this.loading) {
+        this.loader();
+        this.$store.commit("forceCloseMobileMenu");
+        document.getElementsByTagName("html")[0].style.overflow = "hidden";
+      }
     },
     finish() {
       this.loading = false;
@@ -36,7 +36,7 @@ export default {
         this.$refs.progress.style.width = this.progress + "%";
       }
 
-      if (this.progress >= 100) {
+      if (this.progress >= 95) {
         clearTimeout(this.timeoutInstance);
         setTimeout(() => {
           this.progress = 0;
@@ -48,7 +48,8 @@ export default {
         }, 500);
       }
     },
-    load() {
+    loader() {
+      this.loading = true;
       let elems = [];
       const images = document.getElementsByTagName("img");
       const video = document.getElementsByTagName("video");
@@ -60,7 +61,7 @@ export default {
         elems.push(item);
       });
 
-      const eachPercentage = Math.ceil(100 / elems.length);
+      const eachPercentage = 100 / elems.length;
 
       const self = this;
 
@@ -81,9 +82,8 @@ export default {
 
           img.src = element.getAttribute("data-src");
         } else {
-
-
           let loopFilmUrl = require('@/assets/img/home/loop.mp4')
+
           const req = new XMLHttpRequest();
           req.open('GET', loopFilmUrl, true);
           req.responseType = 'blob';
@@ -96,33 +96,11 @@ export default {
               self.setProgress(eachPercentage);
             }
           };
-          req.onerror = function () {
-          };
           req.send();
-
-          // element.addEventListener("progress", function () {
-          //   console.log('loading');
-          //   if (Math.round(element.buffered.end(0)) / Math.round(element.seekable.end(0)) === 1) {
-          //     console.log('loaded');
-          //     document.getElementById("main-v").play();
-          //     self.setProgress(eachPercentage);
-          //   }
-          // }, false);
-
-          // let loopFilmUrl = require('@/assets/img/home/loop.mp4');
-          // var r = new XMLHttpRequest();
-          // r.onload = function () {
-          //   document.getElementById("main-v").play();
-          //   self.setProgress(eachPercentage);
-          // };
-          // r.open("GET", loopFilmUrl);
-          // r.responseType = "blob";
-          // r.send();
         }
       });
     },
   },
-  mounted() { },
 };
 </script>
 <style lang="scss" scoped>

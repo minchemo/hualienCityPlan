@@ -591,9 +591,14 @@ export default {
   },
   mounted() {
     this.handleScroll();
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start();
-    });
+  },
+  created() {
+    if (process.client) {
+
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start();
+      });
+    }
   },
   beforeMount() {
     window.addEventListener("scroll", this.handleScroll);
