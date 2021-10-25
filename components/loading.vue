@@ -44,7 +44,7 @@ export default {
             this.$refs.loadingPage.classList.add("fadeOut");
           setTimeout(() => {
             this.finish();
-          }, 1000);
+          }, 800);
         }, 500);
       }
     },

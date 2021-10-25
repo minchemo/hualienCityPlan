@@ -590,6 +590,7 @@ export default {
     },
   },
   mounted() {
+    this.handleScroll();
     this.$nextTick(() => {
       this.$nuxt.$loading.start();
     });
