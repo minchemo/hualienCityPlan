@@ -52,7 +52,7 @@
       font-size: 1.2vw;
     }
     .subtitle {
-      font-size: 2vw;
+      font-size: 2.5vw;
       font-weight: 700;
     }
     .content {
@@ -288,7 +288,6 @@
 }
 </style>
 <script>
-
 export default {
   data() {
     return {
@@ -337,7 +336,12 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a1-1花式提問.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/discover193/",
+                },
+              ],
             },
           ],
         },
@@ -363,7 +367,12 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
                 require("@/assets/img/program/4-1日出未來河/a2-2白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-2花式提問.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/wgagriculture",
+                },
+              ],
             },
           ],
         },
@@ -394,7 +403,12 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a3-1家族.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/chiachienju",
+                },
+              ],
             },
           ],
         },
@@ -447,13 +461,24 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a5-1這原是一條河.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/bigwhitelili/",
+                },
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/lingli_tseng/",
+                },
+              ],
             },
           ],
         },
         {
           title: "Q6",
-          subtitle: this.$device.isMobile ? "非常態運動<br/>失序邊境" : "非常態運動-失序邊境",
+          subtitle: this.$device.isMobile
+            ? "非常態運動<br/>失序邊境"
+            : "非常態運動-失序邊境",
           tag: "什麼永恆不變？",
           color: "#C8E6FA",
           tab: [
@@ -481,7 +506,20 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
                 require("@/assets/img/program/4-1日出未來河/a6-1非常態4.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a6-1非常態5.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://reurl.cc/r1dbG1",
+                },
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/o.f.c_theatre/",
+                },
+                {
+                  type: "yt",
+                  link: "https://reurl.cc/NZjOAx",
+                },
+              ],
             },
             {
               name: "滑板表演",
@@ -497,7 +535,12 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
                 require("@/assets/img/program/4-1日出未來河/a6-2滑板1.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a6-2滑板2.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/pay_or_die/",
+                },
+              ],
             },
           ],
         },
@@ -520,7 +563,12 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a7-1鏡岕.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/profile.php?id=100044553908975",
+                },
+              ],
             },
           ],
         },
@@ -576,7 +624,16 @@ MīMī Lo，Allison Chu，Jonathan Chi，David Yang，Yuzhen Chen<br/><br/>
                 require("@/assets/img/program/4-1日出未來河/a8-2-4臺北劇場.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-2-5臺北劇場.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/taipeitheatrelab",
+                },
+                {
+                  type: "personal",
+                  link: "https://taipeitheatrelab.wordpress.com/",
+                },
+              ],
             },
             {
               name: "《臺北室外網球公開賽》在花蓮",
@@ -606,7 +663,12 @@ MīMī Lo，Allison Chu，Jonathan Chi，David Yang，Yuzhen Chen<br/><br/>
                 require("@/assets/img/program/4-1日出未來河/a8-3-2網球公開賽.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-3-3網球公開賽.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/wego5519/",
+                },
+              ],
             },
             {
               name: "廣場帶動跳",
@@ -672,7 +734,16 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
                 require("@/assets/img/program/4-1日出未來河/a8-7-1汝妮.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-7-2汝妮.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/djdungisapor",
+                },
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/dungisapor",
+                },
+              ],
             },
             {
               name: "回家跳舞",
@@ -705,7 +776,12 @@ Soundcloud：<a target="_blank" href="https://soundcloud.com/ankr_taiwan">soundc
                 require("@/assets/img/program/4-1日出未來河/a8-8-2Jesse.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-8-3Jesse.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "personal",
+                  link: "https://soundcloud.com/wenyunlo",
+                },
+              ],
             },
             {
               name: "東岸爵士重奏",
@@ -739,7 +815,7 @@ Soundcloud：<a target="_blank" href="https://soundcloud.com/ankr_taiwan">soundc
     };
   },
   methods: {},
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
 };
 </script>

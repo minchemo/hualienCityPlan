@@ -67,6 +67,23 @@
               </div>
               <div class="time" v-html="data.info"></div>
               <div class="warn" v-html="data.warn"></div>
+
+              <div
+                class="social-link"
+                v-if="data.links.length > 0"
+                v-show="!$device.isMobile"
+              >
+                <p>店家臉書 / IG連結</p>
+                <template v-for="(link, i) in data.links">
+                  <a :key="i" :href="link.link" target="_blank">
+                    <img
+                      :src="`@/assets/img/${link.type}.svg`"
+                      alt=""
+                      srcset=""
+                    />
+                  </a>
+                </template>
+              </div>
             </div>
             <div class="slide">
               <div class="program-carousel-wrapper" v-if="data.name != ''">
@@ -79,7 +96,16 @@
                   ></div>
                 </VueSlickCarousel>
               </div>
-              <div class="info" v-show="$device.isMobile">
+              <div
+                class="info"
+                v-show="$device.isMobile"
+                v-bind:class="{
+                  'has-status': data.status > 0 ,
+                  'right-social':
+                    $nuxt.$route.fullPath == '/program#1' ||
+                    $nuxt.$route.fullPath == '/program#3',
+                }"
+              >
                 <div class="name">{{ data.name }}</div>
                 <div class="enname">{{ data.enname }}</div>
                 <div class="creator" v-if="data.creator">
@@ -87,6 +113,34 @@
                 </div>
                 <div class="time" v-html="data.info"></div>
                 <div class="warn" v-html="data.warn"></div>
+
+                <div class="social-link" v-if="data.links.length > 0">
+                  <template v-for="(link, i) in data.links">
+                    <a :key="i" :href="link.link" target="_blank">
+                      <img
+                        :src="require(`@/assets/img/${link.type}.svg`)"
+                        alt=""
+                        srcset=""
+                      />
+                    </a>
+                  </template>
+                </div>
+
+                <div
+                  class="other-title"
+                  v-show="$nuxt.$route.fullPath == '/program#4'"
+                >
+                  品牌故事
+                </div>
+
+                <div
+                  class="question"
+                  v-if="data.status > 0"
+                  v-show="$device.isMobile"
+                >
+                  <div v-if="data.status == 2">問－答</div>
+                  <div v-else-if="data.status == 1">問</div>
+                </div>
               </div>
               <div
                 ref="content"
@@ -95,22 +149,13 @@
                 v-html="data.content"
               ></div>
             </div>
-            <div class="question" v-if="data.status > 0">
+            <div
+              class="question"
+              v-if="data.status > 0"
+              v-show="!$device.isMobile"
+            >
               <div v-if="data.status == 2">問-答</div>
               <div v-else-if="data.status == 1">問</div>
-            </div>
-            <div class="social-link" v-if="data.links.length > 0">
-              <p>店家臉書 / IG連結</p>
-              <template v-for="(link, i) in data.links">
-                <a
-                  :key="i"
-                  :href="link.link"
-                  target="_blank"
-                  v-if="link.type == 'fb'"
-                >
-                  <img src="@/assets/img/fb.svg" alt="" srcset="" />
-                </a>
-              </template>
             </div>
           </div>
         </template>
@@ -408,12 +453,14 @@
         width: 100%;
         position: relative;
         align-items: flex-start;
-        margin-bottom: 3vw;
+        margin-bottom: 0;
         border-top: 1px solid #262626;
         .info {
           padding: 2vw 1.5vw 0 2vw;
           box-sizing: border-box;
           width: 35%;
+          height: 47vw;
+          overflow-y: hidden;
           .name {
             font-size: 1.8vw;
             font-weight: 900;
@@ -453,6 +500,7 @@
             font-weight: 400;
             line-height: 2;
             letter-spacing: 0.1vw;
+            padding-bottom: 5vw;
             &::-webkit-scrollbar {
               width: 1px;
             }
@@ -558,6 +606,9 @@
       background: #fff;
       overflow-y: scroll;
       overflow-x: hidden;
+      &::-webkit-scrollbar {
+        width: 1px;
+      }
 
       .tab {
         position: sticky;
@@ -648,7 +699,8 @@
             padding: 5vw 10vw;
             box-sizing: border-box;
             width: 100%;
-            margin-bottom: 10vw;
+            margin-bottom: 5vw;
+            height: auto;
             .name {
               font-size: 18pt;
             }
@@ -663,17 +715,41 @@
               padding-bottom: 2vw;
             }
             .time {
-              font-size: 1vw;
-              line-height: 2;
-              letter-spacing: 1px;
+              font-size: 9pt;
             }
             .warn {
-              color: #8c8c8c;
-              font-size: 1vw;
-              line-height: 2;
+              font-size: 9pt;
               margin-top: 0.5vw;
             }
 
+            .social-link {
+              position: relative;
+              left: 0;
+              padding: 2vw 0;
+              a {
+                margin-left: 0;
+                img {
+                  height: 20pt;
+                }
+              }
+            }
+
+            .other-title {
+              font-size: 10pt;
+              margin-top: 16pt;
+            }
+            .question {
+              position: absolute;
+              right: 10vw;
+              font-size: 30pt;
+              top: 6vw;
+              left: unset;
+              writing-mode: vertical-rl;
+              div {
+                color: #c8e6fa !important;
+                font-weight: 200;
+              }
+            }
             &:after {
               content: "";
               width: 80vw;
@@ -682,6 +758,31 @@
               position: absolute;
               bottom: 0;
               left: 10vw;
+            }
+
+            &.has-status {
+              padding-right: 20vw;
+              margin-bottom: 5vw;
+            }
+            &.right-social {
+              padding-right: 20vw;
+              margin-bottom: 10vw;
+              .social-link {
+                position: absolute;
+                right: 10vw;
+                left: unset;
+                top: 4pt;
+                padding: 5vw 0;
+                align-items: flex-start;
+                flex-direction: column;
+                a {
+                  margin-bottom: 7pt;
+                  margin-left: 0;
+                  img {
+                    height: 20pt;
+                  }
+                }
+              }
             }
           }
           .slide {
@@ -696,17 +797,6 @@
               &::-webkit-scrollbar {
                 width: 1px;
               }
-            }
-          }
-
-          .question {
-            position: absolute;
-            left: 2vw;
-            font-size: 7vw;
-            top: 23vw;
-            div {
-              color: #c8e6fa !important;
-              font-weight: 200;
             }
           }
 
@@ -800,11 +890,14 @@ export default {
       if (isVisible) {
         this.activeTabName = entry.target.getAttribute("data-tab-name");
         const tabKey = entry.target.getAttribute("data-tab-key");
-        this.$scrollTo(document.getElementById('tabs-item-' + tabKey), 100, this.tabScrollOptions);
+        this.$scrollTo(
+          document.getElementById("tabs-item-" + tabKey),
+          100,
+          this.tabScrollOptions
+        );
       }
     },
     scroll(id) {
-      console.log(document.getElementsByClassName("detail-content-box"));
       this.$scrollTo(document.getElementById(id), 300, this.scrollOptions);
     },
   },

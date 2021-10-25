@@ -101,26 +101,32 @@
       </div>
 
       <div class="social-button">
-        <a href="">
+        <a href="https://www.facebook.com/hualien.festival" target="_blank">
           <img src="@/assets/img/fb.svg" alt="" srcset="" />
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/hualien.festival" target="_blank">
           <img src="@/assets/img/ig.svg" alt="" srcset="" />
         </a>
-        <a href="">
+        <a
+          href="https://www.youtube.com/user/hlcultural/featured"
+          target="_blank"
+        >
           <img src="@/assets/img/yt.svg" alt="" srcset="" />
         </a>
       </div>
     </div>
 
     <div class="social-button" v-show="!$device.isMobile">
-      <a href="">
+      <a href="https://www.facebook.com/hualien.festival" target="_blank">
         <img src="@/assets/img/fb.svg" alt="" srcset="" />
       </a>
-      <a href="">
+      <a href="https://www.instagram.com/hualien.festival" target="_blank">
         <img src="@/assets/img/ig.svg" alt="" srcset="" />
       </a>
-      <a href="">
+      <a
+        href="https://www.youtube.com/user/hlcultural/featured"
+        target="_blank"
+      >
         <img src="@/assets/img/yt.svg" alt="" srcset="" />
       </a>
     </div>

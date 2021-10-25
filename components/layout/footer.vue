@@ -16,19 +16,31 @@
         <div class="right">
           <div class="link">
             <h2>LINK</h2>
-            <a class="item">
+            <a
+              class="item"
+              href="https://www.facebook.com/hualien.festival"
+              target="_blank"
+            >
               <img src="@/assets/img/fb.svg" alt="" srcset="" />
             </a>
-            <a class="item">
+            <a
+              class="item"
+              href="https://www.instagram.com/hualien.festival"
+              target="_blank"
+            >
               <img src="@/assets/img/ig.svg" alt="" srcset=""
             /></a>
-            <a class="item">
+            <a
+              class="item"
+              href="https://www.youtube.com/user/hlcultural/featured"
+              target="_blank"
+            >
               <img src="@/assets/img/yt.svg" alt="" srcset=""
             /></a>
           </div>
           <div class="link">
             <h2>google map</h2>
-            <a class="item">
+            <a class="item" target="_blank" href="https://www.google.com/maps/d/u/0/edit?mid=1bFwTEbDMCowCsWwZBAa1GbiDlIOvSTf6&ll=23.91008567818818%2C121.55307569999998&z=12">
               <img src="@/assets/img/gmap.svg" alt="" srcset=""
             /></a>
           </div>

@@ -15,7 +15,11 @@
 
           日出開幕儀式｜<span>11.20（六）5:00-7:30</span><br />
           日出閉幕儀式｜<span>11.21（日）5:00-7:30</span><br />
-          <span>＊實際場次時間將依當日天候狀況調整，<br v-show="$device.isMobile" />請以現場流程為主</span>
+          <span
+            >＊實際場次時間將依當日天候狀況調整，<br
+              v-show="$device.isMobile"
+            />請以現場流程為主</span
+          >
         </p>
       </div>
 
@@ -58,7 +62,7 @@
       font-size: 1.2vw;
     }
     .subtitle {
-      font-size: 2vw;
+      font-size: 2.5vw;
       font-weight: 700;
     }
     .content {
@@ -299,16 +303,21 @@ export default {
               content: `
 有著古典鋼琴及舞蹈的底子，不侷限任何音樂類型，在奠下基礎後，2015年進入DJ生涯，不斷挑戰清楚建立出自己的聲響辨識，使她的音樂場景擁有獨特品味，表演中大膽拼湊自我意識的風格，被稱為公主的她很快就累積出一批死忠粉絲。曾受邀於Australia、New Zealand、S2O Taiwan Songkran Music Festival演出、德國知名TechnoDJ Monoloc亞洲巡迴台灣站指定暖場DJ、與華人世界百大女DJ Cookie演出，以地下場景鍛鍊出的能量與爆發力說服音樂祭的舞客。來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
 
-<div class="en">DUNGI SAPOR is an indigenous mix of Taiwan indigenous and Maori. Self-conscious style, uses wild tempo to illustrate complicated tribe language and let the world hear Taiwan's most beautiful music, but the song is not subject to any genre. Dungi's musical taste is unique, and the singing skills are unique. It is always fatal to please all kinds of ethnic groups. Nowadays, you can feel the energy flowing around, and the moment will definitely be sucked into her world, and you Will become a believer in the princess.</div><br/><br/>
-
-<a href="https://www.facebook.com/djdungisapor" target="_blank">https://www.facebook.com/djdungisapor</a>
-<a href="https://www.instagram.com/dungisapor" target="_blank">https://www.instagram.com/dungisapor</a>
-`,
+<div class="en">DUNGI SAPOR is an indigenous mix of Taiwan indigenous and Maori. Self-conscious style, uses wild tempo to illustrate complicated tribe language and let the world hear Taiwan's most beautiful music, but the song is not subject to any genre. Dungi's musical taste is unique, and the singing skills are unique. It is always fatal to please all kinds of ethnic groups. Nowadays, you can feel the energy flowing around, and the moment will definitely be sucked into her world, and you Will become a believer in the princess.</div>`,
               slides: [
                 require("@/assets/img/program/4-3南濱奔日流/02-1汝妮.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/02-2汝妮.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/djdungisapor",
+                },
+                {
+                  type: "ig",
+                  link: "https://www.instagram.com/dungisapor",
+                },
+              ],
             },
           ],
         },
@@ -340,15 +349,18 @@ export default {
               name: "原舞者",
               info: `場次｜11/20（六）、 11/21（日）<br>時間｜06:15 - 06:40`,
               content: `
-自1991年成立，至今已滿30年，透過田野採集的方式向部落請益，製作出不同族群的樂舞製作，也保存記錄美麗且珍貴的文化資產。除了樂舞展演，也透過教學、研習、創作及出版等多元的方式，持續推廣原住民樂舞文化。原舞者相信，只要部落的篝火不滅，原舞者必會在文化傳承這條路繼續走下去。<br/><br/>
-
-<a href="https://fidfca.com.tw/index.php" target="_blank">https://fidfca.com.tw/index.php</a>`,
+自1991年成立，至今已滿30年，透過田野採集的方式向部落請益，製作出不同族群的樂舞製作，也保存記錄美麗且珍貴的文化資產。除了樂舞展演，也透過教學、研習、創作及出版等多元的方式，持續推廣原住民樂舞文化。原舞者相信，只要部落的篝火不滅，原舞者必會在文化傳承這條路繼續走下去。`,
               slides: [
                 require("@/assets/img/program/4-3南濱奔日流/04-1原舞者.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/04-2原舞者.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/04-3原舞者.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "personal",
+                  link: "https://fidfca.com.tw",
+                },
+              ],
             },
           ],
         },
@@ -376,7 +388,7 @@ export default {
   },
   components: {},
   methods: {},
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
 };
 </script>

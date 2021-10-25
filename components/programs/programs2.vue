@@ -2,8 +2,11 @@
   <div>
     <div class="program2">
       <div class="program-title">
-        <h2 class="title">花創園區</h2>
+        <h2 class="title">花蓮文化創意產業園區</h2>
         <div class="subtitle">花創火溫酒</div>
+        <div class="main-speaker">
+          <span>主持</span>林清盛（太魯閣之音主持人）
+        </div>
         <p class="content">
           這是舊時代的酒廠園區，古蹟演進成為文創基地，日治時期的屋舍建築，悠緩的氣氛依舊，有人愛上<br
             v-show="!$device.isMobile"
@@ -132,13 +135,25 @@
       font-size: 1.2vw;
     }
     .subtitle {
-      font-size: 2vw;
+      font-size: 2.5vw;
       font-weight: 700;
     }
     .content {
       font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
+    }
+    .main-speaker {
+      font-weight: bold;
+      font-size: 0.8vw;
+      margin-top: 1vw;
+      margin-bottom: 2vw;
+      span {
+        margin-right: 1vw;
+        border: 1px solid #262626;
+        border-radius: 100%;
+        padding: 0.2vw 1vw;
+      }
     }
   }
 
@@ -269,6 +284,18 @@
         font-size: 9.5pt;
         text-align: justify;
         margin-top: 7vw;
+      }
+      .main-speaker {
+        font-weight: bold;
+        font-size: 9pt;
+        margin-top: 10pt;
+        margin-bottom: 8pt;
+        span {
+          margin-right: 8pt;
+          border: 1px solid #262626;
+          border-radius: 100%;
+          padding: 2pt 6pt;
+        }
       }
     }
 
@@ -510,7 +537,6 @@ export default {
     fitText() {
       const name = this.$refs.speakername;
 
-
       if (name.length > 0) {
         name.forEach((item) => {
           let text = item.textContent.split("");
@@ -527,7 +553,7 @@ export default {
       }
     },
   },
-  created() { },
+  created() {},
   mounted() {
     this.fitText();
   },

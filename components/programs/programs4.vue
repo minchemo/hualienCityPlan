@@ -75,7 +75,7 @@
       font-size: 1.2vw;
     }
     .subtitle {
-      font-size: 2vw;
+      font-size: 2.5vw;
       font-weight: 700;
     }
     .content {

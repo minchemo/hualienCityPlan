@@ -75,7 +75,7 @@
           />
         </div>
         <h2 class="title margin-fix large">活動主題｜模擬富民</h2>
-        <div class="subtitle mobile">
+        <div class="subtitle mobile small">
           報名場次｜11/20、11/21 ( 09:00 - 13:00 )<br />
           地點｜豐田村
         </div>
@@ -131,9 +131,13 @@
     }
     .subtitle {
       position: relative;
-      font-size: 2vw;
+      font-size: 2.5vw;
       font-weight: 700;
       z-index: 1;
+      &.small {
+        font-size: 1vw;
+        line-height: 2;
+      }
     }
     .introtitle {
       position: relative;
@@ -143,6 +147,8 @@
       z-index: 1;
     }
     .content {
+      position: relative;
+      z-index: 1;
       font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
@@ -166,7 +172,7 @@
         font-size: 1vw;
         text-align: right;
         line-height: 2;
-        z-index: 1;
+        z-index: 2;
         p {
           color: #dcc8eb;
         }
