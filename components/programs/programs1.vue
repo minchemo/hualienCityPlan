@@ -47,7 +47,7 @@
   margin: 0 auto;
   margin-bottom: 5vw;
   .program-title {
-    margin: 5vw 0;
+    margin: 8vw 0;
     .title {
       font-size: 1.2vw;
     }
@@ -69,7 +69,7 @@
         height: 1px;
         background: #262626;
         left: 50%;
-        bottom: -5vw;
+        bottom: -7vw;
         transform: translateX(-50%);
       }
     }
@@ -121,11 +121,12 @@
         position: relative;
         z-index: 1;
         transition: all 0.2s;
-        font-size: 1vw;
+        font-size: .9vw;
+        color: #4d4d4d;
       }
       .program-item-subtitle {
         position: relative;
-        font-size: 1vw;
+        font-size: 1.1vw;
         margin-top: 0.5vw;
         padding-right: 1.1vw;
         transition: all 0.2s;
@@ -182,8 +183,8 @@
             position: absolute;
             font-weight: 400;
             left: 50%;
-            transform: translate(-50%, 110%);
-            font-size: 1vw;
+            transform: translate(-50%, 140%);
+            font-size: .9vw;
           }
         }
       }
@@ -355,7 +356,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               name: "白浪海嘯吃菜吧",
               enname: "Vegetables Everyday",
               creator: "走路草農藝團",
-              info: `11/19(五)-11/21(日)1000-2200<br/>作品互動｜1600-2200<br/>地點｜自由街X南京街-成功街`,
+              info: `11/19(五)-11/21(日) 1000-2200<br/>作品互動｜1600-2200<br/>地點｜自由街X南京街-成功街`,
               content: `「白浪」有海的意像，也是原住民朋友稱呼漢人時所使用的名稱；「海嘯吧」很可怕，但其實是原住民朋友，對於「還是要吧」的這四個字連音的諧音讀字。「白浪海嘯吃菜吧」是走路草以「白浪」身份，針對地方常見的「野菜」發起的現地計劃，除邀請參與的朋友，認識不同的「野菜」，也告訴來此的「白浪」們，還是要吃地方的野菜吧！本計劃包含從臺灣的蔬果紙箱出發，與當地的媽媽們合作，創造出花蓮特選的野菜紙箱，另外透過動力裝置與作物種子的結合，創造出在海聽濤的聲響，也呼應著過去曾經可以看到溪流的日出大道。<br/><br/>
 
 <b>｜走路草農／藝團成員</b><br/>
@@ -383,9 +384,9 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
           tab: [
             {
               name: "家族",
-              enname: "Faimily",
+              enname: "Family",
               creator: "賈茜茹",
-              info: `11/19(五)-11/21(日)1000-2200<br/>展演｜1730-1830<br/>地點｜自由街X成功街-福建街`,
+              info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1730-1830<br/>地點｜自由街X成功街-福建街`,
               content: `每個家都會有一個客廳，每個客廳都有屬於自己的故事。離不開的是不想離開還是不能離開？回來的是想回來還是不得不回來？在這一座山、一片海、一條消失的溪流之下，將發生一個家族的聚散，一通沒人接聽的電話，一場沒有邊界的演出。<br/><br/>
 
 使用當地的二手傢俱，拼製一座可多面向觀看的架高客廳與如橋樑般的長桌，回應溝仔尾過去建築在河床上房舍和福住橋的形象。與戲劇治療師合作，透過表演者的引導，讓觀眾成為這個混聚客廳裡的短暫家人。其中特別使用柯智豪所提供的作品「國王的驢耳朵」中孩子們的童言童語，放置在裝置中，為這次的作品拉出一個更純粹的情境，回應花蓮的令人感到美好的一部分。<br/><br/>
@@ -423,13 +424,13 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               name: "校準：路徑",
               enname: "Calibrate: Path",
               creator: "謝佑承 王中原",
-              info: `11/19(五)-11/21(日)1000-2200<br/>地點｜自由街X成功街-福建街`,
+              info: `11/19(五)-11/21(日) 1000-2200<br/>地點｜自由街X成功街-福建街`,
               content: `日出大道的地理位置，往前往後延伸連接，分別連接兩個頂點：山與海的兩邊，縱切從山至海的路線，依著每個人的方向，路線因此有了各自不同的起點與終點。如果路徑的兩端永恆不變，通道將帶我們去哪邊？<br/><br/>
 
 《校準：路徑》運用日出大道棋盤般的場域，以螢光膠帶放大至整個戶外的景觀中。在路徑之上，它既揉合了城市臨時與永久性的街景改造，同時也引領觀者的眼睛橫渡「此刻」與「未來」的探索場景，相較數位技術的便捷與快速，希望能透過人工、勞動所銘刻的身體感覺與轉換，回應當下另一種感覺重置與想像時空。<br/><br/>
 
 <b>創作概念：謝佑承</b><br/>
-<b>協同創作：王中原</b><br/>
+<b>協同創作：王中原</b><br/><br/>
 
 謝佑承畢業於國立臺北藝術大學新媒體藝術學系碩士班。創作常以現場製作、影像、物質材料等不同形式與媒材，發展以光為存在辯證的系列作品。王中原畢業於倫敦大學金匠學院設計研究所，作品媒材多使用裝置與聲音等複合形式，觀察生態系中人、生物、環境間的互動與影響。<br/><br/>
 
@@ -453,7 +454,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               name: "這原是一條河",
               enname: "There Is A River",
               creator: "曾令理",
-              info: `11/19(五)-11/21(日)1000-2200<br/>互動｜每10分鐘霧氣施放<br/>
+              info: `11/19(五)-11/21(日) 1000-2200<br/>互動｜每10分鐘霧氣施放<br/>
 地點｜自由街X廣東街-重慶路`,
               content: `日出香榭大道的下方是花蓮居民口中的溝仔尾，承襲著過去沿岸的歷代風華。 城市的發展有著許多複雜綜合的判斷，有些留下成為永恆的日常，有些在不得已中逐漸被淡忘。藝術家在此使用鋪面縫隙作為引導，定時施放向上竄升的水霧，讓來往的人在水氣瀰漫間想起下方伴隨著花蓮的河。<br/><br/>
 
@@ -488,7 +489,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               name: "非常態運動-失序邊境 （選段演出）",
               enname: "Helter Skelter – Tilted Border",
               creator: "失序場團隊",
-              info: `11/19(五)-11/21(日)1000-2200<br/>展演｜1700-1800、1930-2030<br/>地點｜自由街X重慶路`,
+              info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1700-1800、1930-2030<br/>地點｜自由街X重慶路`,
               content: `<span class="highlight">*本節目為臺中國家歌劇院2021新藝計畫作品，前期發展由財團法人國家文化藝術基金會贊助。</span><br/><br/>
 
 藉著打造類似蹺蹺板的大型金屬裝置及帶有電磁鐵的身上配件，為演出創造一個反重力的「不穩定場域」。在充滿不確定性的環境下，受過身體訓練的3位表演者不再能如過往自主控制身體，更需在與裝置牽引、拉扯的過程中轉換肢體運用方式，找尋各自、彼此及與裝置間的生存之道。《非常態運動-失序邊境》反映著當環境不再以過去的規則進行、所有的秩序被打破時，彼此之間的情感與關係開始在混沌失序的狀態中產生變化、相互衝突，直到新的秩序與平衡重新被建構。然而失序的僅是眼前的環境紛 擾或世界變遷，還是內心深處最親近的自己?<br/><br/><br/>
@@ -527,7 +528,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               name: "滑板表演",
               enname: "Freestyle Skate",
               creator: "滑板團隊",
-              info: `11/19(五)-11/21(日)1530-1645<br/>地點｜自由街X重慶路`,
+              info: `11/19(五)-11/21(日) 1530-1645<br/>地點｜自由街X重慶路`,
               content: `滑板極限運動表演，利用現有的道具，做出地板招式以及卡招的運用。<br/><br/>
 
 <b>｜花蓮在地的滑手</b><br/>
@@ -555,8 +556,8 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
             {
               name: "鏡岕",
               enname: "Between Reflections",
-              creator: "豪華朗機工LuxuryLogico",
-              info: `11/19(五)-11/21(日)1000-2200<br/>地點｜自由街X重慶路`,
+              creator: "豪華朗機工 LuxuryLogico",
+              info: `11/19(五)-11/21(日) 1000-2200<br/>地點｜自由街X重慶路`,
               content: `利用募集回收鏡子來反射大道上的一切，包含天地。象徵這個世界是無限循環，映照即看見，所有的一切都在裝置理集聚與擴散，一如這個城市承載著人們的相聚與離合，全都在這夢境般的反射之中，而我們從這裡對未來展開提問。<br/><br/>
 
 <b>｜豪華朗機工</b><br/>
@@ -585,7 +586,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               enname: "We Ask You Answer Me",
               creator:
                 "大人問到底團隊（羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁）",
-              info: `11/19(五)-11/21(日)1630-1730、1830-1930<br/><br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
+              info: `11/19(五)-11/21(日) 1630-1730、1830-1930<br/><br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
               content: `如果你這樣問我，我會那樣回答你。<br/><br/>
 
 問題與答案可以同時存在，卻也無形交織著，<br/>
@@ -640,9 +641,9 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
             },
             {
               name: "《臺北室外網球公開賽》在花蓮",
-              enname: "《Taipei Schwaiwanqiu Open》in Hualien",
+              enname: this.$device.isMobile ? "《Taipei Schwaiwanqiu Open》<br/>in Hualien":"《Taipei Schwaiwanqiu Open》in Hualien",
               creator: "走問團：張汶皓",
-              info: `11/19(五)-11/20(六)1815-1915、2045-2145<br/>11/21(日)1815-1915<br/>地點｜自由街X重慶路<br/>（活動時間內隨機出現）`,
+              info: `11/19(五)-11/20(六) 1815-1915、2045-2145<br/>11/21(日) 1815-1915<br/>地點｜自由街X重慶路`,
               content: `我們熱愛網球，就像愛著花蓮這塊土地一樣愛。<br/><br/>
 
 
@@ -671,10 +672,10 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               ],
             },
             {
-              name: "Charlie的叭叭洗澎澎：城市廣場舞",
+              name: "Charlie的叭叭洗澎澎：<br/>城市廣場舞",
               enname: "",
               creator: "說書團：法咪咪",
-              info: `11/20(六)1900-1910、2100-2110<br/>地點｜自由街X福建街`,
+              info: `11/20(六) 1900-1910、2100-2110<br/>地點｜自由街X福建街`,
               content: `日出大道上，舞動廣場舞準時齊聲齊動，踏上你的步伐一起跳跳跳。法咪咪跨界與怪奇饒舌歌手春艷合作，推出單曲洗腦歌曲「Charlie的叭叭洗澎澎」，將在花蓮城空藝術節中，於日出大道上與好萊塢歌舞協會一同帶來城市快閃廣場舞！<br/><br/>
 
 <b>｜法咪咪</b><br/>
@@ -691,7 +692,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               name: "遊俠說書",
               enname: "",
               creator: "說書團：黃懷德",
-              info: `11/19(五)-11/21(日)1730-1830、1930-2030<br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
+              info: `11/19(五)-11/21(日) 1730-1830、1930-2030<br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
               content: `俠客/說書人，扮演花蓮曾經有的英雄式角色，遊走在大道上與展覽或民眾互動，也藉此去讓人記憶花蓮曾經有的人與故事。<br/><br/>
 
 <b>｜黃懷德</b><br/>
@@ -706,7 +707,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               name: "西服店的日常與盛況",
               enname: "Daily Life of the Suite Store",
               creator: "說書團：三分生劇團",
-              info: `11/20(六)-11/21(日)1630-1720<br/>地點｜明義街X上海街→往「明星洋服店」`,
+              info: `11/20(六)-11/21(日) 1630-1720<br/>地點｜明義街X上海街→往「明星洋服店」`,
               content: `昔日溝仔尾的街上有菜市場、醫生館、戲院、西服店......，日常的西服店裡，老闆教導徒弟學藝態度，傳授他們真心面對手藝學習。每日有各式客人前來店裡，需求各有不同，有外來客到本地做西服、也有因結婚、升官、工作等需求來做西服，那個年頭的西服榮景蓬勃非凡......。<br/><br/>
 
 <b>｜三分生劇團</b><br/>
@@ -723,7 +724,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               enname: "",
               creator: "音樂團：DJ 汝妮",
               info: `11/19(五)2030-2130<br/>
-11/21(日)2030-2130<br/>
+11/21(日) 2030-2130<br/>
 地點｜自由街X成功街-福建街`,
               content: `來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
 
@@ -751,7 +752,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               name: "回家跳舞",
               enname: "Home Party",
               creator: "音樂團：Jesse Chen、Gazer、Venci",
-              info: `11/20(六)1630-2100<br/>
+              info: `11/20(六) 1630-2100<br/>
 地點｜自由街X成功街-福建街`,
               content: `青年外流，壯年回流，重回山海夕陽與夜幕洋流之間，在陌生卻熟悉的海風中，跳舞慶祝。<br/><br/>
 
@@ -763,7 +764,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
 雙好設計2byWu&Chen與派對策劃單位Pleasure Always Brings Pain (PABP) 共同主理人之一。派對風格深受柏林場景影響，近年陸續邀請英國重砲製作人Perc、柏林獨立派對主理人Henning Baer（Grounded Theory) 、柏林Herrensauna派對創始DJ之一MCMLXXXV、 奧地利Meat Market主腦Gerald VDH、柏林新鋭DJ製作人Parallx、Introversion、Emika、Daniela La Luz以及柏林龐克教父Mark Reeder來臺並同台演出。<br/><br/>
 
 <b>｜GAZER (Gary Chen)</b> <br/>
-來自台北，成長於90橫跨千禧世代，於2013年開始演出。喜愛飽滿低頻中帶有自然大氣氛圍的Techno音樂風格，擅長融合自然及工業聲響來編排舞曲，營造出穩健的低音及飽和的空間感，並在催眠節奏中帶出持續流動的情緒變化。<br/><br/>
+來自台北，成長於90橫跨千禧世代，於2013年開始演出。喜愛飽滿低頻中帶有自然大氣氛圍的Techno音樂風格，擅長融合自然及工業聲響來編排舞曲，營造出穩健的低音及飽和的空間感，並在催眠節奏中帶出持續流動的情緒變化。2020年創立【泊人ANKR】，為從在地自然觀點出發的音樂及活動品牌。<br/><br/>
 
 <b>｜Venci</b><br/>
 出身自台東、生活於台北，Techno是她生活中不可或缺的元素。Techno之於Venci，就如同飲食之於人類。與故鄉台東感情深厚，希望更多人聽見臺灣DJ文化的底蘊，也讓東臺灣有機會享受優雅的電音場景。目前為派對單位Evaporate成員之一，並以推廣臺灣電音文化為核心，希望透過電子音樂，讓聽眾更多元、年齡更廣泛。`,
@@ -784,7 +785,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
               name: "東岸爵士重奏",
               enname: "East Coast Jazz Ensemble",
               creator: "音樂團：許元耀、王佳祥、李成員、丁羅紀晴、陳健文",
-              info: `表演｜11/19(五)-11/21(日)1630-1730<br/>地點｜自由街X福建街<br/>
+              info: `表演｜11/19(五)-11/21(日) 1630-1730<br/>地點｜自由街X福建街<br/>
 （活動時間內隨機出現）`,
               content: `由薩克斯風、小號、吉他、鋼琴、貝斯所組成的東岸爵士重奏團，要用藍調、搖擺、拉丁、巴薩諾瓦......等不同風格的爵士經典曲目來分享我們對於花蓮生活中的美好。<br/><br/>
 
@@ -813,7 +814,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
     };
   },
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>

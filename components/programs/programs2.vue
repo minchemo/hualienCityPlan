@@ -130,7 +130,7 @@
   margin: 0 auto;
   margin-bottom: 5vw;
   .program-title {
-    margin: 5vw 0;
+    margin: 8vw 0;
     .title {
       font-size: 1.2vw;
     }
@@ -230,7 +230,7 @@
             font-size: 1vw;
             font-weight: 400;
             span {
-              font-weight: 900;
+              font-weight: bold;
             }
           }
           .time {

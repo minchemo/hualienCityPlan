@@ -128,7 +128,7 @@
   margin: 0 auto;
   margin-bottom: 5vw;
   .program-title {
-    margin: 5vw 0;
+    margin: 8vw 0;
     .title {
       position: relative;
       font-size: 1.2vw;

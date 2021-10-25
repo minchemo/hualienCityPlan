@@ -8,9 +8,12 @@
         <div
           class="tab-title"
           v-bind:class="{ single: $store.state.detailTab.length == 1 }"
-          v-html="$store.state.currentDetailTitle.replaceAll('<br/>', ' ')"
-        >
-        </div>
+          v-html="
+            $store.state.currentDetailTitle.length > 0
+              ? $store.state.currentDetailTitle.replaceAll('<br/>', ' ')
+              : ''
+          "
+        ></div>
         <template v-if="$store.state.detailTab.length > 1">
           <div class="tabs">
             <div
@@ -20,9 +23,8 @@
               :key="i"
               v-bind:class="activeTabName == tab.name ? 'active' : ''"
               @click="scroll(`detail-item-${i}`, i, tab.name)"
-            >
-              {{ tab.name }}
-            </div>
+              v-html="tab.name.replaceAll('<br/>', '')"
+            ></div>
           </div>
         </template>
         <div class="close" @click="$store.commit('closeDetail')">
@@ -48,7 +50,7 @@
           <div
             class="detail-item"
             :id="`detail-item-${i}`"
-            :key="i"
+            :key="data.name"
             v-bind:class="
               $store.state.detailTab.length > 1 ? 'multiple' : 'single'
             "
@@ -60,20 +62,16 @@
             :data-tab-key="i"
           >
             <div class="info" v-show="!$device.isMobile">
-              <div class="name">{{ data.name }}</div>
+              <div class="name" v-html="data.name"></div>
               <div class="enname">{{ data.enname }}</div>
               <div class="creator" v-if="data.creator">
                 {{ data.creator }}
               </div>
-              <div class="time" v-html="data.info"></div>
-              <div class="warn" v-html="data.warn"></div>
-
               <div
                 class="social-link"
                 v-if="data.links.length > 0"
                 v-show="!$device.isMobile"
               >
-                <p></p>
                 <template v-for="(link, i) in data.links">
                   <a :key="i" :href="link.link" target="_blank">
                     <img
@@ -84,6 +82,18 @@
                   </a>
                 </template>
               </div>
+              <div
+                class="time"
+                v-html="data.info"
+                v-bind:class="{
+                  'border-top': $nuxt.$route.fullPath == '/program#1',
+                }"
+              ></div>
+              <div
+                class="warn"
+                v-html="data.warn"
+                v-bind:class="{ small: $nuxt.$route.fullPath == '/program#3' }"
+              ></div>
             </div>
             <div class="slide">
               <div class="program-carousel-wrapper" v-if="data.name != ''">
@@ -106,8 +116,8 @@
                     $nuxt.$route.fullPath == '/program#3',
                 }"
               >
-                <div class="name">{{ data.name }}</div>
-                <div class="enname">{{ data.enname }}</div>
+                <div class="name" v-html="data.name"></div>
+                <div class="enname" v-html="data.enname"></div>
                 <div class="creator" v-if="data.creator">
                   {{ data.creator }}
                 </div>
@@ -263,7 +273,7 @@
       text-align: left;
     }
     .highlight {
-      color: rgb(211, 168, 26);
+      color: #8c8c8c;
     }
   }
 }
@@ -474,19 +484,25 @@
           .creator {
             font-size: 1vw;
             margin: 1vw 0 2vw 0;
-            border-bottom: 1px solid #262626;
-            padding-bottom: 2vw;
           }
           .time {
             font-size: 1vw;
             line-height: 2;
             letter-spacing: 1px;
+
+            &.border-top {
+              border-top: 1px solid #262626;
+              padding-top: 1vw;
+            }
           }
           .warn {
             color: #8c8c8c;
             font-size: 1vw;
             line-height: 2;
             margin-top: 0.5vw;
+            &.small {
+              font-size: 0.9vw;
+            }
           }
         }
         .slide {
@@ -520,16 +536,17 @@
 
         .social-link {
           display: flex;
-          position: absolute;
+          position: relative;
           align-items: center;
-          left: 2vw;
+          left: 0;
           bottom: 0vw;
           font-size: 1vw;
+          margin-bottom: 1vw;
           p {
             margin: 0;
           }
           a {
-            margin-left: 0.5vw;
+            margin-right: .5vw;
             img {
               height: 1.5vw;
             }
@@ -563,26 +580,6 @@
           padding-bottom: 2vw;
           .info {
             height: auto;
-          }
-          .social-link {
-            display: flex;
-            position: absolute;
-            align-items: center;
-            left: 2vw;
-            bottom: 2vw;
-            font-size: 1vw;
-            p {
-              margin: 0;
-            }
-            a {
-              margin-left: 0.5vw;
-              img {
-                height: 1.5vw;
-              }
-              &:hover {
-                opacity: 0.7;
-              }
-            }
           }
 
           .slide {
@@ -886,7 +883,7 @@ export default {
   data() {
     return {
       intersection: {
-        threshold: 0.6,
+        threshold: 0.4,
       },
       slickOptions: {
         slidesToShow: 1,
@@ -929,7 +926,6 @@ export default {
       if (isVisible) {
         const tabKey = entry.target.getAttribute("data-tab-key");
 
-
         if (!this.$device.isMobile) {
           this.activeTabName = entry.target.getAttribute("data-tab-name");
         } else if (this.$device.isMobile && !this.tabScrolling) {
@@ -940,9 +936,6 @@ export default {
             this.tabScrollOptions
           );
         }
-
-
-        console.log(this.activeTabName);
       }
     },
     tabScrollStart() {

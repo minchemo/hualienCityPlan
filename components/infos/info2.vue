@@ -8,16 +8,11 @@
         <div class="map">
           <img
             v-if="!$device.isMobile"
-            src="@/assets/img/info/map.jpg"
+            src="@/assets/img/info/map.png"
             alt=""
             srcset=""
           />
-          <img
-            v-else
-            src="@/assets/img/info/map_mo.png"
-            alt=""
-            srcset=""
-          />
+          <img v-else src="@/assets/img/info/map_mo.png" alt="" srcset="" />
         </div>
         <div class="tag1" v-show="!$device.isMobile">
           <img src="@/assets/img/info/map_tag.svg" alt="" srcset="" />
@@ -27,7 +22,7 @@
         <div
           class="arrow prev"
           @click="mapPrev"
-          v-bind:class="{ disabled: scrollStep == 0 }"
+          v-bind:class="{ disabled: scrollPos <= 10 }"
         >
           <img src="@/assets/img/info/arrow.svg" alt="" srcset="" />
         </div>
@@ -36,7 +31,7 @@
         <div
           class="arrow next"
           @click="mapNext"
-          v-bind:class="{ disabled: scrollStep >= 6 }"
+          v-bind:class="{ disabled: scrollPos >= 80 }"
         >
           <img src="@/assets/img/info/arrow.svg" alt="" srcset="" />
         </div>
@@ -165,7 +160,7 @@
         width: 100%;
         padding-right: 0;
         img {
-          width: 103%;
+          width: 100%;
         }
       }
       .tag1 {
@@ -210,11 +205,11 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: calc(100% / 6);
+        width: calc(100% / 8);
         height: 1px;
         background: #262626;
         z-index: 1;
-        transition: all 0.5s;
+        transition: all 0.25s linear;
       }
     }
     .info-map-detail {
@@ -224,7 +219,6 @@
       overflow-x: scroll;
       overflow-y: hidden;
       position: relative;
-      pointer-events: none;
       img {
         width: auto;
         height: 100%;
@@ -241,12 +235,14 @@
 }
 </style>
 <script>
+import smoothscroll from 'smoothscroll-polyfill';
 
 export default {
   data() {
     return {
       downloadUrl: require('@/assets/img/info/map_download.jpg'),
-      totalScollWidth: 2064,
+      totalScollWidth: 2556.1,
+      scrollPos: 0,
       scrollStep: 0,
       scrollParam: [
         {
@@ -255,29 +251,39 @@ export default {
         },
         {
           step: 1,
-          offsetRatio: 0.12,
+          offsetRatio: 0.1338,
         },
         {
           step: 2,
-          offsetRatio: 0.27,
+          offsetRatio: 0.2887,
         },
         {
           step: 3,
-          offsetRatio: 0.44,
+          offsetRatio: 0.4272,
         },
         {
           step: 4,
-          offsetRatio: 0.57,
+          offsetRatio: 0.55983,
         },
         {
           step: 5,
-          offsetRatio: 0.71,
+          offsetRatio: 0.675247,
         },
         {
           step: 6,
-          offsetRatio: 0.82,
+          offsetRatio: 0.788701,
         },
-      ]
+        {
+          step: 7,
+          offsetRatio: 0.89746,
+        },
+      ],
+      scrollOptions: {
+        container: ".info-map-detail",
+        offset: 0,
+        x: true,
+        y: false,
+      },
     }
   },
   methods: {
@@ -297,7 +303,7 @@ export default {
       this.$refs.mapDetail.scrollTo({ left: this.getScrollStepOffset(), behavior: 'smooth' });
     },
     mapNext() {
-      if (this.scrollStep + 1 > 6) {
+      if (this.scrollStep + 1 > 7) {
         return
       }
       this.scrollStep++;
@@ -306,14 +312,39 @@ export default {
     getScrollStepOffset() {
       const stepOffset = this.scrollParam.find(item => item.step == this.scrollStep);
       let offset = this.totalScollWidth * stepOffset.offsetRatio;
-
-      this.$refs.scrollProgress.style.left = stepOffset.offsetRatio * 100 + '%';
       return offset;
     },
   },
   created() {
   },
   mounted() {
+    smoothscroll.polyfill();
+    const scrollEl = this.$refs.mapDetail;
+    scrollEl.addEventListener('scroll', () => {
+      let scrollLeft = scrollEl.scrollLeft / this.totalScollWidth;
+      this.$refs.scrollProgress.style.left = scrollLeft * 100 + '%'
+
+      this.scrollPos = scrollLeft * 100;
+
+      if (scrollLeft >= 0 && scrollLeft <= 0.1337) {
+        this.scrollStep = 0;
+      } else if (scrollLeft >= 0.1338 && scrollLeft <= 0.2886) {
+        this.scrollStep = 1;
+      } else if (scrollLeft >= 0.2887 && scrollLeft <= 0.4271) {
+        this.scrollStep = 2;
+      } else if (scrollLeft >= 0.4272 && scrollLeft <= 0.55982) {
+        this.scrollStep = 3;
+      } else if (scrollLeft >= 0.55983 && scrollLeft <= 0.675246) {
+        this.scrollStep = 4;
+      } else if (scrollLeft >= 0.675247 && scrollLeft <= 0.788700) {
+        this.scrollStep = 5;
+      } else if (scrollLeft >= 0.788701 && scrollLeft <= 0.89745) {
+        this.scrollStep = 6;
+      } else if (scrollLeft >= 0.89746 && scrollLeft <= 1) {
+        this.scrollStep = 7;
+      }
+
+    })
   },
 }
 </script>

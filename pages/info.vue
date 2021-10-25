@@ -185,6 +185,8 @@ export default {
           path: '/info',
           hash: '#' + hash
         })
+        
+        this.$store.commit('forceCloseMobileMenu');
       }
     }
   },

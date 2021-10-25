@@ -3,7 +3,7 @@
     <div class="program3">
       <div class="program-title">
         <h2 class="title">太平洋公園南濱段</h2>
-        <div class="subtitle">南濱濱日流</div>
+        <div class="subtitle">南濱奔日流</div>
         <p class="content">
           海上日出，太陽一路奔向中央山脈，天空色彩魔幻萬變，這是花蓮獨特的環境濾鏡，潮汐拍打的節<br
             v-show="!$device.isMobile"
@@ -15,7 +15,9 @@
 
           日出開幕儀式｜<span>11.20（六）5:00-7:30</span><br />
           日出閉幕儀式｜<span>11.21（日）5:00-7:30</span><br />
-          <span>＊演出為移動式觀賞動線，5:00從南濱入口開始。</span>
+          <span class="small"
+            >＊演出為移動式觀賞動線，5:00從南濱入口開始。</span
+          >
         </p>
       </div>
 
@@ -53,7 +55,7 @@
   margin: 0 auto;
   margin-bottom: 5vw;
   .program-title {
-    margin: 5vw 0;
+    margin: 8vw 0;
     .title {
       font-size: 1.2vw;
     }
@@ -67,6 +69,9 @@
       letter-spacing: 0.05vw;
       span {
         color: #8c8c8c;
+        &.small {
+          font-size: 0.9vw;
+        }
       }
     }
   }
@@ -329,8 +334,11 @@ export default {
             {
               name: "冉而山劇場",
               info: `場次｜11/20（六）、 11/21（日）<br>時間｜05:45 - 06:10`,
-              content: `冉而山（Langasan）劇場，相應著阿美族聖山「奇冉而山（Cilangasan）」蘊存的神話與族群繁衍的發祥地的意義，本身亦為原舞者資深團員的團長阿道‧巴辣夫‧冉而山做為大海嘯神話中遷往 Cilangasan 一支的氏族，過去以來懷抱文化使命，透過樂舞復振，維繫原住民文化的細膩內涵。<br/><br/>
-<div class="en">The Langasan Theater took it’s name from a mountain in Hualien called Cilangasan. Adaw Palaf Langasan is the founder and mentor of the theatre group.  As legend has it, many years and many moons ago, he and his Langasan people came to Taiwan from the ocean in the waves. The LangasanTheater‘s performances incorporate music, dance, singing and story telling, all as a way of keeping traditional Aborigine culture alive.</div>`,
+              content: `冉而山（Langasan）劇場，相應著阿美族聖山「奇冉而山（Cilangasan）」蘊存的神話與族群繁衍的發祥地的意義，本身亦為原舞者資深團員的團長阿道‧巴辣夫‧冉而山做為大海嘯神話中遷往 Cilangasan 一支的氏族，過去以來懷抱文化使命，透過樂舞復振，維繫原住民文化的細膩內涵。阿道也是冉而山國際行為藝術節的創辦者。<br/><br/>
+
+*圖為第三屆冉而山國際行為藝術節。攝影：顔歸真。<br/><br/>
+
+<div class="en">The Langasan Theater took it’s name from a mountain in Hualien called Cilangasan. Adaw Palaf Langasan is the founder and mentor of the theatre group.  As legend has it, many years and many moons ago, he and his Langasan people came to Taiwan from the ocean in the waves. The LangasanTheater‘s performances incorporate music, dance, singing and story telling, all as a way of keeping traditional Aborigine culture alive. Adaw, he  is also the founder of Langasan International Performance Art Festival (LIPAF)</div>`,
               slides: [
                 require("@/assets/img/program/4-3南濱奔日流/03-01.jpg"),
                 require("@/assets/img/program/4-3南濱奔日流/03-02.jpg"),
@@ -375,7 +383,7 @@ export default {
           img: require("@/assets/img/program/4-3南濱奔日流/05.jpg"),
           tab: [
             {
-              name: "Anu阿努（阿努．卡力亭．沙力朋安 Anu.Kaliting.Sadipongan）",
+              name: "Anu阿努",
               info: `場次｜11/20（六）、 11/21（日）<br>時間｜06:40 - 07:20`,
               content: `有著原住民的身分與脈絡，擁有來自大海的聲音，並且蘊藏著靈性力量與跨時空的音域，可以將各種聲響、節奏、音符塑造成生命，引領生命遠離寂靜，進入極境，讓人置身在那座山林、那片海洋、那條溪流。身處文化斷層的今日，有感於文化式微、語言流失與族群離散，Anu阿努始終專注於母語音樂的創作，希望透過音樂喚起更多人對原民議題的關注。 2019年底製作的專輯《認真生活laloken ko orip》，就是想討論原民在當代環境中如何超越現實世界的種種困境。如何跳脫被資本主義、消費社會、國族主義、西方世界所建構的現代社會，找尋方法抵抗現實、感知自由。如是回到自然、回到自己、回到人的本質。`,
               slides: [
@@ -393,7 +401,7 @@ export default {
   },
   components: {},
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>

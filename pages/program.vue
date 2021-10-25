@@ -68,7 +68,7 @@
           }
           .program-title {
             font-size: 1vw;
-            font-weight: bold;
+            font-weight: 500;
           }
           &:hover {
             cursor: pointer;

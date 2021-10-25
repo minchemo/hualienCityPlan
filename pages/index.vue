@@ -150,9 +150,10 @@
         width: 100vw;
         text-align: center;
         margin: 0 auto;
-      .yt-box {
-        border-bottom: 1px solid #262626;
-      }
+        .yt-box {
+          border-bottom: 1px solid #262626;
+          background-image: url("@/assets/img/home/intro-preview-mo.jpg");
+        }
       }
       .intro-bg-first {
         position: absolute;
@@ -198,6 +199,6 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() { },
 };
 </script>

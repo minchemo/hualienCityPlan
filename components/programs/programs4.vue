@@ -18,7 +18,7 @@
             srcset=""
           />
         </div>
-        <div class="subtitle">問答活動說明</div>
+        <div class="subtitle small">問答活動說明</div>
         <p class="content">
           你是花蓮人嗎？<br />
           為何移居花蓮？<br />
@@ -70,13 +70,16 @@
   margin: 0 auto;
   margin-bottom: 5vw;
   .program-title {
-    margin: 5vw 0;
+    margin: 8vw 0;
     .title {
       font-size: 1.2vw;
     }
     .subtitle {
       font-size: 2.5vw;
       font-weight: 700;
+      &.small {
+        font-size: 1.7vw;
+      }
     }
     .content {
       font-size: 1vw;
@@ -168,6 +171,7 @@
     h4 {
       flex: 100%;
       margin-bottom: 3vw;
+      font-size: 1.2vw;
     }
     .shop {
       font-size: 0.9vw;
@@ -378,7 +382,7 @@ export default {
             {
               name: "大俠米糕",
               info: `地址：花蓮市自由街34號<br/>
-營業時間：11/19-11/21`,
+營業時間：11/19-11/21，1100-2100`,
               status: 1,
               content: `來自中台灣的道地古早味小吃，原汁原味呈現媽媽的味道，經過反覆翻炒入味蒸熟的糕體，配上手工自製的傳統米醬，值得您細細品嘗！`,
               slides: [
@@ -693,7 +697,7 @@ export default {
               info: `地址：花蓮市忠孝街68號<br/>
 營業時間：11/19-11/21，0800-2100`,
               status: 2,
-              content: `實季是一家舊街區中的老宅咖啡廳，老闆是一個從台北到花蓮來創業的年輕人，店內主體形象設計都是以大自然的種子果實做創作加上店長的老物收藏，讓實季以一個獨特氛圍屹立在這個舊街區中。店內主要販售的項目是熱壓吐司以及咖啡，所有口味出自店長獨立研發，非常受到當地居民及觀光客歡迎。想知道老闆是因為什麼契機選擇來到花蓮嗎？就來實季坐坐吧！<br/><br/><b>藝術節限定：1930小二說事講座</b>`,
+              content: `實季是一家舊街區中的老宅咖啡廳，老闆是一個從台北到花蓮來創業的年輕人，店內主體形象設計都是以大自然的種子果實做創作加上店長的老物收藏，讓實季以一個獨特氛圍屹立在這個舊街區中。店內主要販售的項目是熱壓吐司以及咖啡，所有口味出自店長獨立研發，非常受到當地居民及觀光客歡迎。想知道老闆是因為什麼契機選擇來到花蓮嗎？就來實季坐坐吧！<br/><br/><b>藝術節限定：活動期間每晚19:30小二說故事</b>`,
               slides: [
                 require("@/assets/img/program/4-4溝仔尾問路/2.城空限定/2-11_實季_1.jpg"),
                 require("@/assets/img/program/4-4溝仔尾問路/2.城空限定/2-11_實季_2.jpg"),
