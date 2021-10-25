@@ -495,7 +495,7 @@ export default {
           name: "<span>SUN.</span>11.21",
           speakers: [
             {
-              img: require("@/assets/img/program/4-2花創火溫酒/正方形/1121_1900_徐榛蔚.jpg"),
+              img: require("@/assets/img/program/4-2花創火溫酒/正方形/1121_1900_徐榛蔚-59.jpg"),
               name: "徐榛蔚",
               tag: "花蓮縣長",
               time: "19:00",
