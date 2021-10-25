@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main about">
     <Navbar />
     <div class="content">
       <div class="intro">
@@ -54,7 +54,13 @@
             <div class="title">{{ team.title }}</div>
             <div class="in">
               <div class="tag" v-show="!$device.isMobile">{{ team.tag }}</div>
-              <div class="name" v-show="team.name">{{ team.name }}</div>
+              <div
+                class="name"
+                v-show="team.name"
+                v-bind:class="{ border: team.border }"
+              >
+                {{ team.name }}
+              </div>
               <div class="text" v-html="team.content"></div>
             </div>
           </div>
@@ -98,6 +104,18 @@
     <Footer />
   </div>
 </template>
+
+<style lang="scss">
+.about {
+  .text {
+    span {
+      color: #8c8c8c;
+      word-break: keep-all;
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 .main {
@@ -195,7 +213,7 @@
     margin: 7vw auto 3vw auto;
     padding-bottom: 5vw;
     .avatar {
-      width: 30%;
+      min-width: 30%;
       margin: 1vw;
       img {
         width: 100%;
@@ -336,7 +354,7 @@
         box-sizing: border-box;
         max-height: 200px;
         overflow: hidden;
-        transition: all .3s;
+        transition: all 0.3s;
         &.show {
           max-height: 9999px;
         }
@@ -357,7 +375,7 @@
           rgba(255, 255, 255, 0.7) 70%,
           rgba(255, 255, 255, 0) 100%
         );
-        transition: all .3s;
+        transition: all 0.3s;
         img {
           height: 9pt;
           margin-left: 6pt;
@@ -366,7 +384,7 @@
           display: none;
         }
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       }
       &::after {
@@ -405,6 +423,12 @@
             border-left: 0;
             .name {
               font-size: 12pt;
+
+              &.border {
+                border-bottom: 1px solid #262626;
+                padding-bottom: 12pt;
+                margin-bottom: 12pt;
+              }
             }
             .text {
               font-size: 10pt;
@@ -483,17 +507,66 @@ export default {
           tag: "執行團隊",
           name: !this.$device.isMobile ? "" : "執行團隊",
           content: `
-            表演藝術策畫統籌／軟硬倍事<br/>
-            視覺統籌／三頁文<br/>
-            製作執行統籌／藝外創意<br/>
-            行銷宣傳/媒體統籌／好料創意<br/>
-            硬體技術統籌／民偉視訊工程<br/>
-            活動動態紀錄／狠主流多媒體
+          表演藝術策畫統籌｜<span>軟硬倍事</span><br/>
+          視覺統籌｜<span>三頁文</span><br/>
+          製作執行統籌｜<span>藝外創意</span><br/>
+          行銷宣傳/媒體統籌｜<span>好料創意</span><br/>
+          硬體技術統籌｜<span>民偉視訊工程</span><br/>
+          活動動態紀錄｜<span>狠主流多媒體</span><br/><br/>
+
+          藝術總監｜<span>林昆穎</span><br/>
+          藝術總監協策小組｜<span>張楚芬、楊喻斐</span><br/>
+          表演藝術策劃統籌｜<span>陳彥斌</span><br/>
+          表演藝術策劃執行｜<span>盧崇瑋、陳履歡</span><br/>
+          視覺統籌｜<span>顏伯駿</span><br/>
+          視覺專案管理｜<span>蔡佩玲</span><br/>
+          平面設計｜<span>張耕毓、盧勇翰、江元、楊藥智</span><br/>
+          3D設計｜<span>張雅惠、游家廳</span><br/>
+          活動網站｜<span>J 莫</span><br/>
+          執行總統籌｜<span>吳季娟</span><br/>
+          執行製作｜<span>楊喆甯、蔡超聖、劉文誠</span><br/>
+          製作行政｜<span>林郁玟、嚴安琪、賴姸方、吳孟欣</span><br/>
+          總舞監｜<span>鄒雅荃</span><br/>
+          助理舞監｜<span>張君如、曾智偉</span><br/>
+          空間與路線指引設計｜<span>魏匡正</span><br/>
+          行銷宣傳統籌｜<span>孫嘉蓉</span><br/>
+          媒體統籌執行｜<span>盧婷婷、曾郁萍</span><br/>
+          宣傳執行助理｜<span>劉若絹、陳品蓉</span><br/>
+          攝影紀錄｜<span>李欣哲、池孟諭、游子宸、魏歆曄</span><br/><br/>
+
+          活動執行人員｜<span>平馨、白雅瑜、江昕晏、李虹玫、李雩安、李燕玲、青婕、施嵐茵、胡善悅、徐崇馨、曹郡豪、許瀅真、郭倡佑、陳敏薇、陳雅筑、曾千祐、曾家璇、黃健雄、詹嘉榆、劉宇宸、蔡亦涵、蔡宜珊、蔡若彤、蕭宇翔、蕭秩瑄、戴靖霈、鍾萍佳</span><br/><br/>
+
+          志工｜<span>方美玉、江永郎、吳素真、林千惠、林承、林清標、侯明惠、徐菊、張雅琇、陳吾常、陳淑媛、游秀琴、楊暢生、溫開俊、劉昭雄、潘榮章、閻玉蓮、謝國光、謝惠美</span>
             `,
+        },
+        {
+          title: "Artist",
+          tag: "參與藝術家",
+          border: true,
+          name: !this.$device.isMobile ? "" : "參與藝術家",
+          content: `
+          <b>日出未來河</b><br/>
+          Q1 花式提問｜<span>林清盛、陶維均</span><br/>
+          Q2 白浪海嘯吃菜吧｜<span>劉星佑、陳漢聲</span><br/>
+          Q3 家族｜<span>賈茜茹、柳冠竹、何冠儀、楊宇政、初柏翰、董育廷、許少軒、柯智豪</span><br/>
+          Q4 校準：路徑｜<span>謝佑承、王中原</span><br/>
+          Q5 這原是一條河｜<span>曾令理</span><br/>
+          Q6 非常動態運動－失序邊境（選段演出）｜<span>曾靖恩、李冠霖、李晉安、王量、陳彥齊、林意翔</span><br/>
+          Q6 滑板團隊｜<span>胡冠嘉、李斌、林澄浩、墨梵、慕凡、陳爾陽</span><br/>
+          Q7 鏡岕｜<span>豪華朗機工</span><br/>
+          Q8 大道流動問答｜<span>羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁、台北劇場實驗室、黃懷德、張汶皓、法咪咪、汝妮、Jesse Chen、Garzer、Venci、三分生劇團、許元耀、王佳祥、李成員、丁羅紀晴、陳健文</span><br/><br/>
+
+          <b>花創火溫酒</b><br/>
+          <span>林清盛、林昆穎、吳勁毅、東冬．侯溫、李德緯、林育德、楊華美、大亨、王力之、徐榛蔚、馬詠恩、程廷、張皓琤</span><br/>
+          <span>（依場次先後排列）</span><br/><br/>
+
+          <b>南濱奔日流</b><br/>
+          <span>嘎造・伊漾、汝妮、冉而山劇場、原舞者、阿努（依場次先後排列）</span>
+`,
         },
       ],
     };
   },
-  mounted() {},
+  mounted() { },
 };
 </script>
