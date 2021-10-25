@@ -319,6 +319,10 @@ export default {
   },
   mounted() {
     smoothscroll.polyfill();
+
+    const ratioList = this.scrollParam.map(item => item.offsetRatio);
+
+
     const scrollEl = this.$refs.mapDetail;
     scrollEl.addEventListener('scroll', () => {
       let scrollLeft = scrollEl.scrollLeft / this.totalScollWidth;
@@ -326,23 +330,12 @@ export default {
 
       this.scrollPos = scrollLeft * 100;
 
-      if (scrollLeft >= 0 && scrollLeft <= 0.1337) {
-        this.scrollStep = 0;
-      } else if (scrollLeft >= 0.1337 && scrollLeft <= 0.2886) {
-        this.scrollStep = 1;
-      } else if (scrollLeft >= 0.2886 && scrollLeft <= 0.4271) {
-        this.scrollStep = 2;
-      } else if (scrollLeft >= 0.4271 && scrollLeft <= 0.55982) {
-        this.scrollStep = 3;
-      } else if (scrollLeft >= 0.55982 && scrollLeft <= 0.675246) {
-        this.scrollStep = 4;
-      } else if (scrollLeft >= 0.675246 && scrollLeft <= 0.788700) {
-        this.scrollStep = 5;
-      } else if (scrollLeft >= 0.788700 && scrollLeft <= 0.89745) {
-        this.scrollStep = 6;
-      } else if (scrollLeft >= 0.89745 && scrollLeft <= 1) {
-        this.scrollStep = 7;
-      }
+      let closest = ratioList.reduce(function (prev, curr) {
+        return (Math.abs(curr - scrollLeft) < Math.abs(prev - scrollLeft) ? curr : prev);
+      });
+
+      let closestStep = this.scrollParam.find(item => item.offsetRatio == closest);
+      this.scrollStep = closestStep.step;
 
     })
   },
