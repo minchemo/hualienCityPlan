@@ -110,7 +110,6 @@
   .text {
     span {
       color: #8c8c8c;
-      word-break: keep-all;
     }
   }
 }
