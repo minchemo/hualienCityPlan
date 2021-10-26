@@ -121,7 +121,7 @@
         position: relative;
         z-index: 1;
         transition: all 0.2s;
-        font-size: .9vw;
+        font-size: 0.9vw;
         color: #4d4d4d;
       }
       .program-item-subtitle {
@@ -184,7 +184,7 @@
             font-weight: 400;
             left: 50%;
             transform: translate(-50%, 140%);
-            font-size: .9vw;
+            font-size: 0.9vw;
           }
         }
       }
@@ -278,8 +278,12 @@
 
         &:nth-child(6) {
           .program-item-subtitle {
+            padding-right: 0;
             &::before {
               content: "";
+            }
+            &::after {
+              transform: translate(30%,30%);
             }
           }
         }
@@ -626,7 +630,9 @@ export default {
             },
             {
               name: "《臺北室外網球公開賽》在花蓮",
-              enname: this.$device.isMobile ? "《Taipei Schwaiwanqiu Open》<br/>in Hualien":"《Taipei Schwaiwanqiu Open》in Hualien",
+              enname: this.$device.isMobile
+                ? "《Taipei Schwaiwanqiu Open》<br/>in Hualien"
+                : "《Taipei Schwaiwanqiu Open》in Hualien",
               creator: "走問團：張汶皓",
               info: `11/19(五)-11/20(六) 1815-1915、2045-2145<br/>11/21(日) 1815-1915<br/>地點｜自由街X重慶路`,
               content: `我們熱愛網球，就像愛著花蓮這塊土地一樣愛。<br/><br/>
@@ -799,7 +805,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
     };
   },
   methods: {},
-  created() { },
-  mounted() { },
+  created() {},
+  mounted() {},
 };
 </script>
