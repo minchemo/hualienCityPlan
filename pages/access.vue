@@ -30,6 +30,24 @@
           v-lazy-load
         />
       </div>
+      <div class="line">
+        <img
+          v-if="!$device.isMobile"
+          src="@/assets/img/access/line.svg"
+          alt=""
+          srcset=""
+          v-lazy-load
+          @click="openLine"
+        />
+        <img
+          v-else
+          src="@/assets/img/access/line-mo.svg"
+          alt=""
+          srcset=""
+          v-lazy-load
+          @click="openLine"
+        />
+      </div>
     </div>
     <Footer />
   </div>
@@ -128,6 +146,19 @@
         visibility: hidden;
       }
     }
+    .line {
+      margin: 10vw 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      img {
+        width: 10vw;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.5;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 500px) {
@@ -207,6 +238,19 @@
           width: 100%;
         }
       }
+      .line {
+        margin: 10vw 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 30vw;
+          &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+          }
+        }
+      }
     }
   }
 }
@@ -261,6 +305,11 @@ export default {
       ],
     };
   },
-  mounted() {},
+  methods: {
+    openLine() {
+      window.open('https://liff.line.me/1645278921-kWRPP32q/?accountId=033rolty')
+    }
+  },
+  mounted() { },
 };
 </script>

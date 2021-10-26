@@ -19,7 +19,7 @@
 
       <div class="intro" data-aos="fade">
         <div class="intro-content">
-          <div class="yt-box"></div>
+          <div class="yt-box" @click="ytOpen = !ytOpen"></div>
         </div>
         <img
           class="intro-bg-first"
@@ -69,6 +69,18 @@
       </div>
     </div>
     <Footer />
+
+    <div class="yt-popup" v-if="ytOpen" @click="ytOpen = !ytOpen">
+      <iframe
+        ref="yt_iframe"
+        src="https://www.youtube.com/embed/sGF-Mf7sKqI"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div class="loading">Loading...</div>
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -110,6 +122,26 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-image: url("@/assets/img/home/intro-preview.jpg");
+        &::after {
+          content: "";
+          width: 82pt;
+          height: 82pt;
+          background-image: url("@/assets/img/home/playbutton.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          margin-top: -41pt;
+          margin-left: -41pt;
+          transition: all 0.2s;
+        }
+        &:hover {
+          cursor: pointer;
+          &:after {
+            transform: scale(0.9);
+          }
+        }
       }
     }
     .intro-bg {
@@ -126,6 +158,40 @@
     img {
       width: 100%;
     }
+  }
+}
+
+.yt-popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s;
+  transform: translateX(0%);
+  cursor: pointer;
+  .loading {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: 16pt;
+    color: #fff;
+    z-index: 0;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+  iframe {
+    position: relative;
+    z-index: 1;
+    width: 50vw;
+    height: 28.2vw;
   }
 }
 @media screen and (max-width: 500px) {
@@ -154,6 +220,12 @@
         .yt-box {
           border-bottom: 1px solid #262626;
           background-image: url("@/assets/img/home/intro-preview-mo.jpg");
+          &::after {
+            width: 30pt;
+            height: 30pt;
+            margin-top: -15pt;
+            margin-left: -15pt;
+          }
         }
       }
       .intro-bg-first {
@@ -193,13 +265,25 @@
       }
     }
   }
+
+  .yt-popup {
+    iframe {
+      width: 100vw;
+      height: 56.49vw;
+    }
+    &.active {
+      transform: translateX(0%);
+    }
+  }
 }
 </style>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      ytOpen: false
+    };
   },
-  mounted() {},
+  mounted() { },
 };
 </script>

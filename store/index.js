@@ -12,6 +12,8 @@ export const state = () => ({
         links: []
     },
     currentDetailTitle: "",
+    forceTabKeyId: 0,
+    forceTabKeyName: '',
     mobileMenuOpen: false
 });
 
@@ -23,12 +25,19 @@ export const mutations = {
 
         state.detailOpen = true;
 
+        if (payload.forceTabKeyId) {
+            state.forceTabKeyId = payload.forceTabKeyId;
+            state.forceTabKeyName = payload.forceTabKeyName;
+        }
+
         document.getElementsByTagName("html")[0].style.overflow = "hidden";
     },
     setCurrentDetailTab(state, payload) {
         state.currentDetailTab = payload;
     },
     closeDetail(state) {
+        state.forceTabKeyId = 0;
+        state.forceTabKeyName = '';
         state.detailOpen = false;
         document.getElementsByTagName("html")[0].style.overflow = "auto";
     },

@@ -316,7 +316,7 @@ export default {
           img: require("@/assets/img/program/4-3南濱奔日流/02.jpg"),
           tab: [
             {
-              name: "DJ 汝妮 DUNGI SAPOR",
+              name: "汝妮 Dungi Sapor",
               info: `場次｜11/20（六）、 11/21（日）<br>時間｜05:25-05:45`,
               content: `來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
 

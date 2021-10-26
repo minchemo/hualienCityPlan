@@ -96,7 +96,7 @@
     margin: 0 auto;
     flex-wrap: nowrap;
     .map {
-      width: 45%;
+      width: 39%;
       padding-right: 5vw;
       img {
         width: 100%;
@@ -129,13 +129,13 @@
     position: relative;
     width: 100vw;
     margin: 0 auto;
-    padding-top: 5vw;
+    padding-top: 15vw;
     .info-download {
       font-size: 18.35pt;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 14vw 0;
+      margin: 15vw 0;
       span {
         border: 1px solid #dcc8eb;
         color: #e8c6ee;
@@ -240,7 +240,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 export default {
   data() {
     return {
-      downloadUrl: require('@/assets/img/info/map_download.jpg'),
+      downloadUrl: require('@/assets/img/info/2021_Hualien_map.jpg'),
       totalScollWidth: 2556.1,
       scrollPos: 0,
       scrollStep: 0,
@@ -290,7 +290,7 @@ export default {
     download() {
       let a = document.createElement('a');
       a.href = this.downloadUrl;
-      a.download = "花蓮城市空間藝術節 - 展區地圖.jpg";
+      a.download = "2021_Hualien_map.jpg";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

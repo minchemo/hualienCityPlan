@@ -13,12 +13,13 @@
         </p>
         <div class="divider">
           <img
+            v-show="!$device.isMobile"
             src="@/assets/img/program/4-4溝仔尾問路/bg.svg"
             alt=""
             srcset=""
           />
         </div>
-        <div class="subtitle small">問答活動說明</div>
+        <div class="subtitle">問答活動說明</div>
         <p class="content">
           你是花蓮人嗎？<br />
           為何移居花蓮？<br />
@@ -55,8 +56,13 @@
 
       <div class="shops">
         <h4>店家總覽</h4>
-        <div class="shop" v-for="(shop, i) in shops" :key="i">
-          {{ shop }}
+        <div
+          class="shop"
+          v-for="(shop, i) in shops"
+          :key="i"
+          @click="openDetailByShopName(shop.key)"
+        >
+          {{ shop.name }}
         </div>
       </div>
     </div>
@@ -179,6 +185,13 @@
       border: 1px solid #262626;
       border-radius: 50px;
       padding: 0.5vw 1vw;
+
+      &:hover {
+        cursor: pointer;
+        border-color: #6eb9eb;
+        background: #6eb9eb;
+        color: #fff;
+      }
     }
   }
 }
@@ -210,9 +223,9 @@
         width: 100vw;
         left: 50%;
         transform: translateX(-50%);
-        img {
-          width: 100%;
-        }
+        height: 0.5pt;
+        background: #262626;
+        margin: 15vw 0;
       }
     }
 
@@ -307,36 +320,126 @@ export default {
   data() {
     return {
       shops: [
-        "Black cat X Hair 黑貓",
-        "Cafe Copita",
-        "大俠米糕",
-        "伊奶奶 i-Granny",
-        "行味 Tasty Way",
-        "多羅滿賞鯨服務棧&鯨蛋糕",
-        "花蓮日日",
-        "花聲客廳",
-        "昭和58",
-        "珈琲花",
-        "Madman手縫皮件",
-        "Stroll散步咖啡",
-        "小廢柴",
-        "私娼寮展示館",
-        "雨林 Scone & Coffee",
-        "雨樵懶人書店",
-        "花忒發",
-        "花蓮鐵道電影院",
-        "浮室 soave plan",
-        "遠東魷魚羹",
-        "實季・食記 Seedson Coffee",
-        "762書庫 阿榮師文化工作室",
-        "Pay Or Die",
-        "匠心獨作生活實驗室",
-        "花蓮鐵道文化園區",
-        "孩好書屋",
-        "Piatto+菜",
-        "好地下藝術空間",
-        "舊書鋪子",
-        "活動｜深夜限定",
+        {
+          "name": "Black cat X Hair 黑貓",
+          "key": "Black cat X Hair 黑貓"
+        },
+        {
+          "name": "Cafe Copita",
+          "key": "Cafe Copita"
+        },
+        {
+          "name": "大俠米糕",
+          "key": "大俠米糕"
+        },
+        {
+          "name": "伊奶奶 i-Granny",
+          "key": "伊奶奶 i-Granny"
+        },
+        {
+          "name": "行味 Tasty Way",
+          "key": "行味 Tasty Way"
+        },
+        {
+          "name": "多羅滿賞鯨服務棧&鯨蛋糕",
+          "key": "多羅滿賞鯨服務棧&鯨蛋糕"
+        },
+        {
+          "name": "花蓮日日",
+          "key": "花蓮日日"
+        },
+        {
+          "name": "花聲客廳",
+          "key": "花聲客廳"
+        },
+        {
+          "name": "昭和58",
+          "key": "昭和58"
+        },
+        {
+          "name": "珈琲花",
+          "key": "珈琲花"
+        },
+        {
+          "name": "Madman手縫皮件",
+          "key": "Ｍadman 手縫皮件"
+        },
+        {
+          "name": "Stroll散步咖啡",
+          "key": "Stroll散步咖啡"
+        },
+        {
+          "name": "小廢柴",
+          "key": "小廢柴"
+        },
+        {
+          "name": "私娼寮展示館",
+          "key": "私娼寮展示館"
+        },
+        {
+          "name": "雨林 Scone & Coffee",
+          "key": "雨林Scone&Coffee"
+        },
+        {
+          "name": "雨樵懶人書店",
+          "key": "雨樵懶人書店"
+        },
+        {
+          "name": "花忒發",
+          "key": "花忒發"
+        },
+        {
+          "name": "花蓮鐵道電影院",
+          "key": "花蓮鐵道電影院"
+        },
+        {
+          "name": "浮室 soave plan",
+          "key": "浮室soave plan"
+        },
+        {
+          "name": "遠東魷魚羹",
+          "key": "遠東魷魚羹"
+        },
+        {
+          "name": "實季・食記 Seedson Coffee",
+          "key": "實季 食記。Seedson Coffee"
+        },
+        {
+          "name": "762書庫 阿榮師文化工作室",
+          "key": "762書庫 阿榮師文化工作室"
+        },
+        {
+          "name": "Pay Or Die",
+          "key": "Pay Or Die 滑板店"
+        },
+        {
+          "name": "匠心獨作生活實驗室",
+          "key": "匠心獨作生活實驗室"
+        },
+        {
+          "name": "花蓮鐵道文化園區",
+          "key": "花蓮鐵道文化園區"
+        },
+        {
+          "name": "孩好書屋",
+          "key": "孩好書屋"
+        },
+        {
+          "name": "Piatto+菜",
+          "key": "Piatto+菜"
+        },
+        {
+          "name": "好地下藝術空間",
+          "key": "好地下藝術空間"
+        },
+        {
+          "name": "舊書鋪子",
+          "key": "舊書鋪子"
+        },
+        {
+          "name": "活動｜深夜限定",
+          "key": "深夜限定"
+        }
       ],
       list: [
         {
@@ -879,11 +982,37 @@ export default {
           ],
         },
       ],
+      openedTab: {
+        key: 0,
+        name: '',
+        fullTab: null
+      }
     };
   },
   components: {},
-  methods: {},
-  created() {},
-  mounted() {},
+  methods: {
+    getTabByName(key) {
+      this.list.forEach(elem => {
+        const index = elem.tab.findIndex(item => item.name == key);
+        if (index > -1) {
+          this.openedTab.fullTab = elem;
+          this.openedTab.key = index;
+          this.openedTab.name = key
+        };
+      })
+    },
+    openDetailByShopName(key) {
+      this.getTabByName(key);
+
+      this.$store.commit('openDetail', {
+        tab: this.openedTab.fullTab.tab,
+        title: `${this.openedTab.fullTab.title} ${this.openedTab.fullTab.subtitle}`,
+        forceTabKeyId: this.openedTab.key,
+        forceTabKeyName: this.openedTab.name
+      })
+    }
+  },
+  created() { },
+  mounted() { },
 };
 </script>

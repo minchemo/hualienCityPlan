@@ -74,13 +74,13 @@
     position: relative;
     width: 100vw;
     margin: 0 auto;
-    padding-top: 5vw;
+    padding-top: 15vw;
     .info-download {
       font-size: 18.35pt;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 14vw 0;
+      margin: 15vw 0;
       span {
         border: 1px solid #dcc8eb;
         color: #e8c6ee;
@@ -114,14 +114,14 @@
 export default {
   data() {
     return {
-      downloadUrl: require('@/assets/img/info/program_list_download.jpg')
+      downloadUrl: require('@/assets/img/info/2021_Hualien_timetable.jpg')
     }
   },
   methods: {
     download() {
       let a = document.createElement('a');
       a.href = this.downloadUrl;
-      a.download = "花蓮城市空間藝術節 - 節目單.jpg";
+      a.download = "2021_Hualien_timetable.jpg";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

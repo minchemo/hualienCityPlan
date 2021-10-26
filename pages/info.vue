@@ -69,7 +69,7 @@
           }
           .info-title {
             font-size: 1vw;
-            font-weight: bold;
+            font-weight: 400;
           }
 
           &:last-child {

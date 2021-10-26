@@ -355,7 +355,7 @@
         text-align: left;
       }
       .highlight {
-        color: rgb(211, 168, 26);
+        color: #8c8c8c;
       }
     }
   }
@@ -388,7 +388,7 @@
       background: #fff;
       z-index: 10;
       .tab-title {
-        font-weight: 900;
+        font-weight: bold;
         font-size: 0.7vw;
         letter-spacing: 0.1vw;
         padding: 2vw 3vw 0.5vw 3vw;
@@ -476,7 +476,7 @@
           overflow-y: hidden;
           .name {
             font-size: 1.8vw;
-            font-weight: 900;
+            font-weight: bold;
             line-height: 1.5;
           }
           .enname {
@@ -500,10 +500,11 @@
           }
           .warn {
             color: #8c8c8c;
-            font-size: .9vw;
+            font-size: 0.8vw;
             line-height: 2;
             margin-top: 0.5vw;
-            white-space: nowrap;
+            word-break: break-all;
+            
             &.small {
               font-size: 0.9vw;
             }
@@ -550,7 +551,7 @@
             margin: 0;
           }
           a {
-            margin-right: .5vw;
+            margin-right: 0.5vw;
             img {
               height: 1.5vw;
             }
@@ -653,7 +654,7 @@
         background: #fff;
         z-index: 10;
         .tab-title {
-          font-weight: 900;
+          font-weight: bold;
           font-size: 12pt;
           letter-spacing: 0.1vw;
           padding: 12pt 0;
@@ -919,11 +920,24 @@ export default {
     detailOpen() {
       return this.$store.state.detailOpen;
     },
+    forceTab() {
+      return this.$store.state.forceTabKeyId;
+    }
   },
   watch: {
     detailOpen(newState, oldState) {
       this.$refs.detail.scrollTop = 0;
     },
+    forceTab(newState, oldState) {
+      const self = this;
+      setTimeout(() => {
+
+        self.scroll(
+          'detail-item-' + self.$store.state.forceTabKeyId,
+          self.$store.state.forceTabKeyId,
+          self.$store.state.forceTabKeyName);
+      }, 100);
+    }
   },
   methods: {
     visibilityChanged(isVisible, entry) {
