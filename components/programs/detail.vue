@@ -63,7 +63,7 @@
           >
             <div class="info" v-show="!$device.isMobile">
               <div class="name" v-html="data.name"></div>
-              <div class="enname">{{ data.enname }}</div>
+              <div class="enname" v-html="data.enname"></div>
               <div class="creator" v-if="data.creator">
                 {{ data.creator }}
               </div>
@@ -188,6 +188,9 @@
       background-position: center;
       background-repeat: no-repeat;
       cursor: pointer;
+      border: 1px solid #262626;
+      border-top: 0;
+      box-sizing: border-box;
     }
     .slick-arrow {
       cursor: pointer;
@@ -497,9 +500,10 @@
           }
           .warn {
             color: #8c8c8c;
-            font-size: 1vw;
+            font-size: .9vw;
             line-height: 2;
             margin-top: 0.5vw;
+            white-space: nowrap;
             &.small {
               font-size: 0.9vw;
             }

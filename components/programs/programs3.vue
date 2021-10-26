@@ -67,11 +67,24 @@
       font-size: 1vw;
       line-height: 2;
       letter-spacing: 0.05vw;
+      position: relative;
+      margin-bottom: 10vw;
       span {
         color: #8c8c8c;
         &.small {
           font-size: 0.9vw;
         }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100vw;
+        height: 1px;
+        background: #262626;
+        left: 50%;
+        bottom: -7vw;
+        transform: translateX(-50%);
       }
     }
   }
