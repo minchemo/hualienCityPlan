@@ -36,7 +36,7 @@ export default {
         this.$refs.progress.style.width = this.progress + "%";
       }
 
-      if (this.progress >= 95) {
+      if (this.progress >= 99) {
         clearTimeout(this.timeoutInstance);
         setTimeout(() => {
           this.progress = 0;
@@ -55,10 +55,14 @@ export default {
       const video = document.getElementsByTagName("video");
 
       images.forEach((item) => {
-        elems.push(item);
+        let loaded = item.getAttribute("loaded");
+
+        if (!loaded) elems.push(item);
       });
       video.forEach((item) => {
-        elems.push(item);
+        let loaded = item.getAttribute("loaded");
+
+        if (!loaded) elems.push(item);
       });
 
       const eachPercentage = 100 / elems.length;
@@ -77,6 +81,7 @@ export default {
         if (tagName == "IMG") {
           var img = new Image();
           img.onload = () => {
+            element.setAttribute('loaded', true)
             self.setProgress(eachPercentage);
           };
 
@@ -98,12 +103,13 @@ export default {
           // };
           // req.send();
 
-          let loopFilmUrl = require('@/assets/img/home/loop.mp4');
+          let loopFilmUrl = require("@/assets/img/home/loop.mp4");
           var r = new XMLHttpRequest();
           r.onload = function () {
-            element.src = loopFilmUrl;
+            // element.src = loopFilmUrl;
             document.getElementById("main-v").play();
             self.setProgress(eachPercentage);
+            element.setAttribute('loaded', true)
           };
           r.open("GET", loopFilmUrl);
           r.responseType = "blob";

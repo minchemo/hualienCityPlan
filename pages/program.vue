@@ -11,8 +11,7 @@
             @click="setRouteHash(program.id)"
             v-bind:class="routeHash == program.id ? 'active' : ''"
           >
-            <div class="program-title" v-html="program.showTitle">
-            </div>
+            <div class="program-title" v-html="program.showTitle"></div>
           </div>
         </div>
         <div class="program-content">
@@ -170,31 +169,41 @@ export default {
       programs: [
         {
           id: 1,
-          showTitle: this.$device.isMobile ? "日出大道<br/><b>日出未來河</b>" : "日出大道｜<b>日出未來河</b>",
+          showTitle: this.$device.isMobile
+            ? "日出大道<br/><b>日出未來河</b>"
+            : "日出大道｜<b>日出未來河</b>",
           title: "日出大道",
           subtitle: "日出未來河",
         },
         {
           id: 2,
-          showTitle: this.$device.isMobile ? "花創園區<br/><b>花創火溫酒</b>" : "花創園區｜<b>花創火溫酒</b>",
+          showTitle: this.$device.isMobile
+            ? "花創園區<br/><b>花創火溫酒</b>"
+            : "花創園區｜<b>花創火溫酒</b>",
           title: "花創園區",
           subtitle: "花創火溫酒",
         },
         {
           id: 3,
-          showTitle: this.$device.isMobile ? "南濱公園<br/><b>南濱奔日流</b>" : "南濱公園｜<b>南濱奔日流</b>",
+          showTitle: this.$device.isMobile
+            ? "南濱公園<br/><b>南濱奔日流</b>"
+            : "南濱公園｜<b>南濱奔日流</b>",
           title: "南濱公園",
           subtitle: "南濱奔日流",
         },
         {
           id: 4,
-          showTitle: this.$device.isMobile ? "周邊街廓<br/><b>溝仔尾問路</b>" : "周邊街廓｜<b>溝仔尾問路</b>",
+          showTitle: this.$device.isMobile
+            ? "周邊街廓<br/><b>溝仔尾問路</b>"
+            : "周邊街廓｜<b>溝仔尾問路</b>",
           title: "周邊街廓",
           subtitle: "溝仔尾問路",
         },
         {
           id: 5,
-          showTitle: this.$device.isMobile ? "特別場域<br/><b>豐田村秘境</b>" : "特別場域｜<b>豐田村秘境</b>",
+          showTitle: this.$device.isMobile
+            ? "特別場域<br/><b>豐田村秘境</b>"
+            : "特別場域｜<b>豐田村秘境</b>",
           title: "特別場域",
           subtitle: "豐田村秘境",
         },
@@ -219,13 +228,13 @@ export default {
           hash: "#" + hash,
         });
 
-        this.$store.commit('forceCloseMobileMenu');
+        this.$store.commit("forceCloseMobileMenu");
       }
     },
   },
   created() {
     this.setRouteHash(this.$nuxt.$route.hash);
   },
-  mounted() { },
+  mounted() {},
 };
 </script>

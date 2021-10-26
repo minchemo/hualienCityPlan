@@ -4,6 +4,7 @@
       <Navbar />
       <div class="bg" data-aos="fade">
         <video
+          ref="video"
           id="main-v"
           type="video/mp4"
           preload="auto"
@@ -12,7 +13,7 @@
           loop
           playsinline
           class="bg-video"
-          src=""
+          src="@/assets/img/home/loop.mp4"
         ></video>
       </div>
 
@@ -199,6 +200,6 @@ export default {
   data() {
     return {};
   },
-  mounted() { },
+  mounted() {},
 };
 </script>

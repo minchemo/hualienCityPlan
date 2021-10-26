@@ -7358,6 +7358,11 @@ range-parser@^1.2.1, range-parser@~1.2.1:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
   integrity sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==
 
+rangeslider-pure@^0.4.1:
+  version "0.4.11"
+  resolved "https://registry.yarnpkg.com/rangeslider-pure/-/rangeslider-pure-0.4.11.tgz#e06ea857c47e24e6a01f6ef0bd31d2e31fb3de10"
+  integrity sha512-/dI1OFYj4chJuIUiUc3XlefSTDff8mAQyE0Yjke4Ozta+GsOtZaSV2U5AkUTFmE0ngMKYb23h5G1iAUJ5o8C8w==
+
 raw-loader@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-4.0.2.tgz#1aac6b7d1ad1501e66efdac1522c73e59a584eb6"
@@ -8852,6 +8857,14 @@ vue-analytics@^5.22.1:
   version "5.22.1"
   resolved "https://registry.yarnpkg.com/vue-analytics/-/vue-analytics-5.22.1.tgz#9d6b32da56daee1b9dfb23a267b50349a03f710f"
   integrity sha512-HPKQMN7gfcUqS5SxoO0VxqLRRSPkG1H1FqglsHccz6BatBatNtm/Vyy8brApktZxNCfnAkrSVDpxg3/FNDeOgQ==
+
+vue-canvasvideo@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-canvasvideo/-/vue-canvasvideo-1.0.0.tgz#30d70e1715002a824d0099ec4acc4b6d10db7dc2"
+  integrity sha512-3pBpmJ4fLuNlmfW1JjlRME1PMZYtDyZgHj/5a4Ee4LRoCmoAbvKjTQTQyDR7sKhruKhKJP0SCbu8dQwW/3+ESA==
+  dependencies:
+    lodash.debounce "^4.0.8"
+    rangeslider-pure "^0.4.1"
 
 vue-client-only@^2.0.0:
   version "2.1.0"

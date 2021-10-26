@@ -283,7 +283,7 @@
               content: "";
             }
             &::after {
-              transform: translate(30%,30%);
+              transform: translate(30%, 30%);
             }
           }
         }
