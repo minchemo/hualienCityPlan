@@ -316,23 +316,7 @@ export default {
 步行嗜好者，移居花蓮靠山新住民。「有点文化」負責人，「有點熟游擊廣播電台」「豐田電台TOYOTA RADIO」台長，「花蓮豐田移創指導所」舍監，小犬MAJIgaga的犬父。<br/><br/>
 
 <b>｜林清盛</b><br/>
-飛碟聯播網太魯閣之音廣播節目主持人，在花蓮主持「熱情東海岸」、「花現193」兩個節目，前News98電台「阿貓阿狗逛大街」主持人，入圍兩屆廣播金鐘獎主持人獎。著有《第十個約定》（新經典文化）。在花蓮的日子，新聞採訪、節目製作、業務工作，甚至身兼戶外活動主持，一刻不得閒。聲音與文字的傳播者。<br/><br/>
-
-<div class="en">Everyone who lives in Hualien has questions about Hualien in his heart. There is a problem because of caring. Caring is to want to be better. Whether you are concerned about  yourself or your community, your career or the environment, you have a lot of questions and you want to spray. "Flower Hey Spray" is not afraid of you spraying wheat or breaking your voice. I'm afraid you dare not ask. Let us turn our concerns into words and problems into practice. My way of listening is yours. It is better to say hello to Hualien out loud, and to ask for a better way.<br/><br/>
-
-Mainly during the event period from 14:00 to 18:00 pm on Saturdays and Sundays, a temporary broadcasting studio was set up in Hualien Cultural and Creative Park, with Lin Qingsheng as the chief moderator in the studio and Tao Weijun as the outfield moderator. The program is mainly linked and interviewed by Lin Qingsheng. At the same time, Tao Weijun will also invite passing passengers outside the shed to line up for interviews, placing them among the interviewees who have been invited in advance.<br/><br/>
-
-<b>Fancy Questions | 14:00-17:00</b><br/>
-In advance, the Hualien heroes from all walks of life were invited to be interviewed, mainly private amateurs who had not been interviewed publicly or had few public appearances. The interviewees are not limited in their occupational age and gender, including police officers, cabinet sisters, forest service employees, legislators, restaurant owners, and beef stall owners are all expected to be invited. The interview time of each respondent is limited to 30 minutes, and must be the introductory questioner of the "next respondent". Each respondent answers questions and asks questions, which is reflected in the way that questions are linked to questions. A diverse collection of opinions and voices at the broadcast site.<br/><br/>
-
-<b>Flower black spray, welcome to spray | 17:00-18:00</b><br/>
-Tao Weijun served as the host, and people who passed by were invited to come in and talk at will. If you want to be the host to interview other passers-by, you can ask questions together in Hualien, a fancy questioning fight where everyone is a host.<br/><br/>
-
-<b>| Tao Wei-Jyun</b><br/>
-A walking addict, moved to Hualien as a backer. The person in charge of "A Little Culture", the director of "A Little Familiar Guerrilla Radio", "Toyota Radio", "Toyota Radio", the supervisor of the "Hualien Toyota Transformation Guidance Center", and the father of the dog MAJIgaga.<br/><br/>
-
-<b>| Lin Qingsheng</b><br/>
-The host of the Voice of Taroko radio program on UFO network, hosted two programs of "Passion East Coast" and "Hua Xian 193" in Hualien. The former host of News98 radio "Amao Agou Going on the Street" was shortlisted for two radio gold medals. Bell Prize Host Award. Author of "The Tenth Promise" (New Classical Culture). In Hualien’s days, news coverage, program production, business work, and even hosting of outdoor events were all for a moment. Communicator of sound and words.</div>`,
+飛碟聯播網太魯閣之音廣播節目主持人，在花蓮主持「熱情東海岸」、「花現193」兩個節目，前News98電台「阿貓阿狗逛大街」主持人，入圍兩屆廣播金鐘獎主持人獎。著有《第十個約定》（新經典文化）。在花蓮的日子，新聞採訪、節目製作、業務工作，甚至身兼戶外活動主持，一刻不得閒。聲音與文字的傳播者。`,
               warn: "注意事項：請保持心平氣和",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a1-1花式提問.jpg"),
@@ -396,6 +380,7 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
 表演者：何冠儀、楊宇政、初柏翰<br/>
 視覺統籌：董育廷<br/>
 佈展執行：許少軒<br/>
+電話裝置製作：穀米機工<br/>
 特別感謝：柯智豪<br/><br/>
 
 <b>｜賈茜茹</b><br/>
@@ -492,13 +477,13 @@ The host of the Voice of Taroko radio program on UFO network, hosted two program
               info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1700-1800、1930-2030<br/>地點｜自由街X重慶路`,
               content: `<span class="highlight">*本節目為臺中國家歌劇院2021新藝計畫作品，前期發展由財團法人國家文化藝術基金會贊助。</span><br/><br/>
 
-藉著打造類似蹺蹺板的大型金屬裝置及帶有電磁鐵的身上配件，為演出創造一個反重力的「不穩定場域」。在充滿不確定性的環境下，受過身體訓練的3位表演者不再能如過往自主控制身體，更需在與裝置牽引、拉扯的過程中轉換肢體運用方式，找尋各自、彼此及與裝置間的生存之道。《非常態運動-失序邊境》反映著當環境不再以過去的規則進行、所有的秩序被打破時，彼此之間的情感與關係開始在混沌失序的狀態中產生變化、相互衝突，直到新的秩序與平衡重新被建構。然而失序的僅是眼前的環境紛 擾或世界變遷，還是內心深處最親近的自己?<br/><br/><br/>
+藉著打造類似蹺蹺板的大型金屬裝置及帶有電磁鐵的身上配件，為演出創造一個反重力的「不穩定場域」。在充滿不確定性的環境下，受過身體訓練的3位表演者不再能如過往自主控制身體，更需在與裝置牽引、拉扯的過程中轉換肢體運用方式，找尋各自、彼此及與裝置間的生存之道。《非常態運動-失序邊境》反映著當環境不再以過去的規則進行、所有的秩序被打破時，彼此之間的情感與關係開始在混沌失序的狀態中產生變化、相互衝突，直到新的秩序與平衡重新被建構。然而失序的僅是眼前的環境紛擾或世界變遷，還是內心深處最親近的自己?<br/><br/><br/>
 
 
 <b>舞者曁共同創作｜曾靖恩、李冠霖、李晉安</b><br/>
 <b>裝置設計曁共同創作｜王量、陳彥齊、林意翔</b><br/><br/>
 
-失序場由 3 位編舞者曾靖恩、李冠霖、李晉安及 3 位新媒體藝術家王量、林意翔及陳彥齊共組而成的跨領域表演藝術團體，期望探討表演藝術與新媒體藝術在不失各自領域本質下，激發不同類型 的創作形式、打造新藝術語彙。
+失序場由 3 位編舞者曾靖恩、李冠霖、李晉安及 3 位新媒體藝術家王量、林意翔及陳彥齊共組而成的跨領域表演藝術團體，期望探討表演藝術與新媒體藝術在不失各自領域本質下，激發不同類型的創作形式、打造新藝術語彙。
 
 `,
               warn: "",
@@ -723,7 +708,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               name: "汝妮的原住民新聲音",
               enname: "",
               creator: "音樂團：DJ 汝妮",
-              info: `11/19(五)2030-2130<br/>
+              info: `11/19(五) 2030-2130<br/>
 11/21(日) 2030-2130<br/>
 地點｜自由街X成功街-福建街`,
               content: `來自花蓮阿美族的Dungi非常珍視傳統文化，在部落採集外面聽不到的聲音，不斷嘗試堅硬的敲擊聲碰撞富有文化感的古調，創造出動人心弦的電子音樂。<br/><br/>
