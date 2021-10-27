@@ -248,18 +248,6 @@
           }
         }
       }
-      &:after {
-        content: "花蓮城市空間藝術節";
-        -ms-writing-mode: tb-lr;
-        writing-mode: vertical-lr;
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        letter-spacing: 6.4vw;
-        white-space: nowrap;
-        font-size: 1vw;
-      }
     }
     &::after {
       content: "";

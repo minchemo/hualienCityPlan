@@ -120,8 +120,12 @@
       <a href="https://www.facebook.com/hualien.festival" target="_blank">
         <img src="@/assets/img/fb.svg" alt="" srcset="" />
       </a>
-      <a href="https://www.instagram.com/hualien.festival" target="_blank">
-        <img src="@/assets/img/ig.svg" alt="" srcset="" />
+      <a
+        class="no-invert"
+        href="https://www.instagram.com/hualien.festival"
+        target="_blank"
+      >
+        <img src="@/assets/img/ig_bw.svg" alt="" srcset="" />
       </a>
       <a
         href="https://www.youtube.com/user/hlcultural/featured"
@@ -310,6 +314,11 @@
     img {
       width: 1vw;
       filter: invert(100%);
+    }
+    &.no-invert {
+      img {
+        filter: invert(0%);
+      }
     }
   }
 }

@@ -60,11 +60,13 @@
             cursor: pointer;
             .info-title {
               color: $primaryColor;
+              font-weight: bold;
             }
           }
           &.active {
             .info-title {
               color: $primaryColor;
+              font-weight: bold;
             }
           }
           .info-title {

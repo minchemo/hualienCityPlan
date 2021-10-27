@@ -247,7 +247,11 @@
           width: 30vw;
           &:hover {
             cursor: pointer;
-            opacity: 0.5;
+            opacity: 1;
+          }
+          &:active {
+            cursor: pointer;
+            opacity: .5;
           }
         }
       }
