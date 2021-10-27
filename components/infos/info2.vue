@@ -162,8 +162,13 @@
 
         transform: translate3d(0, 0, 0);
         -webkit-transform: translate3d(0, 0, 0);
+        background-image: url("@/assets/img/info/map_mo.jpg");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
         img {
           width: 100%;
+          visibility: hidden;
         }
       }
       .tag1 {
