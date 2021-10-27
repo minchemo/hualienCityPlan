@@ -574,8 +574,7 @@ export default {
             {
               name: "大人問到底",
               enname: "We Ask You Answer Me",
-              creator:
-                "羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁",
+              creator: "羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁",
               info: `11/19(五)-11/21(日) 1630-1730、1830-1930<br/><br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
               content: `如果你這樣問我，我會那樣回答你。<br/><br/>
 
@@ -681,6 +680,18 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               links: [],
             },
             {
+              name: "",
+              enname: "",
+              creator: "",
+              info: ``,
+              content: ``,
+              warn: "",
+              slides: [
+              ],
+              links: [],
+              breakline: true
+            },
+            {
               name: "遊俠說書",
               enname: "",
               creator: "黃懷德",
@@ -766,8 +777,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
                 require("@/assets/img/program/4-1日出未來河/a8-8-2Jesse.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-8-3Jesse.jpg"),
               ],
-              links: [
-              ],
+              links: [],
             },
             {
               name: "東岸爵士重奏",

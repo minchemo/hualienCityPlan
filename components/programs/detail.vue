@@ -16,15 +16,18 @@
         ></div>
         <template v-if="$store.state.detailTab.length > 1">
           <div class="tabs">
-            <div
-              class="item tabs-item"
-              :id="`tabs-item-${i}`"
-              v-for="(tab, i) in $store.state.detailTab"
-              :key="i"
-              v-bind:class="activeTabName == tab.name ? 'active' : ''"
-              @click="scroll(`detail-item-${i}`, i, tab.name)"
-              v-html="tab.name.replaceAll('<br/>', '')"
-            ></div>
+            <template v-for="(tab, i) in $store.state.detailTab">
+              <div
+                class="item tabs-item"
+                :id="`tabs-item-${i}`"
+                :key="i"
+                v-bind:class="activeTabName == tab.name ? 'active' : ''"
+                @click="scroll(`detail-item-${i}`, i, tab.name)"
+                v-html="tab.name.replaceAll('<br/>', '')"
+                v-if="!tab.breakline"
+              ></div>
+              <div v-else :key="i" class="breakline"></div>
+            </template>
           </div>
         </template>
         <div class="close" @click="$store.commit('closeDetail')">
@@ -422,6 +425,9 @@
             color: $primaryColor;
           }
         }
+        .breakline {
+          flex: 100%;
+        }
       }
       &::after {
         content: "";
@@ -504,7 +510,7 @@
             line-height: 2;
             margin-top: 0.5vw;
             word-break: break-all;
-            
+
             &.small {
               font-size: 0.9vw;
             }
@@ -690,6 +696,9 @@
             }
           }
           &::-webkit-scrollbar {
+            display: none;
+          }
+          .breakline {
             display: none;
           }
         }
@@ -922,7 +931,7 @@ export default {
     },
     forceTab() {
       return this.$store.state.forceTabKeyId;
-    }
+    },
   },
   watch: {
     detailOpen(newState, oldState) {
@@ -931,13 +940,13 @@ export default {
     forceTab(newState, oldState) {
       const self = this;
       setTimeout(() => {
-
         self.scroll(
-          'detail-item-' + self.$store.state.forceTabKeyId,
+          "detail-item-" + self.$store.state.forceTabKeyId,
           self.$store.state.forceTabKeyId,
-          self.$store.state.forceTabKeyName);
+          self.$store.state.forceTabKeyName
+        );
       }, 100);
-    }
+    },
   },
   methods: {
     visibilityChanged(isVisible, entry) {
