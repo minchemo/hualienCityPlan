@@ -12,7 +12,7 @@
             alt=""
             srcset=""
           />
-          <img v-else src="@/assets/img/info/map_mo.png" alt="" srcset="" />
+          <img v-else src="@/assets/img/info/map_mo.jpg" alt="" srcset="" />
         </div>
         <div class="tag1" v-show="!$device.isMobile">
           <img src="@/assets/img/info/map_tag.svg" alt="" srcset="" />
