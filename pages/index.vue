@@ -71,18 +71,43 @@
     <Footer />
 
     <div class="yt-popup" v-if="ytOpen" @click="ytOpen = !ytOpen">
-      <iframe
+      <!-- <iframe
         ref="yt_iframe"
         src="https://www.youtube.com/embed/sGF-Mf7sKqI"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></iframe>
+      ></iframe> -->
+      <youtube
+        class="yt-frame"
+        :video-id="'sGF-Mf7sKqI'"
+      />
       <div class="loading">Loading...</div>
     </div>
   </div>
 </template>
+
+<style lang="scss">
+.yt-frame {
+  iframe {
+    position: relative;
+    z-index: 1;
+    width: 50vw;
+    height: 28.2vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .yt-frame {
+    iframe {
+      width: 100vw;
+      height: 56.49vw;
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 .main {
@@ -187,12 +212,6 @@
     font-weight: 200;
     letter-spacing: 1px;
   }
-  iframe {
-    position: relative;
-    z-index: 1;
-    width: 50vw;
-    height: 28.2vw;
-  }
 }
 @media screen and (max-width: 500px) {
   .main {
@@ -267,10 +286,6 @@
   }
 
   .yt-popup {
-    iframe {
-      width: 100vw;
-      height: 56.49vw;
-    }
     &.active {
       transform: translateX(0%);
     }
@@ -281,9 +296,9 @@
 export default {
   data() {
     return {
-      ytOpen: false
+      ytOpen: false,
     };
   },
-  mounted() { },
+  mounted() {},
 };
 </script>

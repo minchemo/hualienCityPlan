@@ -96,7 +96,7 @@
     margin: 0 auto;
     flex-wrap: nowrap;
     .map {
-      width: 39%;
+      width: 35.5%;
       padding-right: 5vw;
       img {
         width: 100%;
@@ -251,31 +251,31 @@ export default {
         },
         {
           step: 1,
-          offsetRatio: 0.1338,
+          offsetRatio: 0.136,
         },
         {
           step: 2,
-          offsetRatio: 0.2887,
+          offsetRatio: 0.3055,
         },
         {
           step: 3,
-          offsetRatio: 0.4272,
+          offsetRatio: 0.4596,
         },
         {
           step: 4,
-          offsetRatio: 0.55983,
+          offsetRatio: 0.602,
         },
         {
           step: 5,
-          offsetRatio: 0.675247,
+          offsetRatio: 0.732,
         },
         {
           step: 6,
-          offsetRatio: 0.788701,
+          offsetRatio: 0.848,
         },
         {
           step: 7,
-          offsetRatio: 0.89746,
+          offsetRatio: 0.97,
         },
       ],
       scrollOptions: {
@@ -321,7 +321,6 @@ export default {
     smoothscroll.polyfill();
 
     const ratioList = this.scrollParam.map(item => item.offsetRatio);
-
 
     const scrollEl = this.$refs.mapDetail;
     scrollEl.addEventListener('scroll', () => {

@@ -324,6 +324,7 @@ export default {
               warn: "注意事項：請保持心平氣和",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a1-1花式提問.jpg"),
+                require("@/assets/img/program/4-1日出未來河/a2-2花式提問.jpg"),
               ],
               links: [
                 {
@@ -353,7 +354,7 @@ export default {
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a2-1白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-2白浪海嘯.jpg"),
-                require("@/assets/img/program/4-1日出未來河/a2-2花式提問.jpg"),
+                require("@/assets/img/program/4-1日出未來河/a2-3白浪海嘯.jpg"),
               ],
               links: [
                 {
