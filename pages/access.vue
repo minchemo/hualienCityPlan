@@ -141,6 +141,8 @@
     .map {
       background-image: url("@/assets/img/access/map.jpg");
       background-size: cover;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
       img {
         width: 100%;
         visibility: hidden;
@@ -251,7 +253,7 @@
           }
           &:active {
             cursor: pointer;
-            opacity: .5;
+            opacity: 0.5;
           }
         }
       }
@@ -311,9 +313,11 @@ export default {
   },
   methods: {
     openLine() {
-      window.open('https://liff.line.me/1645278921-kWRPP32q/?accountId=033rolty')
-    }
+      window.open(
+        "https://liff.line.me/1645278921-kWRPP32q/?accountId=033rolty"
+      );
+    },
   },
-  mounted() { },
+  mounted() {},
 };
 </script>

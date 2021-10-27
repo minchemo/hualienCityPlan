@@ -159,6 +159,9 @@
       .map {
         width: 100%;
         padding-right: 0;
+
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
         img {
           width: 100%;
         }
@@ -235,12 +238,12 @@
 }
 </style>
 <script>
-import smoothscroll from 'smoothscroll-polyfill';
+import smoothscroll from "smoothscroll-polyfill";
 
 export default {
   data() {
     return {
-      downloadUrl: require('@/assets/img/info/2021_Hualien_map.jpg'),
+      downloadUrl: require("@/assets/img/info/2021_Hualien_map.jpg"),
       totalScollWidth: 2556.1,
       scrollPos: 0,
       scrollStep: 0,
@@ -284,11 +287,11 @@ export default {
         x: true,
         y: false,
       },
-    }
+    };
   },
   methods: {
     download() {
-      let a = document.createElement('a');
+      let a = document.createElement("a");
       a.href = this.downloadUrl;
       a.download = "2021_Hualien_map.jpg";
       document.body.appendChild(a);
@@ -297,46 +300,56 @@ export default {
     },
     mapPrev() {
       if (this.scrollStep - 1 < 0) {
-        return
+        return;
       }
       this.scrollStep--;
-      this.$refs.mapDetail.scrollTo({ left: this.getScrollStepOffset(), behavior: 'smooth' });
+      this.$refs.mapDetail.scrollTo({
+        left: this.getScrollStepOffset(),
+        behavior: "smooth",
+      });
     },
     mapNext() {
       if (this.scrollStep + 1 > 7) {
-        return
+        return;
       }
       this.scrollStep++;
-      this.$refs.mapDetail.scrollTo({ left: this.getScrollStepOffset(), behavior: 'smooth' });
+      this.$refs.mapDetail.scrollTo({
+        left: this.getScrollStepOffset(),
+        behavior: "smooth",
+      });
     },
     getScrollStepOffset() {
-      const stepOffset = this.scrollParam.find(item => item.step == this.scrollStep);
+      const stepOffset = this.scrollParam.find(
+        (item) => item.step == this.scrollStep
+      );
       let offset = this.totalScollWidth * stepOffset.offsetRatio;
       return offset;
     },
   },
-  created() {
-  },
+  created() {},
   mounted() {
     smoothscroll.polyfill();
 
-    const ratioList = this.scrollParam.map(item => item.offsetRatio);
+    const ratioList = this.scrollParam.map((item) => item.offsetRatio);
 
     const scrollEl = this.$refs.mapDetail;
-    scrollEl.addEventListener('scroll', () => {
+    scrollEl.addEventListener("scroll", () => {
       let scrollLeft = scrollEl.scrollLeft / this.totalScollWidth;
-      this.$refs.scrollProgress.style.left = scrollLeft * 100 + '%'
+      this.$refs.scrollProgress.style.left = scrollLeft * 100 + "%";
 
       this.scrollPos = scrollLeft * 100;
 
       let closest = ratioList.reduce(function (prev, curr) {
-        return (Math.abs(curr - scrollLeft) < Math.abs(prev - scrollLeft) ? curr : prev);
+        return Math.abs(curr - scrollLeft) < Math.abs(prev - scrollLeft)
+          ? curr
+          : prev;
       });
 
-      let closestStep = this.scrollParam.find(item => item.offsetRatio == closest);
+      let closestStep = this.scrollParam.find(
+        (item) => item.offsetRatio == closest
+      );
       this.scrollStep = closestStep.step;
-
-    })
+    });
   },
-}
+};
 </script>
