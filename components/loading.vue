@@ -59,11 +59,11 @@ export default {
 
         if (!loaded) elems.push(item);
       });
-      video.forEach((item) => {
-        let loaded = item.getAttribute("loaded");
+      // video.forEach((item) => {
+      //   let loaded = item.getAttribute("loaded");
 
-        if (!loaded) elems.push(item);
-      });
+      //   if (!loaded) elems.push(item);
+      // });
 
       const eachPercentage = 100 / elems.length;
 
