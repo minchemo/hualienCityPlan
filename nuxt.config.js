@@ -68,7 +68,7 @@ export default {
         optimizeImages: true
     },
     googleAnalytics: {
-        id: "G-J9724LTZLL",
+        id: "G-P8Y9CLS1SS",
         autoTracking: {
             pageviewOnLoad: false
         }
