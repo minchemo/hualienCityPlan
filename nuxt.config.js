@@ -37,8 +37,7 @@ export default {
         {
             src: "./plugins/v-scrollto.js"
         },
-        { src: "@/plugins/yt.js", ssr: false },
-        { src: "@/plugins/g-tag.js" }
+        { src: "@/plugins/yt.js", ssr: false }
     ],
 
     // Auto import components: https://go. nuxtjs.dev/config-components
@@ -54,7 +53,11 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: ["nuxt-lazy-load", "@nuxtjs/google-fonts"],
+    modules: [
+        "nuxt-lazy-load",
+        "@nuxtjs/google-fonts",
+        "@nuxtjs/google-analytics"
+    ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
@@ -69,5 +72,9 @@ export default {
         families: {
             "Noto+Sans+TC": [300, 400, 700, 900]
         }
+    },
+    googleAnalytics: {
+        dev: true,
+        id: "UA-105806387-11"
     }
 };

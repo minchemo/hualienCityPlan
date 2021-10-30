@@ -294,6 +294,10 @@ export default {
       ytOpen: false,
     };
   },
-  mounted() {},
+  mounted() {
+    this.$ga.page('/')
+
+
+  },
 };
 </script>
