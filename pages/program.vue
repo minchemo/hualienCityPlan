@@ -228,8 +228,6 @@ export default {
           hash: "#" + hash,
         });
 
-        this.$ga.page('/program#' + hash)
-
         this.$store.commit("forceCloseMobileMenu");
       }
     },

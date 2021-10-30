@@ -187,8 +187,7 @@ export default {
           path: '/info',
           hash: '#' + hash
         })
-        
-        this.$ga.page('/info#' + hash)
+      
         
         this.$store.commit('forceCloseMobileMenu');
       }
