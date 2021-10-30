@@ -2,7 +2,7 @@
   <div>
     <div class="main">
       <Navbar />
-      <div class="bg" data-aos="fade">
+      <div class="bg">
         <video
           ref="video"
           id="main-v"
@@ -17,7 +17,7 @@
         ></video>
       </div>
 
-      <div class="intro" data-aos="fade">
+      <div class="intro">
         <div class="intro-content">
           <div class="yt-box" @click="ytOpen = !ytOpen"></div>
         </div>
@@ -51,7 +51,7 @@
         />
       </div>
 
-      <div class="brands" data-aos="fade">
+      <div class="brands">
         <img
           v-if="!$device.isMobile"
           v-lazy-load
@@ -70,18 +70,15 @@
     </div>
     <Footer />
 
-    <div class="yt-popup" v-if="ytOpen" @click="ytOpen = !ytOpen">
+    <div class="yt-popup" v-show="ytOpen" @click="ytOpen = !ytOpen">
       <iframe
         ref="yt_iframe"
-        src="https://www.youtube.com/embed/sGF-Mf7sKqI?autoplay=1"
+        src="https://www.dropbox.com/s/wswynurmfltg5vj/20211017_%E8%8A%B1%E8%93%AE%E5%9F%8E%E5%B8%82%E7%A9%BA%E9%96%93%E8%97%9D%E8%A1%93%E7%AF%80_Final.mp4?raw=1"
         frameborder="0"
         allowfullscreen
       ></iframe>
-      <!-- <youtube
-        class="yt-frame"
-        :video-id="'sGF-Mf7sKqI'"
-      />
-      <div class="loading">Loading...</div> -->
+      
+      <div class="loading">Loading...</div>
     </div>
   </div>
 </template>

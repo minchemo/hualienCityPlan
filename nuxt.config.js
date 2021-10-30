@@ -36,7 +36,9 @@ export default {
         { src: "./plugins/v-observe.js" },
         {
             src: "./plugins/v-scrollto.js"
-        }, { src: '@/plugins/yt.js', ssr: false }
+        },
+        { src: "@/plugins/yt.js", ssr: false },
+        { src: "@/plugins/g-tag.js" }
     ],
 
     // Auto import components: https://go. nuxtjs.dev/config-components
@@ -52,11 +54,7 @@ export default {
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
-    modules: [
-        "nuxt-lazy-load",
-        "@nuxtjs/google-analytics",
-        "@nuxtjs/google-fonts"
-    ],
+    modules: ["nuxt-lazy-load", "@nuxtjs/google-fonts"],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
@@ -66,12 +64,6 @@ export default {
     loading: `~/components/loading.vue`,
     optimizedImages: {
         optimizeImages: true
-    },
-    googleAnalytics: {
-        id: "G-P8Y9CLS1SS",
-        autoTracking: {
-            pageviewOnLoad: false
-        }
     },
     googleFonts: {
         families: {
