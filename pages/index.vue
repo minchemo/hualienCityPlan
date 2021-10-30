@@ -77,7 +77,7 @@
         frameborder="0"
         allowfullscreen
       ></iframe>
-      
+
       <div class="loading">Loading...</div>
     </div>
   </div>
@@ -295,9 +295,6 @@ export default {
     };
   },
   mounted() {
-    this.$ga.page('/')
-
-
   },
 };
 </script>

@@ -56,7 +56,6 @@ export default {
     modules: [
         "nuxt-lazy-load",
         "@nuxtjs/google-fonts",
-        "@nuxtjs/google-analytics"
     ],
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -74,7 +73,6 @@ export default {
         }
     },
     googleAnalytics: {
-        dev: true,
         id: "UA-105806387-11"
     }
 };
