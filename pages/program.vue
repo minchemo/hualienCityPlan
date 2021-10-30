@@ -26,6 +26,7 @@
       <Detail />
     </div>
     <Footer />
+    <Rotate />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -148,6 +149,7 @@ import Program3 from "@/components/programs/programs3.vue";
 import Program4 from "@/components/programs/programs4.vue";
 import Program5 from "@/components/programs/programs5.vue";
 import Detail from "@/components/programs/detail.vue";
+import Rotate from "@/components/rotate.vue";
 
 export default {
   components: {

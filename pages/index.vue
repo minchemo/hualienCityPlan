@@ -80,6 +80,7 @@
 
       <div class="loading">Loading...</div>
     </div>
+    <Rotate />
   </div>
 </template>
 
@@ -288,6 +289,7 @@
 }
 </style>
 <script>
+import Rotate from "@/components/rotate.vue";
 export default {
   data() {
     return {

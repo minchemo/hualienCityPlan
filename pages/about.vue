@@ -102,6 +102,7 @@
       />
     </div>
     <Footer />
+    <Rotate />
   </div>
 </template>
 
@@ -456,6 +457,8 @@
 }
 </style>
 <script>
+import Rotate from "@/components/rotate.vue";
+
 export default {
   data() {
     return {
@@ -553,6 +556,9 @@ export default {
         },
       ],
     };
+  },
+  components: {
+    Rotate
   },
   mounted() { },
 };

@@ -21,6 +21,7 @@
       </div>
     </div>
     <Footer />
+    <Rotate />
   </div>
 </template>
 <style lang="scss" scoped>
@@ -144,6 +145,7 @@
 <script>
 import Info1 from '@/components/infos/info1.vue';
 import Info2 from '@/components/infos/info2.vue';
+import Rotate from "@/components/rotate.vue";
 
 export default {
   components: {
