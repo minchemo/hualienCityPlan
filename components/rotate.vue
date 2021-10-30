@@ -2,6 +2,7 @@
   <div class="screen-rotate-warning" v-bind:class="{ active: showWarn }">
     <div class="demo-screen"></div>
     <p v-html="this.warnText"></p>
+    <div class="close" @click="showWarn = false">關閉</div>
   </div>
 </template>
 
@@ -35,6 +36,10 @@
   }
   &.active {
     transform: translateX(0%);
+  }
+  .close {
+    letter-spacing: 2px;
+    color: gray;
   }
 
   @keyframes rotate {
@@ -82,7 +87,7 @@ export default {
     check() {
       if (this.$device.isTablet) { //平板只能橫式
         if (window.innerHeight > window.innerWidth) {
-          this.warnText = '為確保最佳視覺體驗，請轉為<b>橫向</b>瀏覽'
+          this.warnText = '為確保最佳視覺體驗，請調整您的螢幕方向'
           this.showWarn = true
         } else {
           this.showWarn = false
@@ -90,7 +95,7 @@ export default {
       } else if (this.$device.isMobile) { //手機板只能直式
 
         if (window.innerHeight < window.innerWidth) {
-          this.warnText = '為確保最佳視覺體驗，請轉為<b>直向</b>瀏覽'
+          this.warnText = '為確保最佳視覺體驗，請調整您的螢幕方向'
           this.showWarn = true
         } else {
           this.showWarn = false
