@@ -60,7 +60,8 @@ export default {
     buildModules: [
         // https://go.nuxtjs.dev/eslint
         "@nuxtjs/device",
-        "@aceforth/nuxt-optimized-images"
+        "@aceforth/nuxt-optimized-images",
+        '@nuxtjs/google-analytics'
     ],
 
     // Modules: https://go.nuxtjs.dev/config-modules
