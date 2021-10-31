@@ -72,11 +72,12 @@
 
     <div class="yt-popup" v-show="ytOpen" @click="ytOpen = !ytOpen">
       <iframe
-        ref="yt_iframe"
-        src="https://www.dropbox.com/s/wswynurmfltg5vj/20211017_%E8%8A%B1%E8%93%AE%E5%9F%8E%E5%B8%82%E7%A9%BA%E9%96%93%E8%97%9D%E8%A1%93%E7%AF%80_Final.mp4?raw=1"
+        src="https://player.vimeo.com/video/640865953?h=a95e8ea666&autoplay=1&loop=1&title=0&byline=0&portrait=0"
         frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
       ></iframe>
+      <script src="https://player.vimeo.com/api/player.js"></script>
 
       <div class="loading">Loading...</div>
     </div>
