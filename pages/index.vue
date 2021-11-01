@@ -13,8 +13,9 @@
           loop
           playsinline
           class="bg-video"
-          src="@/assets/img/home/loop.mp4"
-        ></video>
+        >
+          <source src="@/assets/img/home/loop.mp4" type="video/mp4" />
+        </video>
       </div>
 
       <div class="intro">
@@ -297,7 +298,6 @@ export default {
       ytOpen: false,
     };
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
