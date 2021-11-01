@@ -96,5 +96,8 @@ export default {
     },
     googleAnalytics: {
         id: "UA-105806387-11"
+    },
+    sitemap:{
+        hostname: 'https://2021hualienfestival.tw/'
     }
 };
