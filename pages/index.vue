@@ -14,7 +14,7 @@
           playsinline
           class="bg-video"
         >
-          <source src="@/assets/img/home/loop.mp4" type="video/mp4" />
+          <source src="https://i.imgur.com/vf4hYrd.mp4" type="video/mp4" />
         </video>
       </div>
 
