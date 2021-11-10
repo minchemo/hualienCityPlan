@@ -177,7 +177,18 @@
       }
 
       &:nth-child(6) {
+        &:hover {
+          .program-item-subtitle {
+            &::after {
+              transform: translate(-600%, 40%);
+            }
+          }
+        }
         .program-item-subtitle {
+          text-align: left;
+          &::after {
+            transform: translate(-700%, 40%);
+          }
           &::before {
             content: "(選段演出)";
             position: absolute;
@@ -185,6 +196,7 @@
             left: 50%;
             transform: translate(-50%, 140%);
             font-size: 0.9vw;
+            display: none;
           }
         }
       }
@@ -306,7 +318,8 @@ export default {
             {
               name: "花式提問",
               enname: "Ask Me If You Can",
-              creator: "陶維均  林清盛",
+              creator:
+                "陶維均  林清盛<br/><span>Tao Wei-Jyun, Lin Ching-Sheng</span>",
               info: `11/20 (六)、11/21 (日) 1400-1800<br>地點｜花創園區 鍋爐室`,
               content: `每個住花蓮的人，心中對花蓮都有提問。有問題是因為關心，關心是想要更好，無論對自己或社群、對事業或環境，心中有滿滿的疑問想要開噴，《花嘿噴》不怕你噴麥不怕你破音只怕你不敢問。讓我們一起將關心轉為話語，把問題化作實踐，我的道聽是你的塗說，大聲向花蓮問聲好還要更好，問出一條更好的路。<br/><br/>
 
@@ -320,7 +333,20 @@ export default {
 步行嗜好者，移居花蓮靠山新住民。「有点文化」負責人，「有點熟游擊廣播電台」「豐田電台TOYOTA RADIO」台長，「花蓮豐田移創指導所」舍監，小犬MAJIgaga的犬父。<br/><br/>
 
 <b>｜林清盛</b><br/>
-飛碟聯播網太魯閣之音廣播節目主持人，在花蓮主持「熱情東海岸」、「花現193」兩個節目，前News98電台「阿貓阿狗逛大街」主持人，入圍兩屆廣播金鐘獎主持人獎。著有《第十個約定》（新經典文化）。在花蓮的日子，新聞採訪、節目製作、業務工作，甚至身兼戶外活動主持，一刻不得閒。聲音與文字的傳播者。`,
+飛碟聯播網太魯閣之音廣播節目主持人，在花蓮主持「熱情東海岸」、「花現193」兩個節目，前News98電台「阿貓阿狗逛大街」主持人，入圍兩屆廣播金鐘獎主持人獎。著有《第十個約定》（新經典文化）。在花蓮的日子，新聞採訪、節目製作、業務工作，甚至身兼戶外活動主持，一刻不得閒。聲音與文字的傳播者。
+<div class="en">Everyone who lives in Hualien has questions about it. That is because they care. Caring means wanting to do better. Whether you are concerned about yourself or your community, your career or the environment, you have a lot of questions. "Flower Black Spray" is not afraid of your questions, only that you will not ask them. Let us turn our concerns into words and problems into practice. Say hello to Hualien and ask about a better way.<br/><br/>
+
+<b>Fancy Questions | 14:00-17:00</b><br/>
+Hualien’s heroes from all walks of life are interviewed. These are ordinary people who have never or who have rarely been interviewed publicly. There are no limitations in terms of occupation, age, or gender of the respondents. They include police officers, shop clerks, Forestry Bureau employees, legislators, restaurant owners, and beef stall owners. Each interview is limited to 30 minutes and the person being interviewed introduces the next interviewee. Each respondent answers and asks questions, such that the questions become linked, resulting in a diverse collection of opinions and voices.<br/><br/>
+
+<b>Flower Black Spray, Welcome Spray | 17:00-18:00</b><br/>
+Tao Wei-Jyun hosts this event during which people passing by are invited to come in and talk. If you would like to interview other passers-by, you can. Let’s all ask questions about Hualien, to create a fancy question battle.<br/><br/>
+
+<b>｜Tao Wei-Jyun</b><br/>
+Tao Wei-Jyun, a walking enthusiast, moved to Hualien. He is the founder of You Dian Wen Hua (A Little Culture), the director of Never Old to Live Radio and Toyota Radio, and the supervisor for FengTian IDEA Lab. He also owns a dog named MAJIgaga.<br/><br/>
+
+<b>｜Lin Ching-Sheng</b><br/>
+Lin Ching-Sheng hosts the Voice of Taroko radio program on UFO network. In Hualien, he also has two other programs, Re Qing Dong Hai An (Passion for the East Coast) and Hua Xian 193 (Discover 193). While the host of News98 radio’s A Mao A Gou Guang Da Jie (Cats and Dogs on the Street) he was nominated for two Golden Bell awards. He is the author of Di Shi Ge Yue Ding (The Tenth Promise) (Thinkingdom Media Group). In Hualien, he keeps busy covering the news, producing programs, and hosting outdoor events. It can be said that he is a communicator of sounds and words.</div>`,
               warn: "注意事項：請保持心平氣和",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a1-1花式提問.jpg"),
@@ -344,13 +370,27 @@ export default {
             {
               name: "白浪海嘯吃菜吧",
               enname: "Vegetables Everyday",
-              creator: "走路草農藝團",
+              creator:
+                "走路草農藝團<br/><span>Walking Grass Agriculture</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>作品互動｜1600-2200<br/>地點｜自由街X南京街-成功街`,
               content: `「白浪」有海的意像，也是原住民朋友稱呼漢人時所使用的名稱；「海嘯吧」很可怕，但其實是原住民朋友，對於「還是要吧」的這四個字連音的諧音讀字。「白浪海嘯吃菜吧」是走路草以「白浪」身份，針對地方常見的「野菜」發起的現地計劃，除邀請參與的朋友，認識不同的「野菜」，也告訴來此的「白浪」們，還是要吃地方的野菜吧！本計劃包含從臺灣的蔬果紙箱出發，與當地的媽媽們合作，創造出花蓮特選的野菜紙箱，另外透過動力裝置與作物種子的結合，創造出在海聽濤的聲響，也呼應著過去曾經可以看到溪流的日出大道。<br/><br/>
 
 <b>｜走路草農／藝團成員</b><br/>
-來自高雄的甲仙與大社，關注生態自然、農業環境與地景考現等相關議題。「治本於農，以農入藝」走路草創作的方法與目標，農藝不只是農業技術，更是轉化創作的靈感來源與實踐方法。持續的創作計劃包含「思箱計劃」、「噥噥時間交換所」等等。`,
-              warn: "注意事項｜拍照打卡不用錢，參觀選購更歡迎",
+來自高雄的甲仙與大社，關注生態自然、農業環境與地景考現等相關議題。「治本於農，以農入藝」走路草創作的方法與目標，農藝不只是農業技術，更是轉化創作的靈感來源與實踐方法。持續的創作計劃包含「思箱計劃」、「噥噥時間交換所」等等。
+<div class="en">
+    Seeing a road, why do we miss a river? Today, supermarkets are commonplace. So, why do we still need traditional markets or to go to the mountains to collect wild vegetables? How do we recall a stream? How do we observe the leaves of vegetables? How do can we recognize that some plants we have thought of as weeds are actually vegetables? We combine the planting of seeds with a motorized installation that imitates the sounds of a stream. To the indigenous peoples, the land is like a refrigerator, providing food to eat. We collaborated with local residents to learn about wild vegetables. We hope that Vegetables Everyday becomes a place for cultural exchanges, where people eat wild vegetables, see wild vegetables, learn about wild vegetables, and hear the sounds of a stream.<br/><br/>
+
+<b>｜Walking Grass Agriculture</b><br/>
+“Flourishing through agriculture, intervening in art through agriculture” is the method and objective of Walking Grass Agriculture. Its members come from farming families and have a passion for art. They use the term agriculture not just for its technical implications, but also to explore the possibilities of art via the values inherited from their families. Agriculture is a balance between nature and culture. Not unlike art, it responds to the seasons, the heavens and the earth, time and space, and the rhythms of life. Art can act upon all these phenomena.
+</div>`,
+              warn: `注意事項｜拍照打卡不用錢，參觀選購更歡迎 <br><br>
+              活動說明｜<br>
+            一、活動期間，於「花蓮市公所 原味直送野菜箱」網站上訂購野菜，就能獲得限量100份的手工版畫野菜箱，送完為止。<br><br>
+
+            二、現場展售來自國福部落，與華東部落媽媽們種植與採集的野菜，活動期間買菜送樹苗，每日限量100份！本活動樹苗由林務局花蓮林區管理處贊助提供，來自花蓮沿岸防風植物臺灣海藻、白水木、草海桐，花蓮特有種太魯閣櫟、火刺木，阿美族食/實用植物刺蔥、毛柿。<br><br>
+
+            三、活動期間，每天下午四點到五點，有來自大本部落的媽媽們，進行傳統手工藝與料理「阿里鳳鳳」（alifongfong）的製作，現場收費報名。
+`,
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a2-1白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-2白浪海嘯.jpg"),
@@ -374,7 +414,7 @@ export default {
             {
               name: "家族",
               enname: "Family",
-              creator: "賈茜茹",
+              creator: "賈茜茹<br/><span>Chia Chien-Ju</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1730-1830<br/>地點｜自由街X成功街-福建街`,
               content: `每個家都會有一個客廳，每個客廳都有屬於自己的故事。離不開的是不想離開還是不能離開？回來的是想回來還是不得不回來？在這一座山、一片海、一條消失的溪流之下，將發生一個家族的聚散，一通沒人接聽的電話，一場沒有邊界的演出。<br/><br/>
 
@@ -390,8 +430,24 @@ export default {
 
 <b>｜賈茜茹</b><br/>
 1984年於台北出生。擅長自言自語，喜歡與萬物對話，在創作上收集、撿拾，使用任何可以在日常生活中可見的物品做為材料，透過聚集某些物件來重現一種分散在人群當中的力量。試著混合日常物品和生活經驗，創作物品的另一種的觀看方式，並讓這種經驗回歸到生活當中，為真實生活中創作新的體驗和可被想像的空間。
+<div class="en">
+    Every home has a living room and each living room has its own story. Does the inability to leave mean not wanting to or not able to? Do those returning home do so because they want to or have to? There are mountains, a sea, and a disappearing stream. A family gathers and disperses and phone calls go unanswered. This is a performance without boundaries.<br/><br/>
+
+Using locally sourced second-hand furniture, an elevated living room is created that can be seen from multiple angles with a long table that resonates with the houses along the stream in Gouzaiwei and resembles a bridge. In cooperation with a drama therapist and through the guidance provided by the performers, the audience becomes a temporary family in this eclectic living room.The sound clips of children’s childish talks from Blaire Ko's work "The King Midas with Donkey Ears" are also included in this project to emphasize the purity part of this work and echo the beauty of Hualien city.<br/><br/>
+
+Creator: Chia Chien-Ju<br/>
+Co-creator: Liu Kuan-Chu<br/>
+Performers: Ho Kuan-Yi, Yang Yu-Jheng, Chu Po-Han<br/>
+Visual Coordination: Tung Yu-Ting<br/>
+Exhibition Technology: Hsu Shao-Hsuan<br/>
+Telephone mechanism design: Okome Studio<br/>
+Special Thank to Blaire Ko<br/><br/>
+
+<b>｜Chia Chien-Ju</b><br/>
+Chia Chien-Ju was born in Taipei in 1984. She observes and searches for local ready-made objects. In combination with the local living experience, she remakes them into objects seen in real life, presenting them in a new manner to create scenes that might be considered bizarre.
+</div>
 `,
-              warn: "注意事項｜觀眾可自由移動長桌旁的以椅子在這個混聚客廳中找地方坐下，使用完畢時要放回同側桌邊即可。",
+              warn: "注意事項｜觀眾可自由移動長桌旁的椅子在這個混聚客廳中找地方坐下。",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a3-1家族.jpg"),
               ],
@@ -413,7 +469,8 @@ export default {
             {
               name: "校準：路徑",
               enname: "Calibrate: Path",
-              creator: "謝佑承 王中原",
+              creator:
+                "謝佑承 王中原<br/><span>Hsieh Yu-Cheng, Wang Chung-Yuan</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>地點｜自由街X成功街-福建街`,
               content: `日出大道的地理位置，往前往後延伸連接，分別連接兩個頂點：山與海的兩邊，縱切從山至海的路線，依著每個人的方向，路線因此有了各自不同的起點與終點。如果路徑的兩端永恆不變，通道將帶我們去哪邊？<br/><br/>
 
@@ -424,7 +481,29 @@ export default {
 
 謝佑承畢業於國立臺北藝術大學新媒體藝術學系碩士班。創作常以現場製作、影像、物質材料等不同形式與媒材，發展以光為存在辯證的系列作品。王中原畢業於倫敦大學金匠學院設計研究所，作品媒材多使用裝置與聲音等複合形式，觀察生態系中人、生物、環境間的互動與影響。<br/><br/>
 
-兩人期許透過計畫的合作，不限於媒體、空間裝置與聲音，關注當前世界人與自然的交互關聯，乃至集體的共感記憶與生存空間。`,
+兩人期許透過計畫的合作，不限於媒體、空間裝置與聲音，關注當前世界人與自然的交互關聯，乃至集體的共感記憶與生存空間。
+<div class="en">
+    Located along Sunrise Boulevard, also known as “Hualien’s Champs-Élysées”, this work extends forwards and backwards,
+    creating a path that connects the mountains with the sea. Based on everyone’s perspective and direction, this path
+    has a beginning and an end. If both ends remain unchanged, where will this path take us?<br /><br>
+    On top of the avenue’s checkerboard pattern, Calibrate: path mimics projection mapping of an image using fluorescent
+    tape, enlarging it to transform the entire landscape. Along this path, the cityscape is temporarily and permanently
+    reshaped. Meanwhile, audiences are led on an exploration from “now” to the “future”. Compared to the convenience and
+    rapidity of digital techniques, the possibilities for sensory relocation and imagination are explored through the
+    making of something by hand. <br><br>
+    <b>Creator: Hsieh Yu-Cheng</b> <br>
+    <b>Co-creator: Wang Chung-Yuan</b> <br><br>
+
+    <b>｜Hsieh Yu-Cheng、Wang Chung-Yuan</b> <br>
+    Hsieh Yu-Cheng graduated from the Department of New Media Art of Taipei National University of the Arts. He often
+    works with site-specific installations, video, materials, and other media to develop works based on the dialectical
+    relationship of light. Wang Chung-Yuan graduated from the Department of Design at Goldsmiths College, University of
+    London. His works often feature a combination of installation and sound and are based on the observations of the
+    interactions and influences among people, organisms, and the environment.
+
+    This duo hopes that through their collaboration that they will not be limited by media, space, or sound, as they
+    investigate the relationships between humans and nature and even collective memories and living spaces.
+</div>`,
               warn: "",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a4-1校準.jpg"),
@@ -443,13 +522,27 @@ export default {
             {
               name: "這原是一條河",
               enname: "There Is A River",
-              creator: "曾令理",
+              creator: "曾令理<br/><span>Tseng Ling-Li</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>互動｜每10分鐘霧氣施放<br/>
 地點｜自由街X廣東街-重慶路`,
               content: `日出香榭大道的下方是花蓮居民口中的溝仔尾，承襲著過去沿岸的歷代風華。 城市的發展有著許多複雜綜合的判斷，有些留下成為永恆的日常，有些在不得已中逐漸被淡忘。藝術家在此使用鋪面縫隙作為引導，定時施放向上竄升的水霧，讓來往的人在水氣瀰漫間想起下方伴隨著花蓮的河。<br/><br/>
 
 <b>｜曾令理</b><br/>
-藝術家曾令理作品風格總在洗鍊造型中透露著奇幻感，致力於探索不可見的現象並將其轉譯為可體驗的作品。過去在美國庫柏聯盟、哈佛大學完成建築與設計碩士學位。現任陽明交通大學建築學系助理教授，並於2016起擔任偶然設計平台發起人，連結不同的創作者跨領域共同協作專案。`,
+藝術家曾令理作品風格總在洗鍊造型中透露著奇幻感，致力於探索不可見的現象並將其轉譯為可體驗的作品。過去在美國庫柏聯盟、哈佛大學完成建築與設計碩士學位。現任陽明交通大學建築學系助理教授，並於2016起擔任偶然設計平台發起人，連結不同的創作者跨領域共同協作專案。
+<div class="en">
+    Sunrise Boulevard, also called “Hualien’s Champs-Elysees Avenue”, is known as Guo Zai Wei among local residents. It
+    has inherited the charisma and elegance of past generations. The development of a city involves complex and
+    comprehensive judgement. Some places become part of the eternal daily routine while others are gradually forgotten.
+    This artist utilizes the cracks along the checkerboard-patterned avenue as guides, from which mist is regularly
+    released. While walking amid the diffuse vapor, pedestrians are reminded of the body of water that lies underground
+    and that has long accompanied Hualien. <br><br>
+
+    <b>｜Tseng Ling-Li</b><br>
+    Tseng Ling-Li is adept at experiential space creation and installation art of various styles and dimensions. She
+    earned Master’s degrees in architecture and design from Cooper Union and Harvard University. Currently, she works as
+    an Assistant Professor in the Department of Architecture at National Yang Ming Chiao Tung University. In 2016, she
+    founded Serendipity Studio to connect creators and develop interdisciplinary collaborative projects.
+</div>`,
               warn: "注意事項｜水霧施放時請勿距離噴頭過近，並小心衣物潮濕與地滑的可能。",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a5-1這原是一條河.jpg"),
@@ -470,26 +563,42 @@ export default {
         {
           title: "Q6",
           subtitle: this.$device.isMobile
-            ? "非常態運動<br/>失序邊境"
-            : "非常態運動-失序邊境",
+            ? "非常態運動<br/>失序邊境<br>選段演出"
+            : "非常態運動-失序邊境<br>選段演出",
           tag: "什麼永恆不變？",
           color: "#C8E6FA",
           tab: [
             {
-              name: "非常態運動-失序邊境 （選段演出）",
+              name: "非常態運動-失序邊境<br>選段演出",
               enname: "Helter Skelter – Tilted Border",
-              creator: "失序場團隊",
+              creator: "失序場<br/><span>Order from Chaos</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1700-1800、1930-2030<br/>地點｜自由街X重慶路`,
               content: `<span class="highlight">*本節目為臺中國家歌劇院2021新藝計畫作品，前期發展由財團法人國家文化藝術基金會贊助。</span><br/><br/>
 
-藉著打造類似蹺蹺板的大型金屬裝置及帶有電磁鐵的身上配件，為演出創造一個反重力的「不穩定場域」。在充滿不確定性的環境下，受過身體訓練的3位表演者不再能如過往自主控制身體，更需在與裝置牽引、拉扯的過程中轉換肢體運用方式，找尋各自、彼此及與裝置間的生存之道。《非常態運動-失序邊境》反映著當環境不再以過去的規則進行、所有的秩序被打破時，彼此之間的情感與關係開始在混沌失序的狀態中產生變化、相互衝突，直到新的秩序與平衡重新被建構。然而失序的僅是眼前的環境紛擾或世界變遷，還是內心深處最親近的自己?<br/><br/><br/>
+藉著打造類似蹺蹺板的大型金屬裝置及帶有電磁鐵的物件，為演出創造一個反重力的「不穩定場域」。在充滿不確定性的環境下，受過身體訓練的3位表演者不再能如過往自主控制身體，更需在與裝置牽引、拉扯的過程中轉換肢體運用方式，找尋各自、彼此及與裝置間的生存之道。《非常態運動-失序邊境》反映著當環境不再以過去的規則進行、所有的秩序被打破時，彼此之間的情感與關係開始在混沌失序的狀態中產生變化、相互衝突，直到新的秩序與平衡重新被建構。然而失序的僅是眼前的環境紛擾或世界變遷，還是內心深處最親近的自己?<br/><br/><br/>
 
-
+<b>｜失序場</b><br>
 <b>舞者曁共同創作｜曾靖恩、李冠霖、李晉安</b><br/>
 <b>裝置設計曁共同創作｜王量、陳彥齊、林意翔</b><br/><br/>
 
 失序場由 3 位編舞者曾靖恩、李冠霖、李晉安及 3 位新媒體藝術家王量、林意翔及陳彥齊共組而成的跨領域表演藝術團體，期望探討表演藝術與新媒體藝術在不失各自領域本質下，激發不同類型的創作形式、打造新藝術語彙。
+<div class="en">
+    Bearing the impact of COVID-19, six emerging young artists realize that “normalcy” is an ever-changing state,
+    constantly threatening to break away from the expected path. Helter Skelter – Tilted Border is a bold attempt to
+    create an anti-gravity space for performance by deploying a large seesaw-like metal installation and objects with
+    electromagnets. The unpredictability of an anti-gravity stage informs the three physically trained performers’
+    approach to their body movements. They navigate through the push and drag of new force fields, adapting and changing
+    their movements. <br/><br/>
 
+    <b>｜Order from Chaos</b> <br>
+    Dancers & Co-Creators: Tseng Ching-En, Lee Kuan-Ling, Lee Chin-An <br>
+    Installation Design & Co-Creators: Wang Liang, Chen Yen-Chi, Lin Yi-Hsiang <br><br>
+
+    Order from Chaos, a cross-disciplinary performing arts group, is comprised of three choreographers (Tseng Ching-En,
+    Lee Kuan-Ling, and Lee Chin-An) and three new media artists (Wang Liang, Lin Yi-Hsiang, and Chen Yen-Chi). Together,
+    they explore creative paradigms and vocabularies of the performing arts and new media arts while preserving their
+    essence.
+</div>
 `,
               warn: "",
               slides: [
@@ -517,12 +626,19 @@ export default {
             {
               name: "滑板表演",
               enname: "Freestyle Skate",
-              creator: "滑板團隊",
+              creator: "滑板團隊<br/><span>HLC Local skaters</span>",
               info: `11/19(五)-11/21(日) 1530-1645<br/>地點｜自由街X重慶路`,
               content: `滑板極限運動表演，利用現有的道具，做出地板招式以及卡招的運用。<br/><br/>
 
 <b>｜花蓮在地的滑手</b><br/>
-胡冠嘉、李斌、林澄浩、墨梵、慕凡、陳爾陽`,
+胡冠嘉、李斌、林澄浩、墨梵、慕凡、陳爾陽
+
+<div class="en">
+    This is the street lifestyle. Kick, flip 360, flip heel, flip five-O, grind 50-50, grind tailslide, nose grind, and more…<br><br>
+
+<b>｜HLC Local skaters</b> <br>
+Hu Guan-Jia, Lee Bin, Lin Chang-Hao, Mo-Fan, Mu-Fan, Chen Er-Yang
+</div>`,
               warn: "",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a6-2滑板1.jpg"),
@@ -546,12 +662,28 @@ export default {
             {
               name: "鏡岕",
               enname: "Between Reflections",
-              creator: "豪華朗機工 LuxuryLogico",
+              creator: "豪華朗機工<br/><span>LuxuryLogico</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>地點｜自由街X重慶路`,
-              content: `利用募集回收鏡子來反射大道上的一切，包含天地。象徵這個世界是無限循環，映照即看見，所有的一切都在裝置理集聚與擴散，一如這個城市承載著人們的相聚與離合，全都在這夢境般的反射之中，而我們從這裡對未來展開提問。<br/><br/>
+              content: `利用募集回收鏡子來反射大道上的一切，包含天地。象徵這個世界是無限循環，映照即看見，所有的一切都在裝置裡集聚與擴散，一如這個城市承載著人們的相聚與離合，全都在這夢境般的反射之中，而我們從這裡對未來展開提問。<br/><br/>
 
 <b>｜豪華朗機工</b><br/>
-由4位1980年左右出生的新銳藝術家張耿豪、張耿華、陳志建及林昆穎，因混種概念而成軍，作品風格以「輕鬆異境陽光飄浮」而著稱，他們取材於自然環境，憑著狂想討論奇觀社會中的人性思維，將極度的科技整合極度的人文，利用「音樂、視覺、裝置、文本」共陳手法，使面向千變萬化，作品類型橫跨多面。`,
+由4位1980年左右出生的新銳藝術家張耿豪、張耿華、陳志建及林昆穎，因混種概念而成軍，作品風格以「輕鬆異境陽光飄浮」而著稱，他們取材於自然環境，憑著狂想討論奇觀社會中的人性思維，將極度的科技整合極度的人文，利用「音樂、視覺、裝置、文本」共陳手法，使面向千變萬化，作品類型橫跨多面。
+<div class="en">
+    We use recycled glass to reflect the avenue, including the sky and the ground, symbolizing the world as an infinite
+    cycle that is revealed through reflection. Everything is brought together and diffused through this huge mirror,
+    just as the city serves as a platform for people to gather and separate. This all-encapsulating, dreamlike
+    reflection is the starting point of our exploration of the future. <br><br>
+
+    <b>｜LuxuryLogico</b> <br>
+    Based on the concept of “hybrid,” LuxuryLogico was founded by four contemporary artists born in the 1980s: Chang
+    Keng-Hau, Chang Geng-Hwa, Chen Chih-Chien, and Lin Kun-Ying. They are known for their light-hearted style that is
+    based on the idea of “a delightful and strange land”. Inspired by the natural environment, they tackle thoughts and
+    ideas of contemporary society, integrating modern technology and culture, presenting their ideas via music, visual
+    effects, installation, and text. Their works of fantasy manifest in various forms and genres, including drama, film,
+    dance, architecture, pop music, and economic behavior. LuxuryLogico came into being due to this force of unceasing
+    integration.
+</div>
+`,
               warn: "注意事項｜請勿觸碰或攀爬作品",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a7-1鏡岕.jpg"),
@@ -574,7 +706,8 @@ export default {
             {
               name: "大人問到底",
               enname: "We Ask You Answer Me",
-              creator: "羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁",
+              creator:
+                "羅棋諠、瞿正柔、朱昶維、楊大衛、陳妤蓁<br/><span>MīMī Lo, Allison Chu, Jonathan Chi, David Yang, Yuzhen Chen</span>",
               info: `11/19(五)-11/21(日) 1630-1730、1830-1930<br/><br/>地點｜自由街X南京街-重慶路<br/>（活動時間內隨機出現）`,
               content: `如果你這樣問我，我會那樣回答你。<br/><br/>
 
@@ -600,22 +733,44 @@ export default {
             {
               name: "香榭蚌蚌",
               enname: "Clam Bombshell",
-              creator: "台北劇場實驗室",
+              creator:
+                "台北劇場實驗室 feat. Kim、曾歆雁、妮妃雅、張家瑀",
               info: `11/19(五)-11/21(日)<br/>
 1730-1830、1930-2030<br/><br/>
 地點｜自由街X廣東街-成功街<br/>（活動時間內隨機出現）`,
-              content: `溝仔尾的水兀自流，但它總不是自己的主人。<br/>
+              content: `台北劇場實驗室 feat. 秀場女王金咪咪Kim、天涯歌女曾歆雁、變裝天后妮妃雅、音樂浪人張家瑀<br><br>溝仔尾的水兀自流，但它總不是自己的主人。<br/>
 本作品靈感來自溝仔尾的人文歷史——從過往孩童放學在溪中抓蛤仔的景象、盛極一時的紅燈戶和今日想要邁入國際的香榭大道，虛擬出兩個蚌殼精，一中一西的不同風格卻都宣稱自己是這個地方的最佳代言人。今日兩蚌相爭決定在大道上以歌舞決勝負，請大家用雪亮的眼睛、公正的耳朵和愛花蓮的心投下神聖的一票，看誰最蚌。但這塊地的人文風景是否真的能由民眾決定？這兩個蚌殼精就是我們所有的選擇嗎？有誰真的聽到溝仔尾聲音呢？<br/><br/>
 
 <b>｜台北劇場實驗室</b><br/>
-以開放與實驗為經，創作與交流為緯，創作作品不設限領域與形式，風格綺麗擅長以歌舞形式創作，但主題始終關注社會現況。歷年作品包括獲台北藝穗節首獎「永真藝穗獎」肯定的創團作品《愛神紅包場》、《女子比屈歌舞秀》、台北藝術節《但是又何Night》、玩劇場藝術節開幕遊行《舞動起乩》等。`,
+以開放與實驗為經，創作與交流為緯，創作作品不設限領域與形式，風格綺麗擅長以歌舞形式創作，但主題始終關注社會現況。歷年作品包括獲台北藝穗節首獎「永真藝穗獎」肯定的創團作品《愛神紅包場》、《女子比屈歌舞秀》、台北藝術節《但是又何Night》、玩劇場藝術節開幕遊行《舞動起乩》等。
+<div class="en">
+    The water in Gouzaiwei flows freely, but cannot hold its destiny. This site-specific production is inspired by the
+    historic urban landscape of Gouzaiwei, from the trench where children searched for clams after school to the
+    infamous red light district. Covering this trench is the internationally ambitious Sunrise Boulevard. Two clamshell
+    spirits were created in this context. <br><br>
+
+    These spirits with totally different styles, one Taiwanese and one Western, claim to be the mascot of Sunrise
+    Boulevard. Today, they have decided to have a showdown by singing and dancing along the boulevard, to let people
+    choose the winner. Please cast your vote based on what you see and hear and your love of Hualien. May the best clam
+    win! But do people really hold the power to change this urban landscape? Are these two clamshell spirits the only
+    choices? Does anyone really hear the voices of Gouzaiwei? <br><br>
+
+    <b>｜Taipei Theatre Lab</b> <br>
+    Taipei Theatre Lab (TTL) engages in artistic creation and exchange in the spirit of openness and experimentation.
+    Its works cross genres and disciplines, taking on a spectrum of aesthetic styles while tackling topics pertinent to
+    the world today. In 2013, TTL’s inaugural production Cabaret de L’amour received the grand prize at the Taipei
+    Fringe Awards. Following its extravaganza, Bitch Cabaret, TTL created Queer Night, which was commissioned by the
+    Taipei Arts Festival, and the opening parade for Play Arts Summer Festival entitled Dance Like Crazy, Move Your
+    Body!”. All have shown its ingenious style of engaging with audiences.
+</div>
+`,
               warn: "注意事項｜請與表演者保持1.5公尺的肉身距離，但歡迎心靈和語言上的熱情交流。",
               slides: [
-                require("@/assets/img/program/4-1日出未來河/a8-2-1臺北劇場.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-2-2臺北劇場.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-2-3臺北劇場.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-2-4臺北劇場.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a8-2-5臺北劇場.jpg"),
+                require("@/assets/img/program/4-1日出未來河/a8-2-1臺北劇場.jpg"),
               ],
               links: [
                 {
@@ -633,7 +788,7 @@ export default {
               enname: this.$device.isMobile
                 ? "《Taipei Schwaiwanqiu Open》<br/>in Hualien"
                 : "《Taipei Schwaiwanqiu Open》<br/>in Hualien",
-              creator: "張汶皓",
+              creator: "張汶皓<br/><span>Chang Wen-Hao</span>",
               info: `11/19(五)-11/20(六) 1815-1915、2045-2145<br/>11/21(日) 1815-1915<br/>地點｜自由街X重慶路`,
               content: `我們熱愛網球，就像愛著花蓮這塊土地一樣愛。<br/><br/>
 
@@ -645,7 +800,36 @@ export default {
 
 <b>｜張汶皓</b><br/>
 世新大學廣播電視電影學系電視組。1992年出生在台灣台北市，自幼對運動熱愛，接受職業網球運動員訓練，因過於好動，求學時是在班級上是老師們的頭痛人物，被指派去準備慶生表演節目，模仿「Machi麻吉」跳街舞，唯妙唯俏栩栩如生，從此開啟舞蹈人生。<br/>
-街舞背景的汶皓擅長Locking、Krump、Breaking、Hip hop，並將舞蹈風格和武術及當代舞蹈元素相結合。在2011-2012年與街舞名師FunkyBambi、Elmo環島旅行，到各城市的弱勢單位做街頭演出和公益演出。2012年舞蹈家許芳宜從紐約回台灣創作，擔任其製作《Way out》舞者，並與世界級舞蹈家阿喀郎．汗在國家戲劇院同台演出。陸軍退伍後和父親共同經營網球訓練及推廣的工作，2017年以PTR國際教練身份受邀至香港訓練ITF職業青少年網球選手。近年更積極投入舞蹈影像的創作，參與台灣資深音樂人林強、魏如昀、徐佳瑩、蘇珮卿的音樂錄影帶製作，並在加拿大樂團Homeshake邀製的MV《Every single thing》作品，入圍加拿大Prism Prize的音樂錄影帶大獎。`,
+街舞背景的汶皓擅長Locking、Krump、Breaking、Hip hop，並將舞蹈風格和武術及當代舞蹈元素相結合。在2011-2012年與街舞名師FunkyBambi、Elmo環島旅行，到各城市的弱勢單位做街頭演出和公益演出。2012年舞蹈家許芳宜從紐約回台灣創作，擔任其製作《Way out》舞者，並與世界級舞蹈家阿喀郎．汗在國家戲劇院同台演出。陸軍退伍後和父親共同經營網球訓練及推廣的工作，2017年以PTR國際教練身份受邀至香港訓練ITF職業青少年網球選手。近年更積極投入舞蹈影像的創作，參與台灣資深音樂人林強、魏如昀、徐佳瑩、蘇珮卿的音樂錄影帶製作，並在加拿大樂團Homeshake邀製的MV《Every single thing》作品，入圍加拿大Prism Prize的音樂錄影帶大獎。
+<div class="en">
+    We love tennis, just as much as we love Hualien. The predecessor to tennis was a game popular in the French court in
+    the 14th century called handball. Two players were separated by a rope and used their palms to hit a ball made of
+    hair wrapped in cloth back and forth. Later, this game was improved, with a net replacing the rope and a wooden
+    racket replacing the hand. Then, strings were added to the wooden racket. Later, the carbon fiber tennis rackets we
+    see now were developed. Starting in the 18th century, this sport began to appear in Europe, gaining in popularity
+    there in the 19th century. The first Wimbledon championships were held in London, England in 1877, which was the
+    earliest tournament in modern tennis history. <br><br>
+
+    Due to the outbreak of the COVID-19 pandemic in 2020, the four Grand Slam tournaments have been delayed or
+    cancelled. Chang Wen-Hao, a tennis coach with an interest in the arts, decided to launch the Taipei Schwaiwanqiu
+    Open. How does he break through social classes, surpass nobles, and reinterpret tennis? <br><br>
+
+    <b>｜Chang Wen-Hao</b> <br>
+    Born in 1992 in Taipei, Chang Wen-Hao graduated from the Department of Radio, Television, and Film of Shin Hsin
+    University. He has been passionate about sports since childhood and trained to be a professional tennis player. But
+    in the classroom his teachers considered him a troublemaker because he was so full of energy. He appeared on the
+    Machi Street Dance Jump 2003 birthday show to much applause, initiating his dance career. <br><br>
+
+    Wen-Hao explores different styles of street dance such as Locking, Krump, Breaking, and Hip hop and combines these
+    with martial arts and contemporary dance. From 2011 to 2012, he traveled around Taiwan with street dancers Funky
+    Bambi and Elmo and performed for charities and disadvantaged groups. In 2012, he had the chance to work with
+    choreographer Fang-yi Sheu and participated in her production Way Out, sharing the stage with internationally-renown
+    choreographer Akram Khan. After completing his compulsory military service, Wen-Hao went back to tennis. In 2017, as
+    a PTR international coach, he was invited to train ITF young professional tennis players in Hong Kong. Recently, he
+    has worked on dance films and appeared in music videos for songs by Lim Giong, Queen Wei, Lala Hsu, and Paige Su.
+    One of his music videos, “Every Single Thing” from Homeshake, was nominated for a Canadian Prism Prize in 2018.
+</div>
+`,
               warn: `注意事項｜<br/>
 - 本節目開放上臺獻花、獻金、獻果。<br/>
 - 球飛過來的時候，一起幫我們接起來，丟回場中央。<br/>
@@ -667,12 +851,16 @@ export default {
               enname: "",
               creator: "法咪咪",
               info: `11/20(六) 1900-1910、2100-2110<br/>地點｜自由街X福建街`,
-              content: `日出大道上，舞動廣場舞準時齊聲齊動，踏上你的步伐一起跳跳跳。法咪咪跨界與怪奇饒舌歌手春艷合作，推出單曲洗腦歌曲「Charlie的叭叭洗澎澎」，將在花蓮城空藝術節中，於日出大道上與花蓮在地舞蹈團隊一同帶來城市快閃廣場舞！<br/><br/>
+              content: `日出大道上，舞動廣場舞準時齊聲齊動，踏上你的步伐一起跳跳跳。法咪咪跨界與怪奇饒舌歌手春艷合作，推出單曲洗腦歌曲「Charlie的叭叭洗澎澎」，將在花蓮城空藝術節中，於日出大道上與花蓮縣好萊塢歌舞協會一同帶來城市快閃廣場舞！<br/><br/>
 
 <b>｜法咪咪</b><br/>
 榴槤世家第三代的亞洲大亨「法咪咪」企圖轉型家族農產形象，以幽默詼諧的媒體行銷來宣傳這外殼有刺、散發極濃氣味的水果之王。法咪咪手拿著榴槤，掛著招牌微笑周遊各國，2019年登上紐約時報廣場最大的艾迪遜螢幕，並於蘇活區開設首間「榴槤美術館」；2020年旋風回到亞洲，進軍首爾開設「榴槤健身房」，並於夏天在臺北開設首間「榴槤製藥廠」概念店。法咪咪的身份遊走在名人、商人、設計師及歌手之間，用跨界的方式滿足資本社會的需求，並向世界宣告他的時代已來臨！<br/><br/>
 
-Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
+Photo by Eian Kantor, Performa 19. © FAMEME Studio<br><br>
+
+<b>｜花蓮縣好萊塢歌舞協會</b><br>
+於1996年成立，位於花蓮市美崙山上，以提倡正當休閒活動，調劑身心健康，促進心情愉快及祥和氣氛為宗旨。
+`,
               warn: "",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a8-4法咪咪.jpg"),
@@ -686,10 +874,9 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
               info: ``,
               content: ``,
               warn: "",
-              slides: [
-              ],
+              slides: [],
               links: [],
-              breakline: true
+              breakline: true,
             },
             {
               name: "遊俠說書",
@@ -709,12 +896,26 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
             {
               name: "西服店的日常與盛況",
               enname: "Daily Life in the Suite Store",
-              creator: "三分生劇團",
-              info: `11/20(六)-11/21(日) 1630-1720<br/>地點｜明義街X上海街→往「明星洋服店」`,
+              creator: "三分生劇團<br/><span>RAW Theater</span>",
+              info: `11/20(六)-11/21(日) 1630-1720<br/>地點｜明義街Ｘ上海街集合後步行至「明星西服」`,
               content: `昔日溝仔尾的街上有菜市場、醫生館、戲院、西服店......，日常的西服店裡，老闆教導徒弟學藝態度，傳授他們真心面對手藝學習。每日有各式客人前來店裡，需求各有不同，有外來客到本地做西服、也有因結婚、升官、工作等需求來做西服，那個年頭的西服榮景蓬勃非凡......。<br/><br/>
 
 <b>｜三分生劇團</b><br/>
 成立於2018年，成立之際即已進入花蓮溝仔尾做田野調查。溝仔尾是花蓮發展最早與最熱鬧的街區，隨著時代變遷許多過往事蹟均彌足珍貴。劇團因而以溝仔尾地區田調作為劇本創作的依據，二度在花蓮城隍廟前演出，帶領觀眾重回舊時廟前看戲的感受，拉近演出者與觀眾彼此距離，希望在地居民也能看到屬於他們的故事。
+<div class="en">
+    “Kau-á bué” is a bygone commercial area in Hualien City, with a traditional market, clinic, theater, and suit store,
+    etc. To become a master tailor, it is necessary to be an apprentice for 3 years and 4 months and to be dedicated to
+    learning this trade. In this play, you can see clients with various needs for a suit such as a wedding, a job
+    promotion, you name it. This is a place where you can observe people from all walks of life in Hualien City. <br><br>
+
+
+    <b>｜RAW Theater </b> <br>
+    RAW Theater is a troupe that carries out field studies in a bygone commercial area called “kau-á bué” in Hualien
+    City. In 2018, this troupe realized that it is crucial to trace the history of Hualien City. As such, its members
+    have been documenting its oral history and the life stories of its elderly residents. Plays are developed based on
+    the results of fieldwork with performances held in the square in front of Hualien’s City God Temple to collect
+    feedback from residents. RAW Theater believes that plays are a way to interpret history and make it more accessible.
+</div>
 `,
               warn: "注意事項｜街上演出時請與表演者維持1.5公尺距離，但歡迎觀眾於最後加入與演員一同共舞",
               slides: [
@@ -725,7 +926,7 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
             {
               name: "汝妮的原住民新聲音",
               enname: "",
-              creator: "DJ 汝妮",
+              creator: "DJ 汝妮<br/><span>Dungi Sapor</span>",
               info: `11/19(五) 2030-2130<br/>
 11/21(日) 2030-2130<br/>
 地點｜自由街X成功街-福建街`,
@@ -734,7 +935,11 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio`,
 <b>｜DJ 汝妮</b><br/>
 本名DUNGI SAPOR，有著古典鋼琴及舞蹈的底子，不侷限任何音樂類型，在奠下基礎後，2015年進入DJ生涯，不斷挑戰結合在地文化，清楚建立出自己的聲響辨識，使她的音樂場景擁有獨特品味，表演中大膽拼湊自我意識的風格，被稱為公主的她很快就累積出一批死忠粉絲。<br/><br/>
 
-曾受邀於Australia、New Zealand、S2O Taiwan Songkran Music Festival演出、德國知名TechnoDJ Monoloc亞洲巡迴台灣站指定暖場DJ、與華人世界百大女DJ Cookie演出，以地下場景鍛鍊出的能量與爆發力說服音樂祭的舞客。`,
+曾受邀於Australia、New Zealand、S2O Taiwan Songkran Music Festival演出、德國知名TechnoDJ Monoloc亞洲巡迴台灣站指定暖場DJ、與華人世界百大女DJ Cookie演出，以地下場景鍛鍊出的能量與爆發力說服音樂祭的舞客。
+<div class="en">
+    <b>｜DJ Dungi Sapor</b> <br>
+    Dungi Sapor celebrates her indigenous Taiwanese and Maori heritage. With a self-conscious style, she uses wild tempos to illustrate complicated tribal language and let the world hear Taiwan's most beautiful music. However, her works are not limited to any one genre. Dungi's musical tastes and voice are unique, as she knows that it is futile to try and please everyone. Feel the energy and the moment you are sucked into her world, as you become a believer in this princess.
+</div>`,
               warn: "",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a8-7-1汝妮.jpg"),
@@ -770,7 +975,16 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
 來自台北，成長於90橫跨千禧世代，於2013年開始演出。喜愛飽滿低頻中帶有自然大氣氛圍的Techno音樂風格，擅長融合自然及工業聲響來編排舞曲，營造出穩健的低音及飽和的空間感，並在催眠節奏中帶出持續流動的情緒變化。2020年創立【泊人ANKR】，為從在地自然觀點出發的音樂及活動品牌。<br/><br/>
 
 <b>｜Venci</b><br/>
-出身自台東、生活於台北，Techno是她生活中不可或缺的元素。Techno之於Venci，就如同飲食之於人類。與故鄉台東感情深厚，希望更多人聽見臺灣DJ文化的底蘊，也讓東臺灣有機會享受優雅的電音場景。目前為派對單位Evaporate成員之一，並以推廣臺灣電音文化為核心，希望電子音樂的聽眾逐漸變得更多元、年齡更廣泛。`,
+出身自台東、生活於台北，Techno是她生活中不可或缺的元素。Techno之於Venci，就如同飲食之於人類。與故鄉台東感情深厚，希望更多人聽見臺灣DJ文化的底蘊，也讓東臺灣有機會享受優雅的電音場景。目前為派對單位Evaporate成員之一，並以推廣臺灣電音文化為核心，希望電子音樂的聽眾逐漸變得更多元、年齡更廣泛。
+<div class="en">
+    <b>｜Jesse Chen</b> <br>
+    Jesse Chen is a talented up-and-coming Techno DJ. In 2019, he co-created and co-founded Pleasure Always Brings Pain (PABP) with visual designer Sebastian Wu. <br><br>
+    <b>｜GAZER (Gary Chen)</b> <br>
+    GAZER (Gary Chen) is a Techno DJ/producer from Taipei. Growing up in the 90s and into the new millennium, he started performing in 2013 and founded ANKR in 2020. ANKR is a music and event brand that explores the natural perspective. <br><br>
+    <b>｜Venci</b> <br>
+    Born in Taitung, Venci went to Taipei to work in an accounting firm. On weekends, Techno is an indispensable part of her life. Techno to Venci is as important as food
+</div>
+`,
               warn: "",
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a8-8-1Jesse.jpg"),
@@ -782,7 +996,8 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
             {
               name: "東岸爵士重奏",
               enname: "East Coast Jazz Ensemble",
-              creator: "許元耀、王佳祥、李成員、丁羅紀晴、陳健文",
+              creator:
+                "許元耀、王佳祥、李成員、丁羅紀晴、陳健文<br/><span>Dante、Josh、Ken、Christine、Chanchen</span>",
               info: `11/19(五)-11/21(日) 1630-1730<br/>地點｜自由街X福建街<br/>
 （活動時間內隨機出現）`,
               content: `由薩克斯風、小號、吉他、鋼琴、貝斯所組成的東岸爵士重奏團，要用藍調、搖擺、拉丁、巴薩諾瓦......等不同風格的爵士經典曲目來分享我們對於花蓮生活中的美好。<br/><br/>
@@ -795,6 +1010,21 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
 李成員，主修爵士貝斯，師事山田洋平。<br/>
 丁羅紀晴，主修爵士鋼琴，師事Mark郭、翁家怡。<br/>
 陳健文，主修爵士小號，師事魏廣晧。
+<div class="en">
+    The East Coast Jazz Ensemble is composed of saxophone, trumpet, guitar, piano, and bass players. To showcase the
+    beauty of life in Hualien, they perform jazz standards in blues, swing, Latin, and bossa nova styles. <br><br>
+
+    <b>｜East Coast Jazz Ensemble </b> <br>
+    Dante is currently enrolled in National Dong Hwa University's Music Department, majoring in jazz woodwind. <br><br>
+
+    Josh is currently enrolled in National Dong Hua University's Music Department, majoring in jazz guitar. <br><br>
+
+    Ken is currently enrolled in National Dong Hua University's Music Department, majoring in jazz bass. <br><br>
+
+    Christine is currently enrolled in National Dong Hua University's Music Department, majoring in jazz piano. <br><br>
+
+    Chanchen is currently enrolled in National Dong Hua University's Music Department, majoring in jazz trumpet.
+</div>
 `,
               warn: "",
               slides: [

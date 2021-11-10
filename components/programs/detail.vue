@@ -63,13 +63,16 @@
             }"
             :data-tab-name="data.name"
             :data-tab-key="i"
+            v-if="!data.breakline"
           >
             <div class="info" v-show="!$device.isMobile">
               <div class="name" v-html="data.name"></div>
               <div class="enname" v-html="data.enname"></div>
-              <div class="creator" v-if="data.creator">
-                {{ data.creator }}
-              </div>
+              <div
+                class="creator"
+                v-if="data.creator"
+                v-html="data.creator"
+              ></div>
               <div
                 class="social-link"
                 v-if="data.links.length > 0"
@@ -121,9 +124,11 @@
               >
                 <div class="name" v-html="data.name"></div>
                 <div class="enname" v-html="data.enname"></div>
-                <div class="creator" v-if="data.creator">
-                  {{ data.creator }}
-                </div>
+                <div
+                  class="creator"
+                  v-if="data.creator"
+                  v-html="data.creator"
+                ></div>
                 <div class="time" v-html="data.info"></div>
                 <div class="warn" v-html="data.warn"></div>
 
@@ -181,6 +186,14 @@
 
 <style lang="scss">
 @import "@/assets/css/variable.scss";
+
+.creator {
+  line-height: 1.5;
+  letter-spacing: 1px;
+  span {
+    color: #8c8c8c;
+  }
+}
 .slide {
   .program-carousel-wrapper {
     padding: 0;
@@ -275,6 +288,7 @@
       color: $primaryColor;
     }
     .en {
+      margin-top: 40px;
       color: #8c8c8c;
       text-align: left;
     }
@@ -475,10 +489,10 @@
         margin-bottom: 0;
         border-top: 1px solid #262626;
         .info {
-          padding: 2vw 1.5vw 0 2vw;
+          padding: 2vw 1.5vw 2vw 2vw;
           box-sizing: border-box;
           width: 35%;
-          height: 47vw;
+          min-height: 47vw;
           overflow-y: hidden;
           .name {
             font-size: 1.8vw;

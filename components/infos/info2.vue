@@ -259,31 +259,31 @@ export default {
         },
         {
           step: 1,
-          offsetRatio: 0.136,
+          offsetRatio: 0.128,
         },
         {
           step: 2,
-          offsetRatio: 0.3055,
+          offsetRatio: 0.291,
         },
         {
           step: 3,
-          offsetRatio: 0.4596,
+          offsetRatio: 0.4441,
         },
         {
           step: 4,
-          offsetRatio: 0.602,
+          offsetRatio: 0.577,
         },
         {
           step: 5,
-          offsetRatio: 0.732,
+          offsetRatio: 0.701,
         },
         {
           step: 6,
-          offsetRatio: 0.848,
+          offsetRatio: 0.815,
         },
         {
           step: 7,
-          offsetRatio: 0.97,
+          offsetRatio: 0.93,
         },
       ],
       scrollOptions: {
