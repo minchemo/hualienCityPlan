@@ -180,14 +180,14 @@
         &:hover {
           .program-item-subtitle {
             &::after {
-              transform: translate(-600%, 40%);
+              transform: translate(-300%, 40%);
             }
           }
         }
         .program-item-subtitle {
-          text-align: left;
+          text-align: center;
           &::after {
-            transform: translate(-700%, 40%);
+            transform: translate(-350%, 40%);
           }
           &::before {
             content: "(選段演出)";
@@ -295,7 +295,7 @@
               content: "";
             }
             &::after {
-              transform: translate(30%, 30%);
+              transform: translate(100%, -50%);
             }
           }
         }
@@ -378,6 +378,8 @@ Lin Ching-Sheng hosts the Voice of Taroko radio program on UFO network. In Huali
 <b>｜走路草農／藝團成員</b><br/>
 來自高雄的甲仙與大社，關注生態自然、農業環境與地景考現等相關議題。「治本於農，以農入藝」走路草創作的方法與目標，農藝不只是農業技術，更是轉化創作的靈感來源與實踐方法。持續的創作計劃包含「思箱計劃」、「噥噥時間交換所」等等。
 <div class="en">
+合作單位｜花蓮市公所 原味直送野菜箱、撒固兒部落（國福部落）、大本部落（華東部落）、林務局花蓮林區管理處<br><br>
+
     Seeing a road, why do we miss a river? Today, supermarkets are commonplace. So, why do we still need traditional markets or to go to the mountains to collect wild vegetables? How do we recall a stream? How do we observe the leaves of vegetables? How do can we recognize that some plants we have thought of as weeds are actually vegetables? We combine the planting of seeds with a motorized installation that imitates the sounds of a stream. To the indigenous peoples, the land is like a refrigerator, providing food to eat. We collaborated with local residents to learn about wild vegetables. We hope that Vegetables Everyday becomes a place for cultural exchanges, where people eat wild vegetables, see wild vegetables, learn about wild vegetables, and hear the sounds of a stream.<br/><br/>
 
 <b>｜Walking Grass Agriculture</b><br/>
@@ -563,8 +565,8 @@ Chia Chien-Ju was born in Taipei in 1984. She observes and searches for local re
         {
           title: "Q6",
           subtitle: this.$device.isMobile
-            ? "非常態運動<br/>失序邊境<br>選段演出"
-            : "非常態運動-失序邊境<br>選段演出",
+            ? "非常態運動<br/>失序邊境<br/>選段演出"
+            : "非常態運動-失序邊境<br/>選段演出",
           tag: "什麼永恆不變？",
           color: "#C8E6FA",
           tab: [

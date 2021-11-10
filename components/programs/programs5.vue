@@ -83,28 +83,29 @@
         </div>
         <div class="introtitle"><b>活動介紹</b></div>
         <p class="content">
-          以豐田幾位返鄉青年的真實返鄉故事出發，藉由真人農村RPG的形式，讓參與者實地體驗返鄉所遇到的<br />
-          困境與挑戰；藉由當初返鄉青年們作為出發號角的竹炮DIY，在蒐集素材中也更認識農村的人、事、物<br />
+          以豐田幾位返鄉青年的真實返鄉故事出發，藉由真人農村RPG的形式，讓參與者實地體驗返鄉所遇到的<br v-if="!$device.isMobile" />
+          困境與挑戰；藉由當初返鄉青年們作為出發號角的竹炮DIY，在蒐集素材中也更認識農村的人、事、物<br v-if="!$device.isMobile"/>
           產與歷史。<br />
 
           <span class="en">
-            During the "Voice of Going Home" RPG, find a "home" in a rural area where the population and number of children are declining.
+            During the "Voice of Going Home" RPG, find a "home" in a rural area where the population and number of children are <br v-if="!$device.isMobile"> declining.
           </span>
         </p>
         <div class="introtitle">
-          <b>活動策劃</b>｜豐田移創指導所、社團法人花蓮縣牛犁社區交流協會
+          <b>活動策劃</b>
         </div>
         <p class="content">
-          <b>豐田移創指導所 FengTian IDEA Lab</b><br />
-          藉由引進創意人口短或長期移駐，增進地方情感關係人口，打造下個世代的農村創意基地。<br /><br />
-
-          <b>社團法人花蓮縣牛犁社區交流協會</b><br />
-          以建立屬於現今居民特色的社區營造工作為志業，在民國九十年遂正式立案為「花蓮縣牛犁社區交流協會」，<br />關懷觸角伸及村中的老人、婦女以及青少年，更關切自身的土地認同，透過對土地歷史、禮俗及生活紀事的追尋，逐漸為豐田－我們的家。<br />
-
+          <b>豐田移創指導所</b><br />
+          藉由引進創意人口短或長期移駐，增進地方情感關係人口，打造下個世代的農村創意基地。<br />
           <span class="en">
+            <b>FengTian IDEA Lab</b><br/>
            By encouraging short-term and long-term migrations of creative people, the population that is emotionally connected to <br v-if="!$device.isMobile"> this place increases, resulting in a rural creative base for the next generation.
 
-          </span>
+          </span><br><br>
+
+          <b>社團法人花蓮縣牛犁社區交流協會</b><br />
+          以建立屬於現今居民特色的社區營造工作為志業，在民國九十年遂正式立案為「花蓮縣牛犁社區交流協會」，<br v-if="!$device.isMobile" />關懷觸角伸及村中的老人、婦女以及青少年，更關切自身的土地認同，透過對土地歷史、禮俗及生活紀事的追尋，逐漸為豐田－我們的家。<br />
+
         </p>
         <div class="introtitle"></div>
         <p class="content">
@@ -160,7 +161,7 @@
       line-height: 2;
       letter-spacing: 0.05vw;
       span {
-        font-size: .9vw;
+        font-size: .8vw;
         color: #8c8c8c;
       }
     }
@@ -300,6 +301,7 @@
         text-align: justify;
         span {
           color: #8c8c8c;
+          font-size: 9pt;
         }
         &.border-top {
           border-top: 1px solid #262626;

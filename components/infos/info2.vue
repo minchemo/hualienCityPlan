@@ -31,7 +31,7 @@
         <div
           class="arrow next"
           @click="mapNext"
-          v-bind:class="{ disabled: scrollPos >= 80 }"
+          v-bind:class="{ disabled: scrollPos >= 90 }"
         >
           <img src="@/assets/img/info/arrow.svg" alt="" srcset="" />
         </div>
