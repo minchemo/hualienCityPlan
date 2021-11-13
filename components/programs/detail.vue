@@ -10,7 +10,7 @@
           v-bind:class="{ single: $store.state.detailTab.length == 1 }"
           v-html="
             $store.state.currentDetailTitle.length > 0
-              ? $store.state.currentDetailTitle.replaceAll('<br/>', ' ')
+              ? $store.state.currentDetailTitle.replace(/<br\s*\/?>/gi, ' ')
               : ''
           "
         ></div>
@@ -23,7 +23,7 @@
                 :key="i"
                 v-bind:class="activeTabName == tab.name ? 'active' : ''"
                 @click="scroll(`detail-item-${i}`, i, tab.name)"
-                v-html="tab.name.replaceAll('<br/>', '')"
+                v-html="tab.name.replace(/<br\s*\/?>/gi, '')"
                 v-if="!tab.breakline"
               ></div>
               <div v-else :key="i" class="breakline"></div>
