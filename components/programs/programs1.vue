@@ -374,26 +374,33 @@ Lin Ching-Sheng hosts the Voice of Taroko radio program on UFO network. In Huali
                 "走路草農藝團<br/><span>Walking Grass Agriculture</span>",
               info: `11/19(五)-11/21(日) 1000-2200<br/>作品互動｜1600-2200<br/>地點｜自由街X南京街-成功街`,
               content: `「白浪」有海的意像，也是原住民朋友稱呼漢人時所使用的名稱；「海嘯吧」很可怕，但其實是原住民朋友，對於「還是要吧」的這四個字連音的諧音讀字。「白浪海嘯吃菜吧」是走路草以「白浪」身份，針對地方常見的「野菜」發起的現地計劃，除邀請參與的朋友，認識不同的「野菜」，也告訴來此的「白浪」們，還是要吃地方的野菜吧！本計劃包含從臺灣的蔬果紙箱出發，與當地的媽媽們合作，創造出花蓮特選的野菜紙箱，另外透過動力裝置與作物種子的結合，創造出在海聽濤的聲響，也呼應著過去曾經可以看到溪流的日出大道。<br/><br/>
+<b>線上活動：海嘯線上訂野菜吧！</b><br/>
+走路草農／藝團與「花蓮市公所 原味直送野菜箱」獨家合作，採網路訂購野菜箱，不但能吃到原味直送的野菜，還能獲得2021花蓮城市空間藝術節「溫花蓮」活動限定「白浪海嘯吃菜吧」手工版畫紙箱。限量100份，售完為止。<br/>
+<div class="highlight">參與方式：請洽<a href="https://mapolongkita.com/" target="_blank">「花蓮市公所 原味直送野菜箱」</a>網站。</div><br/>
+<b>現場活動：</b><br/>
+①愛人的便當海嘯自己做吧！16:00-17:00<br/>
+來自大本部落的媽媽們，將於現場，解釋「阿里鳳鳳」（alifongfong）的由來，並現場教學，如何編織林投樹的葉子，製作傳統的「阿里鳳鳳」。<br/>
+講師：高嬌艷、陳品潔<br/>
+<div class="highlight">參與方式：現場報名，酌收講師與材料費300元，每日限10人。</div>
+②白浪海嘯買野菜吧！16:00-21:00<br/>
+現場展售華東部落X撒固兒部落媽媽們種植與採集的野菜，活動期間買菜送樹苗，每日限量100棵！本活動樹苗由林務局花蓮林區管理處贊助提供，來自花蓮沿岸防風植物臺灣海藻、白水木、草海桐，花蓮特有種太魯閣櫟、火刺木，阿美族食／實用植物刺蔥、毛柿。<br/>
+<div class="highlight">參與方式：現場購買，季節實價（所得將全數回饋給華東部落X撒固兒部落）</div>
+③海嘯自己印野菜帆布袋吧！ 19:00-20:00<br/>
+與原味直送野菜箱合作版畫箱同款設計，將於活動現場ＤＩＹ印製。<br/>
+<div class="highlight">參與方式：現場報名，酌收部分材料費300元，每日限30人。</div><br/>
 
-<b>｜走路草農／藝團成員</b><br/>
-來自高雄的甲仙與大社，關注生態自然、農業環境與地景考現等相關議題。「治本於農，以農入藝」走路草創作的方法與目標，農藝不只是農業技術，更是轉化創作的靈感來源與實踐方法。持續的創作計劃包含「思箱計劃」、「噥噥時間交換所」等等。
+<b>｜走路草農／藝團</b><br/>
+來自高雄的甲仙與大社，關注生態自然、農業環境與地景考現等相關議題。「治本於農，以農入藝」走路草創作的方法與目標，農藝不只是農業技術，更是轉化創作的靈感來源與實踐方法。持續的創作計劃包含「思箱計劃」、「噥噥時間交換所」等等。<br/><br/>
+合作單位｜花蓮市公所 原味直送野菜箱、撒固兒部落（國福部落）、大本部落（華東部落）、林務局花蓮林區管理處
 <div class="en">
-合作單位｜花蓮市公所 原味直送野菜箱、撒固兒部落（國福部落）、大本部落（華東部落）、林務局花蓮林區管理處<br><br>
-
     Seeing a road, why do we miss a river? Today, supermarkets are commonplace. So, why do we still need traditional markets or to go to the mountains to collect wild vegetables? How do we recall a stream? How do we observe the leaves of vegetables? How do can we recognize that some plants we have thought of as weeds are actually vegetables? We combine the planting of seeds with a motorized installation that imitates the sounds of a stream. To the indigenous peoples, the land is like a refrigerator, providing food to eat. We collaborated with local residents to learn about wild vegetables. We hope that Vegetables Everyday becomes a place for cultural exchanges, where people eat wild vegetables, see wild vegetables, learn about wild vegetables, and hear the sounds of a stream.<br/><br/>
 
 <b>｜Walking Grass Agriculture</b><br/>
 “Flourishing through agriculture, intervening in art through agriculture” is the method and objective of Walking Grass Agriculture. Its members come from farming families and have a passion for art. They use the term agriculture not just for its technical implications, but also to explore the possibilities of art via the values inherited from their families. Agriculture is a balance between nature and culture. Not unlike art, it responds to the seasons, the heavens and the earth, time and space, and the rhythms of life. Art can act upon all these phenomena.
 </div>`,
-              warn: `注意事項｜拍照打卡不用錢，參觀選購更歡迎 <br><br>
-              活動說明｜<br>
-            一、活動期間，於「花蓮市公所 原味直送野菜箱」網站上訂購野菜，就能獲得限量100份的手工版畫野菜箱，送完為止。<br><br>
-
-            二、現場展售來自國福部落，與華東部落媽媽們種植與採集的野菜，活動期間買菜送樹苗，每日限量100份！本活動樹苗由林務局花蓮林區管理處贊助提供，來自花蓮沿岸防風植物臺灣海藻、白水木、草海桐，花蓮特有種太魯閣櫟、火刺木，阿美族食/實用植物刺蔥、毛柿。<br><br>
-
-            三、活動期間，每天下午四點到五點，有來自大本部落的媽媽們，進行傳統手工藝與料理「阿里鳳鳳」（alifongfong）的製作，現場收費報名。
-`,
+              warn: `注意事項｜拍照打卡不用錢，參觀選購更歡迎`,
               slides: [
+                require("@/assets/img/program/4-1日出未來河/a2-0白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-1白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-2白浪海嘯.jpg"),
                 require("@/assets/img/program/4-1日出未來河/a2-3白浪海嘯.jpg"),
@@ -417,14 +424,14 @@ Lin Ching-Sheng hosts the Voice of Taroko radio program on UFO network. In Huali
               name: "家族",
               enname: "Family",
               creator: "賈茜茹<br/><span>Chia Chien-Ju</span>",
-              info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1730-1830<br/>地點｜自由街X成功街-福建街`,
+              info: `11/19(五)-11/21(日) 1000-2200<br/>展演｜1730-1830 五六、1845-1945 日<br/>地點｜自由街X成功街-福建街`,
               content: `每個家都會有一個客廳，每個客廳都有屬於自己的故事。離不開的是不想離開還是不能離開？回來的是想回來還是不得不回來？在這一座山、一片海、一條消失的溪流之下，將發生一個家族的聚散，一通沒人接聽的電話，一場沒有邊界的演出。<br/><br/>
 
 使用當地的二手傢俱，拼製一座可多面向觀看的架高客廳與如橋樑般的長桌，回應溝仔尾過去建築在河床上房舍和福住橋的形象。與戲劇治療師合作，透過表演者的引導，讓觀眾成為這個混聚客廳裡的短暫家人。其中特別使用柯智豪所提供的作品「國王的驢耳朵」中孩子們的童言童語，放置在裝置中，為這次的作品拉出一個更純粹的情境，回應花蓮的令人感到美好的一部分。<br/><br/>
 
 創作概念：賈茜茹<br/>
 協同創作：柳冠竹<br/>
-表演者：何冠儀、楊宇政、初柏翰<br/>
+表演者：何冠儀、楊宇政、初柏漢<br/>
 視覺統籌：董育廷<br/>
 佈展執行：許少軒<br/>
 電話裝置製作：穀米機工<br/>
@@ -923,7 +930,11 @@ Photo by Eian Kantor, Performa 19. © FAMEME Studio<br><br>
               slides: [
                 require("@/assets/img/program/4-1日出未來河/a8-6-1三分生.jpg"),
               ],
-              links: [],
+              links: [
+                {
+                  type: "fb",
+                  link: "https://www.facebook.com/%E4%B8%89%E5%88%86%E7%94%9F%E5%8A%87%E5%9C%98-241678560114872",
+                },],
             },
             {
               name: "汝妮的原住民新聲音",
@@ -1044,7 +1055,7 @@ Venci — Evaporate｜19:10 - 21:00 <br/><br/>
     };
   },
   methods: {},
-  created() {},
-  mounted() {},
+  created() { },
+  mounted() { },
 };
 </script>
